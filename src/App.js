@@ -14,7 +14,8 @@ export default () => (
         return (
           route.routeGuard === 'authGuard' ?
             <AuthPrivateRoute path={route.path} exact={route.exact} component={route.component} /> :
-            <GuestPrivateRoute path={route.path} exact={route.exact} component={route.component} />
+            route.routeGuard === 'Guestroute' ? <GuestPrivateRoute path={route.path} exact={route.exact} component={route.component} /> :
+              <Route path={route.path} exact={route.exact} component={route.component} />
         );
       })}
     </Switch>

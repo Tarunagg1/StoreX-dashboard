@@ -6,9 +6,9 @@ export default function() {
       to: "/dashboard",
     },
     {
-      title: "Api keys",
+      title: "Credentials",
       htmlBefore: '<i class="material-icons">key</i>',
-      to: "/credential",
+      to: "/credentials",
     },
     {
       title: "Errors",

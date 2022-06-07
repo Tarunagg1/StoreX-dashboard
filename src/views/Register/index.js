@@ -5,10 +5,9 @@ import '../Login/login.css';
 export default function Register() {
   return (
     <Fragment>
-
       <div class="d-lg-flex half">
-        <div class="bg order-1 order-md-2 imagContINER" ></div>
-        <div class="contents order-2 order-md-1">
+        <div class="bg  imagContINER" ></div>
+        <div class="contents order-2">
           <div class="container">
             <div class="row align-items-center justify-content-center">
               <div class="col-md-10">

@@ -1,8 +1,3 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
-
-// Layout Types
-import Dashboard from '../views/Dashboard';
 
 // Route Views
 import Errors from "../views/Errors";

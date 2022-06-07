@@ -14,19 +14,19 @@ export default [
         path: "/",
         exact: true,
         component: Home,
-        routeGuard: false
+        routeGuard: 'Guestroute'
     },
     {
         path: "/login",
         exact: true,
         component: Login,
-        routeGuard: false
+        routeGuard: 'Guestroute'
     },
     {
         path: "/register",
         component: Register,
         exact: true,
-        routeGuard: 'authGuard'
+        routeGuard: 'Guestroute'
     },
 
 ];

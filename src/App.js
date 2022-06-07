@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import routes from "./routes/routes";
+import { AuthPrivateRoute, GuestPrivateRoute } from './utils/privateRoutes/PrivateRoute';
+import './App.css';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/shards-dashboards.1.1.0.min.css";
@@ -11,12 +12,9 @@ export default () => (
     <Switch>
       {routes.map((route, index) => {
         return (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.component}
-          />
+          route.routeGuard === 'authGuard' ?
+            <AuthPrivateRoute path={route.path} exact={route.exact} component={route.component} /> :
+            <GuestPrivateRoute path={route.path} exact={route.exact} component={route.component} />
         );
       })}
     </Switch>

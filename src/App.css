@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary: #36454f;
+    --secondary: #2f3136;
+    --black: black;
+    --white: #efefef;
+    --pureWhite:#fff;
+}
+

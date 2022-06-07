@@ -1,0 +1,119 @@
+p {
+  color: var(--white);
+  font-weight: 300;
+}
+
+.imagContINER {
+  background-image: url(https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+}
+
+a {
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+a:hover {
+  text-decoration: none !important;
+}
+
+.content {
+  padding: 7rem 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.half,
+.half .container > .row {
+  height: 100vh;
+}
+
+@media (max-width: 991.98px) {
+  .half .bg {
+    height: 500px;
+  }
+}
+
+.half .contents,
+.half .bg {
+  width: 35%;
+}
+
+.half .contents .form-group,
+.half .bg .form-group {
+  margin-bottom: 0;
+  border: 1px solid var(--white);
+  padding: 15px 0;
+  border-bottom: none;
+}
+.formContainer input {
+  height: 45px;
+  border-radius: 3px;
+  padding-left: 10px !important;
+}
+
+.half .contents .form-group.first,
+.half .bg .form-group.first {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.half .contents .form-control,
+.half .bg .form-control {
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  border-radius: 0;
+}
+
+.half .bg {
+  background-size: cover;
+  background-position: center;
+  width: 65%;
+}
+
+.half a {
+  color: #888;
+  text-decoration: underline;
+}
+
+.half .btn {
+  height: 54px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.half .forgot-pass {
+  position: relative;
+  top: 2px;
+  font-size: 14px;
+}
+
+.formContainer .button {
+  background-color: var(--black);
+  color: var(--pureWhite);
+  font-size: 15px;
+  height: 2.5rem !important;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+}
+
+.formContainer .button:hover {
+  color: var(--pureWhite);
+  background-color: rgb(52, 49, 49);
+}
+
+@media (max-width: 1199.98px) {
+  .half .contents,
+  .half .bg {
+    width: 100%;
+  }
+  .half .bg {
+    display: none;
+  }
+  .half .contents {
+    width: 100% !important;
+  }
+}

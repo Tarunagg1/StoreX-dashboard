@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
   return [
     {
       title: "Dashboard",
@@ -11,9 +11,9 @@ export default function() {
       to: "/credentials",
     },
     {
-      title: "Errors",
-      htmlBefore: '<i class="material-icons">error</i>',
-      to: "/errors",
+      title: "Setting",
+      htmlBefore: '<i class="material-icons">settings</i>',
+      to: "/setting",
     }
   ];
 }

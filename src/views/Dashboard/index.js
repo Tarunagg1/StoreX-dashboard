@@ -1,19 +1,19 @@
 import React from "react";
 import { Container, Row, Col, Card, CardHeader, CardBody } from "shards-react";
-
 import PageTitle from "../../components/common/PageTitle";
 import { DefaultLayout } from '../../layouts';
+// import SmallStats from '../../components/common/SmallStats';
 
 const Dashboard = () => (
   <DefaultLayout>
 
-  <Container fluid className="main-content-container px-4">
-    {/* Page Header */}
-    <Row noGutters className="page-header py-4">
-      <PageTitle sm="4" title="Add New Post" subtitle="Blog Posts" className="text-sm-left" />
-    </Row>
+    <Container fluid className="main-content-container px-4">
+      {/* Page Header */}
+      <Row noGutters className="page-header py-4">
+        <PageTitle sm="4" title="Add New Post" className="text-sm-left" />
+      </Row>
 
-    {/* <Row>
+      {/* <Row>
       <Col>
         <Card small className="mb-4">
           <CardHeader className="border-bottom">
@@ -60,7 +60,7 @@ const Dashboard = () => (
     </Row> */}
 
 
-  </Container>
+    </Container>
   </DefaultLayout>
 );
 

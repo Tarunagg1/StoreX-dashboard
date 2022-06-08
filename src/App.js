@@ -13,8 +13,8 @@ export default () => (
       {routes.map((route, index) => {
         return (
           route.routeGuard === 'authGuard' ?
-            <AuthPrivateRoute path={route.path} exact={route.exact} component={route.component} /> :
-            route.routeGuard === 'Guestroute' ? <GuestPrivateRoute path={route.path} exact={route.exact} component={route.component} /> :
+            <AuthPrivateRoute key={index} path={route.path} exact={route.exact} component={route.component} /> :
+            route.routeGuard === 'Guestroute' ? <GuestPrivateRoute key={index} path={route.path} exact={route.exact} component={route.component} /> :
               <Route path={route.path} exact={route.exact} component={route.component} />
         );
       })}

@@ -31,7 +31,7 @@ export default function Login() {
                   <input type="submit" value="Log In" class="btn btn-block button" />
                 </form>
                 <div class="d-flex mt-3">
-                  <Link to="/register"><span>Don't have an Account??</span></Link>
+                  <span>Don't have an Account?? <Link to="/register">Create one</Link></span>
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ export default function Register() {
                   </div>
 
                   <div class="d-flex mb-2 float-right">
-                    <Link to="/login"><span>Have an Account??</span></Link>
+                    <span>Have an Account? <Link to="/login">SignIn</Link></span>
                   </div>
 
                   <input type="submit" value="Sign up" class="btn btn-block button" />

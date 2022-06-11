@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 
 const AuthPrivateRoute = (props) => {
-    let user = false;
+    let user = true;
     return user ? (
         <Route path={props.path} exact={props.exact} component={props.component} />
     ) : (
@@ -12,7 +12,7 @@ const AuthPrivateRoute = (props) => {
 }
 
 const GuestPrivateRoute = (props) => {
-    let user = false;
+    let user = true;
     return user ? (
         <Redirect to="/dashboard" />
     ) : (

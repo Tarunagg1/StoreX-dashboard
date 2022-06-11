@@ -7,7 +7,6 @@ import './keys.css';
 
 import PageTitle from "../../components/common/PageTitle";
 import { DefaultLayout } from '../../layouts';
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 
 const IOSSwitch = styled((props) => (

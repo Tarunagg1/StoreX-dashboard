@@ -1,6 +1,3 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
-
 // Layout Types
 import Home from '../views/Home';
 import Login from '../views/Login';

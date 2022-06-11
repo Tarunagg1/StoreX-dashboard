@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, CardHeader, CardBody } from "shards-react";
+import { Container, Row } from "shards-react";
 import PageTitle from "../../components/common/PageTitle";
 import { DefaultLayout } from '../../layouts';
 // import SmallStats from '../../components/common/SmallStats';

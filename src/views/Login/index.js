@@ -24,9 +24,9 @@ export default function Login() {
                     <input type="password" class="form-control" placeholder="Your Password" id="password" />
                   </div>
 
-                  <div class="d-flex mb-3 align-items-center">
-                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
-                  </div>
+                  <div class="d-flex mt-3">
+                  <span>Don't have an Account?? <Link to="/register">Forgot Password</Link></span>
+                </div>
 
                   <input type="submit" value="Log In" class="btn btn-block button" />
                 </form>

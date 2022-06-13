@@ -6,108 +6,108 @@ import { DefaultLayout } from '../../layouts';
 
 const Dashboard = () => (
   <DefaultLayout>
-
     <Container fluid className="main-content-container px-4">
       {/* Page Header */}
       <Row noGutters className="page-header py-4">
-        <PageTitle sm="4" title="Add New Post" className="text-sm-left" />
+        <PageTitle sm="4" title="Activities" className="text-sm-left" />
+
       </Row>
 
 
-      <div class="row">
-        <div class="col-lg col-md-6 col-sm-6 mb-4">
-          <div class="stats-small stats-small--1 card card-small">
-            <div class="card-body p-0 d-flex">
-              <div class="d-flex flex-column m-auto">
-                <div class="stats-small__data text-center">
-                  <span class="stats-small__label text-uppercase">Posts</span>
-                  <h6 class="stats-small__value count my-3">2,390</h6>
+      <div className="row">
+        <div className="col-lg col-md-6 col-sm-6 mb-4">
+          <div className="stats-small stats-small--1 card card-small">
+            <div className="card-body p-0 d-flex">
+              <div className="d-flex flex-column m-auto">
+                <div className="stats-small__data text-center">
+                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
-                <div class="stats-small__data">
-                  <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                <div className="stats-small__data">
+                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                 </div>
               </div>
-              <canvas height="120" class="blog-overview-stats-small-1"></canvas>
+              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
             </div>
           </div>
         </div>
-        <div class="col-lg col-md-6 col-sm-6 mb-4">
-          <div class="stats-small stats-small--1 card card-small">
-            <div class="card-body p-0 d-flex">
-              <div class="d-flex flex-column m-auto">
-                <div class="stats-small__data text-center">
-                  <span class="stats-small__label text-uppercase">Posts</span>
-                  <h6 class="stats-small__value count my-3">2,390</h6>
+        <div className="col-lg col-md-6 col-sm-6 mb-4">
+          <div className="stats-small stats-small--1 card card-small">
+            <div className="card-body p-0 d-flex">
+              <div className="d-flex flex-column m-auto">
+                <div className="stats-small__data text-center">
+                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
-                <div class="stats-small__data">
-                  <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                <div className="stats-small__data">
+                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                 </div>
               </div>
-              <canvas height="120" class="blog-overview-stats-small-1"></canvas>
+              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
             </div>
           </div>
         </div>
-          <div class="col-lg col-md-6 col-sm-6 mb-4">
-          <div class="stats-small stats-small--1 card card-small">
-            <div class="card-body p-0 d-flex">
-              <div class="d-flex flex-column m-auto">
-                <div class="stats-small__data text-center">
-                  <span class="stats-small__label text-uppercase">Posts</span>
-                  <h6 class="stats-small__value count my-3">2,390</h6>
+        <div className="col-lg col-md-6 col-sm-6 mb-4">
+          <div className="stats-small stats-small--1 card card-small">
+            <div className="card-body p-0 d-flex">
+              <div className="d-flex flex-column m-auto">
+                <div className="stats-small__data text-center">
+                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
-                <div class="stats-small__data">
-                  <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                <div className="stats-small__data">
+                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                 </div>
               </div>
-              <canvas height="120" class="blog-overview-stats-small-1"></canvas>
+              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
             </div>
           </div>
         </div>
-        <div class="col-lg col-md-6 col-sm-6 mb-4">
-          <div class="stats-small stats-small--1 card card-small">
-            <div class="card-body p-0 d-flex">
-              <div class="d-flex flex-column m-auto">
-                <div class="stats-small__data text-center">
-                  <span class="stats-small__label text-uppercase">Posts</span>
-                  <h6 class="stats-small__value count my-3">2,390</h6>
+        <div className="col-lg col-md-6 col-sm-6 mb-4">
+          <div className="stats-small stats-small--1 card card-small">
+            <div className="card-body p-0 d-flex">
+              <div className="d-flex flex-column m-auto">
+                <div className="stats-small__data text-center">
+                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
-                <div class="stats-small__data">
-                  <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
+                <div className="stats-small__data">
+                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
                 </div>
               </div>
-              <canvas height="120" class="blog-overview-stats-small-1"></canvas>
+              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
             </div>
           </div>
         </div>
-        
+
       </div>
 
       {/* <Row>
       <Col>
-        <Card small className="mb-4">
-          <CardHeader className="border-bottom">
-            <h6 className="m-0">Active Users</h6>
+        <Card small classNameName="mb-4">
+          <CardHeader classNameName="border-bottom">
+            <h6 classNameName="m-0">Active Users</h6>
           </CardHeader>
-          <CardBody className="p-0 pb-3">
-            <table className="table mb-0">
-              <thead className="bg-light">
+          <CardBody classNameName="p-0 pb-3">
+            <table classNameName="table mb-0">
+              <thead classNameName="bg-light">
                 <tr>
-                  <th scope="col" className="border-0">
+                  <th scope="col" classNameName="border-0">
                     #
                   </th>
-                  <th scope="col" className="border-0">
+                  <th scope="col" classNameName="border-0">
                     First Name
                   </th>
-                  <th scope="col" className="border-0">
+                  <th scope="col" classNameName="border-0">
                     Last Name
                   </th>
-                  <th scope="col" className="border-0">
+                  <th scope="col" classNameName="border-0">
                     Country
                   </th>
-                  <th scope="col" className="border-0">
+                  <th scope="col" classNameName="border-0">
                     City
                   </th>
-                  <th scope="col" className="border-0">
+                  <th scope="col" classNameName="border-0">
                     Phone
                   </th>
                 </tr>

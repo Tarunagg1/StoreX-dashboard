@@ -1,8 +1,6 @@
 import React from "react";
 import { Container } from "shards-react";
-import PageTitle from "../../components/common/PageTitle";
 import { DefaultLayout } from '../../layouts';
-// import SmallStats from '../../components/common/SmallStats';
 
 const Profile = () => (
     <DefaultLayout>

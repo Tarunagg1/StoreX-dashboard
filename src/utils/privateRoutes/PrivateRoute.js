@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'
+
 
 const AuthPrivateRoute = (props) => {
-    let user = true;
+    const user = useSelector(state => state.Auth.isAuthencated);
+
     return user ? (
         <Route path={props.path} exact={props.exact} component={props.component} />
     ) : (
@@ -12,7 +14,7 @@ const AuthPrivateRoute = (props) => {
 }
 
 const GuestPrivateRoute = (props) => {
-    let user = true;
+    const user = useSelector(state => state.Auth.isAuthencated);
     return user ? (
         <Redirect to="/dashboard" />
     ) : (

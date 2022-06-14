@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAlert } from "react-alert";
 import { useDispatch } from 'react-redux'
 import './login.css';
@@ -9,7 +9,6 @@ export default function Login() {
   const alert = useAlert();
   const dispatch = useDispatch();
 
-  const history = useHistory();
   const [showPassword, setshowPassword] = useState(false);
 
   const [data, setData] = useState({
@@ -25,7 +24,6 @@ export default function Login() {
       alert.show("All fields required!");
     } else {
       dispatch(loginUser(data));
-      console.log('kmij');
     }
   }
 
@@ -50,17 +48,15 @@ export default function Login() {
                 <h3>Signin to <strong>storeX == Developer console</strong></h3>
                 <form class="formContainer" onSubmit={onSubmit}>
                   <div class="form-group first">
-                    <label for="Email">Email</label>
+                    <label htmlFor="Email">Email</label>
                     <input type="text" class="form-control" name="email" onChange={InputEvent} value={data.email} placeholder="your-email@example.com" id="username" required />
                   </div>
 
                   <div class="form-group last">
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type={showPassword ? 'text' : 'password'} class="form-control" name="password" onChange={InputEvent} value={data.password} placeholder="Your Password" id="password" required />
                   </div>
 
-
-                  
                   <div class="d-flex mb-2 float-right">
                     <span><Link to="/login">Forgot Password</Link> ?</span>
                   </div>

@@ -14,16 +14,16 @@ export default function Register() {
                 <h3>Signup to <strong>storeX == Developer console</strong></h3>
                 <form class="formContainer">
                   <div class="form-group first">
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input type="text" class="form-control" placeholder="your-email@example.com" id="example" />
                   </div>
                   <div class="form-group last">
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" class="form-control" placeholder="Your Password" id="password" />
                   </div>
 
                   <div class="form-group last">
-                    <label for="password">Confirm password</label>
+                    <label htmlFor="password">Confirm password</label>
                     <input type="password" class="form-control" placeholder="confirm Your Password" id="password" />
                   </div>
 

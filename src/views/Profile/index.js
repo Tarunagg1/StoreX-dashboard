@@ -41,36 +41,36 @@ const Profile = () => (
                                         <form>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="feFirstName">First Name</label>
+                                                    <label htmlFor="feFirstName">First Name</label>
                                                     <input type="text" class="form-control" id="feFirstName" placeholder="First Name" value="Sierra" /> </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="feLastName">Last Name</label>
+                                                    <label htmlFor="feLastName">Last Name</label>
                                                     <input type="text" class="form-control" id="feLastName" placeholder="Last Name" value="Brooks" /> </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="feEmailAddress">Email</label>
+                                                    <label htmlFor="feEmailAddress">Email</label>
                                                     <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com" /> </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="fePassword">Password</label>
+                                                    <label htmlFor="fePassword">Password</label>
                                                     <input type="password" class="form-control" id="fePassword" placeholder="Password" /> </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="feInputAddress">Address</label>
+                                                <label htmlFor="feInputAddress">Address</label>
                                                 <input type="text" class="form-control" id="feInputAddress" placeholder="1234 Main St" /> </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="feInputCity">City</label>
+                                                    <label htmlFor="feInputCity">City</label>
                                                     <input type="text" class="form-control" id="feInputCity" /> </div>
                                                 <div class="form-group col-md-4">
-                                                    <label for="feInputState">State</label>
+                                                    <label htmlFor="feInputState">State</label>
                                                     <select id="feInputState" class="form-control">
                                                         <option selected>Choose...</option>
                                                         <option>...</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-2">
-                                                    <label for="inputZip">Zip</label>
+                                                    <label htmlFor="inputZip">Zip</label>
                                                     <input type="text" class="form-control" id="inputZip" /> </div>
                                             </div>
 

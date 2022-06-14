@@ -1,11 +1,11 @@
-import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS } from '../constants/auth.constannts';
+import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_START, LOGOUT_SUCCESS } from '../constants/auth.constannts';
 
 export const loginUser = (user) => async (dispatch) => {
     dispatch({ type: LOGIN_START, payload: true });
     try {
         // const { data } = await axiosinstance.post('/how/admin/auth/login', User);
 
-        dispatch({ type: LOGIN_SUCCESS, payload: {isAuthencated:true} });
+        dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true } });
 
         // localStorage.setItem('token', data.data.token);
         // localStorage.setItem('user', JSON.stringify(data.data.how));
@@ -34,3 +34,7 @@ export const loginUser = (user) => async (dispatch) => {
 }
 
 
+export const logoutUserAction = (user) => async (dispatch) => {
+    dispatch({ type: LOGOUT_SUCCESS });
+    // dispatch({ type: LOGOUT_START, payload: true });
+}

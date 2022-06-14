@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {
   Dropdown,
@@ -9,9 +9,16 @@ import {
   NavItem,
   NavLink
 } from "shards-react";
+import { connect } from 'react-redux';
+import { logoutUserAction } from '../../../../redux/actions/auth.Actions';
+import { bindActionCreators } from 'redux'
 
-export default class UserActions extends React.Component {
+
+class UserActions extends Component {
+
+
   constructor(props) {
+    // this.dispatch = useDispatch();
     super(props);
 
     this.state = {
@@ -20,6 +27,10 @@ export default class UserActions extends React.Component {
 
     this.toggleUserActions = this.toggleUserActions.bind(this);
   }
+  
+  logout = () => {
+    this.props.logoutUserAction();
+  }
 
   toggleUserActions() {
     this.setState({
@@ -27,10 +38,12 @@ export default class UserActions extends React.Component {
     });
   }
 
+
+
   render() {
     return (
       <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
-        <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
+        <DropdownToggle style={{ cursor: 'pointer' }} caret tag={NavLink} className="text-nowrap px-3">
           <img
             className="user-avatar rounded-circle mr-2"
             src={require("./../../../../assets/images/0.jpg")}
@@ -42,15 +55,15 @@ export default class UserActions extends React.Component {
           <DropdownItem tag={Link} to="profile">
             <i className="material-icons">&#xE7FD;</i> Profile
           </DropdownItem>
-        
-          <DropdownItem tag={Link} to="file-manager-list">
+
+          {/* <DropdownItem tag={Link} to="file-manager-list">
             <i className="material-icons">&#xE2C7;</i> Files
           </DropdownItem>
           <DropdownItem tag={Link} to="transaction-history">
             <i className="material-icons">&#xE896;</i> Transactions
-          </DropdownItem>
+          </DropdownItem> */}
           <DropdownItem divider />
-          <DropdownItem tag={Link} to="/" className="text-danger">
+          <DropdownItem onClick={this.logout} className="text-danger">
             <i className="material-icons text-danger">&#xE879;</i> Logout
           </DropdownItem>
         </Collapse>
@@ -58,3 +71,14 @@ export default class UserActions extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  // return {
+  //   logoutUser: () => dispatch(logoutUser),
+  // }
+
+  return bindActionCreators({ logoutUserAction }, dispatch)
+}
+
+
+export default connect(null, mapDispatchToProps)(UserActions);

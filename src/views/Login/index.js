@@ -4,6 +4,7 @@ import { useAlert } from "react-alert";
 import { useDispatch } from 'react-redux'
 import './login.css';
 import { loginUser } from '../../redux/actions/auth.Actions';
+import logo from '../../assets/images/logo.png';
 
 export default function Login() {
   const alert = useAlert();
@@ -39,39 +40,36 @@ export default function Login() {
 
   return (
     <Fragment>
-      <div class="d-lg-flex half">
-        <div class="bg order-1 order-md-2 imagContINER" ></div>
-        <div class="contents order-2 order-md-1">
-          <div class="container">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-10">
-                <h3>Signin to <strong>storeX == Developer console</strong></h3>
-                <form class="formContainer" onSubmit={onSubmit}>
-                  <div class="form-group first">
-                    <label htmlFor="Email">Email</label>
-                    <input type="text" class="form-control" name="email" onChange={InputEvent} value={data.email} placeholder="your-email@example.com" id="username" required />
-                  </div>
-
-                  <div class="form-group last">
-                    <label htmlFor="password">Password</label>
-                    <input type={showPassword ? 'text' : 'password'} class="form-control" name="password" onChange={InputEvent} value={data.password} placeholder="Your Password" id="password" required />
-                  </div>
-
-                  <div class="d-flex mb-2 float-right">
-                    <span><Link to="/login">Forgot Password</Link> ?</span>
-                  </div>
-
-                  <input type="submit" value="Log In" class="btn btn-block button" />
-                </form>
-                <div class="d-flex mt-3">
-                  <span>Don't have an Account?? <Link to="/register">Create one</Link></span>
-                </div>
+      <div className="container">
+        <div className="d-flex align-items-center justify-content-center">
+          <div className="col-md-6 top-10">
+            <Link to="/">
+              <img src={logo} alt="logo" className="logo" srcSet="" />
+            </Link>
+            <h3 className="title">Sign in to your account</h3>
+            <form className="formContainer" onSubmit={onSubmit}>
+              <div className="form-group first">
+                <label htmlFor="Email">Email</label>
+                <input type="text" className="form-control" name="email" onChange={InputEvent} value={data.email} placeholder="your-email@example.com" id="username" required />
               </div>
+
+              <div className="form-group mt-4">
+                <label htmlFor="password">Password</label>
+                <input type={showPassword ? 'text' : 'password'} className="form-control" name="password" onChange={InputEvent} value={data.password} placeholder="Your Password" id="password" required />
+              </div>
+
+              <div className="d-flex mb-4 float-right">
+                <span><Link to="/login" className="link">Forgot your Password? </Link></span>
+              </div>
+
+              <button className="btn btn-block btn button">Continue <i className="material-icons">arrow_forward</i></button>
+            </form>
+            <div className="mt-4 text-center">
+              <span className="text-center">Don't have an Account? <Link className="link" to="/register">Signup</Link></span>
             </div>
           </div>
         </div>
       </div>
-
     </Fragment>
   )
 }

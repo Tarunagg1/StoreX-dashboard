@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@400;700&family=Open+Sans:wght@500&family=Red+Hat+Display:ital,wght@0,300;0,800;1,700&family=Titillium+Web:wght@600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +13,7 @@
   --white: #efefef;
   --pureWhite: #fff;
   --blue: #1a73e8;
+  --footer: #5b5b5b;
 }
 .no-underline {
   text-decoration: none;
@@ -38,4 +41,13 @@
 
 .dib {
   display: inline-block;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
 }

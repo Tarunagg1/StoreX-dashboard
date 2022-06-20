@@ -34,14 +34,14 @@ export default function Register() {
                 <input type="password" className="form-control" placeholder="confirm Your Password" id="password" />
               </div>
 
-              <div className="d-flex mb-2 float-right">
+              {/* <div className="d-flex mb-2 float-right">
                 <span>Have an Account? <Link to="/login">SignIn</Link></span>
-              </div>
+              </div> */}
 
-              <button className="btn btn-block btn button">Continue <i className="material-icons">arrow_forward</i></button>
+              <button className="btn btn-block btn button">Continue account {"  "}  <i className="material-icons">arrow_forward</i></button>
             </form>
             <div className="mt-4 text-center">
-              <span className="text-center">Hve an Account? <Link className="link" to="/register">Signin</Link></span>
+              <span className="text-center">Hve an Account? <Link className="link" to="/login">Signin</Link></span>
             </div>
           </div>
         </div>

@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
 
 import { Dispatcher, Constants } from "../../../flux";
-
+import logo from '../../../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 class SidebarMainNavbar extends React.Component {
   constructor(props) {
     super(props);
@@ -31,17 +32,16 @@ class SidebarMainNavbar extends React.Component {
             style={{ lineHeight: "25px" }}
           >
             <div className="d-table m-auto">
-              {/* <img
-                id="main-logo"
-                className="d-inline-block align-top mr-1"
-                style={{ maxWidth: "25px" }}
-                src={'https://storx.tech/assets/images/storx-logo-light.png'}
-                alt="Shards Dashboard"
-              /> */}
               {!hideLogoText && (
-                <h5 className="d-none d-md-inline ml-1">
-                  StoreX Developer console
-                </h5>
+                <Link to="/dashboard">
+                  <img
+                    id="main-logo"
+                    className="d-inline-block align-top mr-1"
+                    style={{ maxWidth: "125px" }}
+                    src={logo}
+                    alt="storeX Avatarlogo"
+                  />
+                </Link>
               )}
             </div>
           </NavbarBrand>

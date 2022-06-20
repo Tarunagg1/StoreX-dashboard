@@ -11,7 +11,7 @@ export default [
         path: "/",
         exact: true,
         component: Home,
-        routeGuard: 'Guestroute'
+        routeGuard: 'NoAuthGuard'
     },
     {
         path: "/login",

@@ -1,11 +1,11 @@
 
 // Route Views
-import Login from '../views/Login';
+import Documentation from '../views/documentation/Documentation';
 
 export default [
     {
         path: "/documentation",
-        component: Login,
+        component: Documentation,
         routeGuard: 'NoAuthGuard'
     }
 ];

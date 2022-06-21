@@ -72,3 +72,11 @@
   color: var(--white) !important;
   border-color: var(--buttoncolor);
 }
+
+
+
+@media (max-width: 450px) {
+  .headerInnerRow .getStartbtn{
+    display: none;
+  }
+}

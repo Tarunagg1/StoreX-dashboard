@@ -2,6 +2,7 @@
 import Home from '../views/Home';
 import Login from '../views/Login';
 import Register from '../views/Register';
+import ResetPassword from '../views/Resetpassword';
 
 // Route Views
 
@@ -23,6 +24,12 @@ export default [
         path: "/register",
         component: Register,
         exact: true,
+        routeGuard: 'Guestroute'
+    },
+    {
+        path: "/forgotpassword",
+        exact: true,
+        component: ResetPassword,
         routeGuard: 'Guestroute'
     },
 

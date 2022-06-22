@@ -59,7 +59,7 @@ export default function Login() {
               </div>
 
               <div className="d-flex mb-4 float-right">
-                <span><Link to="/login" className="link">Forgot your Password? </Link></span>
+                <span><Link to="/forgotpassword" className="link">Forgot your Password? </Link></span>
               </div>
 
               <button className="btn btn-block btn button">Continue <i className="material-icons">arrow_forward</i></button>

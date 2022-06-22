@@ -1,6 +1,5 @@
 /* header */
 
-
 .header {
   position: fixed;
   left: 0;
@@ -47,6 +46,7 @@
 .getStartbtn {
   display: inline-block;
   margin-right: 1rem;
+  transition: 0.5s all linear;
 }
 
 .getStartbtn a {
@@ -73,10 +73,16 @@
   border-color: var(--buttoncolor);
 }
 
+.right .toggle-sidebarHome {
+  display: none !important;
+  transition: 0.5s all linear;
+}
 
-
-@media (max-width: 450px) {
-  .headerInnerRow .getStartbtn{
+@media (max-width: 645px) {
+  .headerInnerRow .getStartbtn {
     display: none;
+  }
+  .right .toggle-sidebarHome {
+    display: block !important;
   }
 }

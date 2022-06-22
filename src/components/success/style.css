@@ -1,0 +1,74 @@
+.top-4 {
+  margin-top: 5%;
+}
+
+.logo {
+  width: 189px;
+  height: 61px;
+  margin-bottom: 45px;
+}
+
+a {
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.content {
+  padding: 7rem 0;
+}
+
+.subhesading {
+  color: var(--black);
+  line-height: 23.81px;
+}
+
+.headingtitle {
+  color: var(--buttoncolor);
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.bottomButtons .button {
+  transition: background-color 0.3s ease-in-out;
+  background-color: var(--buttoncolor);
+  color: var(--pureWhite);
+  border-radius: 5px;
+  font-size: 15px;
+  height: 50px !important;
+  width: 45%;
+  border: none;
+}
+
+.bottomButtons .button:hover {
+  color: var(--pureWhite);
+}
+
+.bottomButtons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .bottomButtons .buttons {
+    flex-direction: column;
+  }
+
+  .bottomButtons .button {
+    width: 100%;
+  }
+
+  .headingtitle {
+    font-size: 20px;
+  }
+}

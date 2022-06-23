@@ -51,14 +51,6 @@ a:hover {
   color: var(--pureWhite);
 }
 
-.bottomButtons span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
 @media (max-width: 400px) {
   .bottomButtons .buttons {
     flex-direction: column;

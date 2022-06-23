@@ -73,17 +73,75 @@ const Credentials = () => {
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="API Keys" className="text-sm-left" />
-          <Col className="flex justify-content-end">
-            <FormControlLabel
-              control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
-              label="Live mode"
-            />
-          </Col>
         </Row>
 
-        <Row>
+        <div className="row mt-4">
+          <div className="col-md-1"></div>
+          <div className="col-lg-9">
+            <div className="card card-small mb-4">
+              <div className="card-header border-bottom">
+                <div className="row d-flex justify-content-between align-items-center px-2">
+                    <h6 className="m-0">Keys Details</h6>
+                    <FormControlLabel
+                      control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
+                      label="Live mode"
+                    />
+                </div>
+              </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item p-3">
+                  <div className="row">
+                    {/* <div className="col">
+                      <form>
+                        <div className="form-row">
+                          <div className="form-group col-md-6">
+                            <label htmlFor="feFirstName">First Name</label>
+                            <input type="text" className="form-control" id="feFirstName" placeholder="First Name" value="Sierra" /> </div>
+                          <div className="form-group col-md-6">
+                            <label htmlFor="feLastName">Last Name</label>
+                            <input type="text" className="form-control" id="feLastName" placeholder="Last Name" value="Brooks" /> </div>
+                        </div>
+                        <div className="form-row">
+                          <div className="form-group col-md-6">
+                            <label htmlFor="feEmailAddress">Email</label>
+                            <input type="email" className="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com" /> </div>
+                          <div className="form-group col-md-6">
+                            <label htmlFor="fePassword">Password</label>
+                            <input type="password" className="form-control" id="fePassword" placeholder="Password" /> </div>
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="feInputAddress">Address</label>
+                          <input type="text" className="form-control" id="feInputAddress" placeholder="1234 Main St" /> </div>
+                        <div className="form-row">
+                          <div className="form-group col-md-6">
+                            <label htmlFor="feInputCity">City</label>
+                            <input type="text" className="form-control" id="feInputCity" /> </div>
+                          <div className="form-group col-md-4">
+                            <label htmlFor="feInputState">State</label>
+                            <select id="feInputState" className="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div className="form-group col-md-2">
+                            <label htmlFor="inputZip">Zip</label>
+                            <input type="text" className="form-control" id="inputZip" /> </div>
+                        </div>
+
+                        <button type="submit" className="btn btn-accent">Update Account</button>
+                      </form>
+                    </div> */}
+
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        {/* <Row>
           <Col>
-            <Card small className="mb-4">
+          <Card small className="mb-4">
               <CardBody className="p-0 pb-3">
                 <table className="table mb-0">
                   <thead className="bg-light">
@@ -129,7 +187,7 @@ const Credentials = () => {
               </CardBody>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
 
 
       </Container>

@@ -19,9 +19,7 @@ export default function Success() {
             <div className="bottomButtons">
               <div className="buttons d-flex justify-content-between align-items-center">
                 <Link to="/" className='btn btn-block btn button'>Get Api Key &nbsp; &nbsp; <i className="material-icons">arrow_forward</i></Link>
-                <Link to="/dashboard" className='btn btn-block btn button'>Account &nbsp; &nbsp; <i className="material-icons">arrow_forward</i></Link>
               </div>
-              <span>Logout</span>
             </div>
           </div>
         </div>

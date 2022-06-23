@@ -22,7 +22,7 @@ export default () => {
         height={4}
       />
       <Nav navbar className="border-left flex-row">
-        <Notifications />
+        {/* <Notifications /> */}
         <UserActions />
       </Nav>
     </Fragment>

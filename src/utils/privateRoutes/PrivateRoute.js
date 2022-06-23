@@ -16,7 +16,7 @@ const AuthPrivateRoute = (props) => {
 const GuestPrivateRoute = (props) => {
     const user = useSelector(state => state.Auth.isAuthencated);
     return user ? (
-        <Redirect to="/dashboard" />
+        <Redirect to="/credentials" />
     ) : (
         <Route path={props.path} exact={props.exact} component={props.component} />
     )

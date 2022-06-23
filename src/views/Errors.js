@@ -9,7 +9,7 @@ const Errors = () => (
         <h2>404</h2>
         <h3>Ohh Snap!!</h3>
         <p>There was a problem on our end. Please try again later.</p>
-        <NavLink to="/dashboard"><Button pill>&larr; Dashboard</Button></NavLink>
+        <NavLink to="/credentials"><Button pill>&larr; Dashboard</Button></NavLink>
       </div>
     </div>
   </Container>

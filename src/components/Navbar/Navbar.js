@@ -22,7 +22,7 @@ export default function Navbar() {
                                     <Link to="/login">Login</Link>
                                 </div>
                                 <div className="getStartbtn">
-                                    <Link className="filllcolor" to="/register">Get Api Key</Link>
+                                    <Link className="filllcolor" to="/register">Get API Key</Link>
                                 </div>
                             </div>
                             <a href="/" onClick={null} className="nav-link nav-link-icon toggle-sidebarHome d-sm-inline d-md-inline d-lg-none text-center">

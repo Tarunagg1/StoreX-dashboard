@@ -51,3 +51,7 @@ nav,
 section {
   display: block;
 }
+
+nav{
+  margin-right:-495px;
+}

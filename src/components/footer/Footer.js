@@ -7,61 +7,46 @@ export default function Footer() {
     <footer className="footer">
           <div className="mainfoterSection">
             <div className="footer-menu">
-              <h6 className="footer-item-heading">News API</h6>
+
+              <h6 className="footer-item-heading">API</h6>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Get started</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Documentation</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Sources</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Lorem Ipsum</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Get API</Link>
               </div>
 
             </div>
 
             <div className="footer-menu">
-              <h6 className="footer-item-heading">News API</h6>
+              <h6 className="footer-item-heading">Company</h6>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Privacy policy</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Terms of service</Link>
               </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
-              </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
-              </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
-              </div>
-
             </div>
 
             <div className="footer-menu">
-              <h6 className="footer-item-heading">News API</h6>
+              <h6 className="footer-item-heading">Support</h6>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Contact</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Twitter</Link>
               </div>
               <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
-              </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
-              </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get Api Key</Link>
+                <Link className="footer-itemLink" to="/register">Github</Link>
               </div>
 
             </div>

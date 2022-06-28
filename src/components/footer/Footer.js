@@ -4,14 +4,16 @@ import './footer.css';
 
 export default function Footer() {
   return (
-    <footer className="footer">
-          <div className="mainfoterSection">
-            <div className="footer-menu" style={{textAlign:'left',marginTop:'30px'}}>
+  <footer className="footer">
 
+    <div className="mainfoterSection">
+          
+            <div className="footer-menu first-footer-menu">
               <h6 className="footer-item-heading">API</h6>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Get started</Link>
-              </div>
+
+                <div className="footer-item">
+                  <Link className="footer-itemLink" to="/register">Get started</Link>
+                </div>
 
               <div className="footer-item">
                 <Link className="footer-itemLink" to="/register">Documentation</Link>
@@ -28,34 +30,39 @@ export default function Footer() {
               <div className="footer-item">
                 <Link className="footer-itemLink" to="/register">Get API</Link>
               </div>
-
             </div>
 
-        <div className="footer-menu" style={{ marginBottom: '145px',textAlign: 'left', marginTop: '30px' }}>
+        <div className="footer-menu second-footer-menu">
               <h6 className="footer-item-heading">Company</h6>
+
               <div className="footer-item">
                 <Link className="footer-itemLink" to="/register">Privacy policy</Link>
               </div>
+
               <div className="footer-item">
                 <Link className="footer-itemLink" to="/register">Terms of service</Link>
               </div>
+        </div>
+
+        <div className="footer-menu third-footer-menu">
+            <h6 className="footer-item-heading">Support</h6>
+
+            <div className="footer-item">
+              <Link className="footer-itemLink" to="/register">Contact</Link>
             </div>
 
-        <div className="footer-menu" style={{ marginBottom: '105px', textAlign: 'left', marginTop: '30px' }}>
-              <h6 className="footer-item-heading">Support</h6>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Contact</Link>
-              </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Twitter</Link>
-              </div>
-              <div className="footer-item">
-                <Link className="footer-itemLink" to="/register">Github</Link>
-              </div>
-
-              </div>
+            <div className="footer-item">
+              <Link className="footer-itemLink" to="/register">Twitter</Link>
             </div>
 
-        </footer>
+            <div className="footer-item">
+              <Link className="footer-itemLink" to="/register">Github</Link>
+            </div>
+        </div>
+
+    </div>
+
+  </footer>
+
   )
 }

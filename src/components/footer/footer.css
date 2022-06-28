@@ -13,16 +13,26 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-left: 250px;
   }
   
   .footer-menu {
-    width: 33.33333%;
-    text-align: center;
+    width: 400px;
     transition: 0.5s all linear;
-
+    text-align: left;
   }
   
+  .first-footer-menu{
+    margin-left: 225px;
+  }
+
+  .second-footer-menu{
+    margin-bottom:145px; 
+  }
+
+  .third-footer-menu{
+    margin-bottom: 105px;
+  }
+
   .footer-menu .footer-item-heading{
     font-family: "Red Hat Display";
     font-style: normal;

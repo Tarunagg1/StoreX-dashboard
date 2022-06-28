@@ -16,25 +16,34 @@
   }
   
   .footer-menu {
-    width: 33.33333%;
-    text-align: center;
+    width: 400px;
     transition: 0.5s all linear;
+    text-align: left;
   }
   
-  .footer-menu .footer-item-heading {
+  .first-footer-menu{
+    margin-left: 225px;
+  }
+
+  .second-footer-menu{
+    margin-bottom:145px; 
+  }
+
+  .third-footer-menu{
+    margin-bottom: 105px;
+  }
+
+  .footer-menu .footer-item-heading{
     font-family: "Red Hat Display";
     font-style: normal;
-    margin-top: 40px;
+    margin-top: 30px;
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 33px;
-  
     color: var(--white);
-  
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+
   }
+
   
   .footer-menu .footer-item {
     margin-top: 1rem;
@@ -43,9 +52,12 @@
   
   .footer-menu .footer-item .footer-itemLink {
     text-decoration: none;
-    color: hsla(0, 0%, 100%, 0.6);
+    color: white;
+    font-size: 20px;
   }
+
   
+
   @media (max-width: 450px) {
     .mainbox .buttons {
       margin: 0;

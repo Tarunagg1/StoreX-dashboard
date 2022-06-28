@@ -1,5 +1,7 @@
 /* header */
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 .header {
   position: fixed;
   left: 0;
@@ -11,20 +13,20 @@
   border-color: rgba(0, 0, 0, 0.1);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  height: 85px;
+  height: 100px;
 }
 
 .header .headerInnerRow {
   width: 90%;
-  margin-right: auto;
-  padding-top: 6px;
-  margin-left: auto;
+  padding-top: 15px;
   max-width: 64rem;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   align-items: center;
+
+  /* margin-left & right :  auto removed*/
 }
 
 .headerInnerRow .left {
@@ -35,6 +37,7 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+  margin-left: 10px;  /* Positioned image more towards left side */
 }
 
 .headerInnerRow .left img {
@@ -47,6 +50,8 @@
   display: inline-block;
   margin-right: 1rem;
   transition: 0.5s all linear;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
 }
 
 .getStartbtn a {
@@ -85,4 +90,7 @@
   .right .toggle-sidebarHome {
     display: block !important;
   }
+    .headerInnerRow .left{
+      margin-left: 5;
+    }
 }

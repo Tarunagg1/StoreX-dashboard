@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 .mainbox {
   height: 800px;
   margin-top: 6rem;
@@ -51,16 +53,28 @@
 }
 
 .side-box div{
-  text-align: left;
-  margin-left: 12px;
-  margin-top: 12px;
-  padding: 10px;
-  width: 200px;
+  padding-top: 15px;
+  font-size: 20px;
+  padding-bottom:15px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.grid-container-sideBox{
+  display:grid;
+  grid-template-columns: auto; 
+  grid-template-rows: 60px 60px 60px 60px; 
 }
 
 .side-box div :hover { 
-  background-color:orangered;
+  background-color:var(--buttoncolor);
+  color: white;
 }
+
+.side-box a {
+  margin-left: 12px;
+}
+
+
 
 .mid-box{
 width:'669px';
@@ -70,6 +84,13 @@ background-color: white;
 
 .mid-box p{
   color: black;
+  font-size: 17px;
+  font-family: 'Quicksand',sans-serif;
+}
+
+.mid-box h4{
+  font-weight: 700;
+  font-family: 'Quicksand',sans-serif;
 }
 
 .getStartbtn {

@@ -159,3 +159,14 @@ background-color: white;
 .end-para p{
   margin-top: 20px;
 }
+
+ @media (max-width: 450px){
+  .blank-box{
+    width:0;
+    height:0;
+  }
+  .side-box{
+    width:0;
+    height:0;
+  }
+ }

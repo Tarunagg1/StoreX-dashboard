@@ -6,7 +6,7 @@ export default function Footer() {
   return (
   <footer className="footer">
 
-    <div className="mainfoterSection">
+    <div className="mainfooterSection">
           
             <div className="footer-menu first-footer-menu">
               <h6 className="footer-item-heading">API</h6>
@@ -59,6 +59,7 @@ export default function Footer() {
               <Link className="footer-itemLink" to="/register">Github</Link>
             </div>
         </div>
+
 
     </div>
 

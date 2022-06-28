@@ -15,7 +15,7 @@ const AuthReducer = (state = initState, action) => {
         case LOGIN_START:
             return { ...state, loading: true }
         case LOGIN_SUCCESS:
-            return { ...state, loading: false, isAuthencated: payload.isAuthencated }
+            return { ...state, loading: false, token: payload.token, isAuthencated: payload.isAuthencated }
         case LOGIN_ERROR:
             return { ...state, loading: false, isAuthencated: false }
         case LOGOUT_START:

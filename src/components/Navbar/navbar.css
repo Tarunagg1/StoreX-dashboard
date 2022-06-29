@@ -83,6 +83,14 @@
   transition: 0.5s all linear;
 }
 
+.burger{
+  display: none;
+}
+
+.overlay{
+  display: none;
+}
+
 @media (max-width: 645px) {
   .headerInnerRow .getStartbtn {
     display: none;
@@ -93,4 +101,55 @@
     .headerInnerRow .left{
       margin-left: 5;
     }
+
+    .burger{
+      display: flex;
+      margin-right: 360px;
+      margin-top: 5px;
+      border: none;
+    }
+
+    .overlay{
+      display: block;
+      background-color: whitesmoke;
+      overflow: auto;
+      height: 100%;
+      padding: 0.5rem;
+      position: fixed;
+      left: 0;
+      right: 0;
+      transition: all 500ms ease-in-out 0s;
+      z-index: 20;
+    }
+
+    .menuover-btn{
+      margin-top:10px;
+    }
+
+    .line{
+     align-items: center;
+     width: 80%;
+     margin-left: 30px;
+     margin-bottom: 40px;
+    }
+
+    .overlay button{
+      border: none;
+      margin-left: 330px;
+      margin-top: 30px;
+    }
+
+    .overlay img{
+      width:20px;
+    }
+
+    .overlay h2{
+      margin-left: 30px;
+      margin-bottom: 40px;
+    }
+
+        
+        
+
+      
 }

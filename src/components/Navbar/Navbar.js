@@ -4,21 +4,32 @@ import './navbar.css';
 import logo from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import Burger from './BurgerImage.png';
+import MenuOver from './MenuOver';
+import { MENU_OVERLAY_ON } from '../../redux/constants/auth.constannts';
 
 
-export default function Navbar() {
+export default function Navbar(){
     const dispatch = useDispatch();
     const { isAuthencated } = useSelector(state => state.Auth);
-
+    const showMenu = useSelector(state=>state.Auth.MenuOver);
+   
     return (
         <Fragment>
+            <MenuOver top={showMenu} />
             <header className="header bg-white">
                 <div className="headerInnerRow">
+                
                     <div className="left">
                         <Link to="/">
                             <img src={logo} alt="logoo" srcSet="" />
                         </Link>
                     </div>
+
+                    <button className='burger' onClick={()=>dispatch({type:MENU_OVERLAY_ON})}>
+                       <img src={Burger} width='50px' />
+                    </button> 
+
                     <nav className="right">
                         <div className="manuItems">
                             {
@@ -38,10 +49,12 @@ export default function Navbar() {
                                 )
                             }
 
+                           
+
                         </div>
-                        <a href="/" onClick={null} className="nav-link nav-link-icon toggle-sidebarHome d-sm-inline d-md-inline d-lg-none text-center">
-                            <i className="material-icons">&#xE5D2;</i>
-                        </a>
+                       
+                     
+                       
                     </nav>
                 </div>
             </header>

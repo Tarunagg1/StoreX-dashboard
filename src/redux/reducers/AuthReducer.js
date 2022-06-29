@@ -1,4 +1,4 @@
-import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_START, LOGOUT_SUCCESS } from '../constants/auth.constannts';
+import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_START, LOGOUT_SUCCESS ,MENU_OVERLAY_OFF,MENU_OVERLAY_ON} from '../constants/auth.constannts';
 
 const initState = {
     loading: false,
@@ -6,7 +6,8 @@ const initState = {
     successMessage: null,
     isAuthencated: false,
     token: null,
-    user: null
+    user: null,
+    MenuOver:'-1000px'
 }
 
 const AuthReducer = (state = initState, action) => {
@@ -24,6 +25,10 @@ const AuthReducer = (state = initState, action) => {
             return { ...state, loading: false, isAuthencated: false, user: null, token: null }
         case LOGOUT_ERROR:
             return { ...state, loading: false }
+        case MENU_OVERLAY_ON:
+            return {...state, MenuOver:'0px'}
+        case MENU_OVERLAY_OFF:
+            return {...state,MenuOver:'-1000px'}
         default:
             return state;
     }

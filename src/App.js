@@ -7,9 +7,7 @@ import { positions, Provider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-
-
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/shards-dashboards.1.1.0.min.css";
 import { isuserLogiIn } from './redux/actions/auth.Actions';
 

@@ -1,5 +1,5 @@
 import { getAuthToken, removeToken, setAuthToken } from '../../utils/common/localStorege';
-import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_SUCCESS, MENU_OVERLAY, MENU_OVERLAY_OFF, MENU_OVERLAY_ON } from '../constants/auth.constannts';
+import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_SUCCESS,} from '../constants/auth.constannts';
 
 export const loginUser = (user) => async (dispatch) => {
     dispatch({ type: LOGIN_START, payload: true });

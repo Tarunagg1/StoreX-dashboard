@@ -72,7 +72,30 @@
       }
     
       .third-footer-menu {
-        margin-bottom:170px;
+        margin-bottom:50px;
       }
   }
+
+  @media (max-width:900px) and (device-height:1180px){
+    .footer-menu{
+       width: 800px;
+    }
+
+    .first-footer-menu{
+      margin-left: 30px;
+    }
+
+    .second-footer-menu{
+      margin-left: 30px;
+      margin-bottom: 0px;
+    }
+
+    .third-footer-menu{
+      margin-left: 30px;
+      margin-bottom: 515px;
+    }
+
+
+  }
+
   

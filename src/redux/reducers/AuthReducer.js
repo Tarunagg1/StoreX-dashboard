@@ -1,4 +1,4 @@
-import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_START, LOGOUT_SUCCESS ,MENU_OVERLAY_OFF,MENU_OVERLAY_ON} from '../constants/auth.constannts';
+import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_ERROR, LOGOUT_START, LOGOUT_SUCCESS ,MENU_OVERLAY_OFF,MENU_OVERLAY_ON,ACTIVE_LINK} from '../constants/auth.constannts';
 
 const initState = {
     loading: false,
@@ -7,7 +7,8 @@ const initState = {
     isAuthencated: false,
     token: null,
     user: null,
-    MenuOver:'-1000px'
+    MenuOver:'-1000px',
+    activeLink:'Get_started'
 }
 
 const AuthReducer = (state = initState, action) => {
@@ -29,6 +30,8 @@ const AuthReducer = (state = initState, action) => {
             return {...state, MenuOver:'0px'}
         case MENU_OVERLAY_OFF:
             return {...state,MenuOver:'-1000px'}
+        case ACTIVE_LINK:
+            return{...state,activeLink:payload}
         default:
             return state;
     }

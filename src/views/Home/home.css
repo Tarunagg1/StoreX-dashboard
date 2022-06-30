@@ -71,6 +71,7 @@
   color: white;
 }
 
+
 .side-box a {
   margin-left: 12px;
 }
@@ -158,6 +159,18 @@ background-color: white;
 
 .end-para p{
   margin-top: 20px;
+}
+
+.grid-container-sideBox a{
+  color: black;
+}
+
+.active-link{
+  background-color: gray;
+}
+
+.active-link a{
+  color: white;
 }
 
  @media (max-width: 450px){

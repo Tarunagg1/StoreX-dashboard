@@ -7,6 +7,7 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_ERROR = "LOGOUT_ERROR";
 export const MENU_OVERLAY_ON = 'MENU_OVERLAY_ON';
 export const MENU_OVERLAY_OFF = 'MENU_OVERLAY_OFF';
+export const ACTIVE_LINK = 'ACTIVE_LINK';
 
 
 

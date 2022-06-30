@@ -14,7 +14,6 @@ export default function Home() {
             <div className='grid-container'>
                <SideBox/>
                <MidBox />
-               <div className='blank-box'></div> {/* Blank box */}
             </div>
           </section>
           <Footer />

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-.mainbox {
+ .mainbox {
   height: 800px;
   margin-top: 6rem;
 }
 
+/*
 .heading {
   left: 253px;
   top: 194px;
@@ -15,10 +16,10 @@
   color: (--buttoncolor);
   font-size: 28px;
   line-height: 53px;
-  /* padding-top: 4px; */
-}
+  
+} */
 
-.subheading {
+/* .subheading {
   padding: 10px;
 }
 
@@ -32,65 +33,32 @@
 
 .section .p12-34 {
   padding: 12px 24px;
-}
+} */
 
 .buttons {
   margin-top: 3rem;
   transition: 0.5s all linear;
 }
 
-.grid-container{
+.grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  gap:0px;
+  gap: 0px;
 }
 
-
-.side-box{
-  width:200px;
-  height: 800px;
-  color:'#f2f3f4';
-}
-
-.side-box div{
-  padding-top: 15px;
-  font-size: 20px;
-  padding-bottom:15px;
-  font-family: 'Quicksand', sans-serif;
-  cursor: pointer;
-}
-
-.grid-container-sideBox{
-  display:grid;
-  grid-template-columns: auto; 
-  grid-template-rows: 60px 60px 60px 60px; 
-}
-
-.side-box div :hover { 
-  background-color:var(--buttoncolor);
-  color: white;
-}
-
-
-.side-box a {
-  margin-left: 12px;
-}
-
-
-
-.mid-box{
+.main-box{
 width:'669px';
 height:'800px';
 background-color: white;
 }
 
-.mid-box p{
+.main-box p{
   color: black;
   font-size: 17px;
   font-family: 'Quicksand',sans-serif;
 }
 
-.mid-box h4{
+.main-box h4{
   font-weight: 700;
   font-family: 'Quicksand',sans-serif;
 }
@@ -129,12 +97,6 @@ background-color: white;
   border-color: var(--buttoncolor);
 }
 
-.blank-box{
-  background-color:#1f2d2d;
-  width:650px; 
-  height:800px;
-}
-
 .start-para{
   margin-top: 70px;
   margin-left:30px; 
@@ -161,25 +123,3 @@ background-color: white;
   margin-top: 20px;
 }
 
-.grid-container-sideBox a{
-  color: black;
-}
-
-.active-link{
-  background-color: gray;
-}
-
-.active-link a{
-  color: white;
-}
-
- @media (max-width: 450px){
-  .blank-box{
-    width:0;
-    height:0;
-  }
-  .side-box{
-    width:0;
-    height:0;
-   }    
- }

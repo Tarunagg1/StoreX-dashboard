@@ -1,13 +1,61 @@
-.docs{
-    display: flex;
+
+.mainbox {
+    height: 800px;
+    margin-top: 6rem;
 }
 
-.index{
-    flex: 1;
-    /* width: 20%; */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0px;
 }
 
-.content{
-    flex: 5;
+
+
+.main-box {
+    width: '669px';
+    height: '800px';
+    background-color: white;
 }
 
+.main-box p {
+    color: black;
+    font-size: 17px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.main-box h4 {
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+
+
+.start-para {
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+.start-para p {
+    margin-top: 20px;
+    margin-right: 70px;
+}
+
+.mid-para {
+    margin-top: 40px;
+    margin-left: 35px;
+    margin-right: 70px;
+}
+
+.end-para {
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 70px;
+}
+
+.end-para p {
+    margin-top: 20px;
+}

@@ -15,11 +15,11 @@ export default function MenuOver(props){
              <img src={Cross} />
             </button>
 
-             <h2>Get started</h2>
-             <h2>Documentation</h2>
+            <h2><Link onClick={() => dispatch({ type: MENU_OVERLAY_OFF })} className="color-link" to="/">Get started</Link></h2>
+            <h2><Link onClick={() => dispatch({ type: MENU_OVERLAY_OFF })} className="color-link" to="/documentation">Documentation</Link></h2>
              <h2>Pricing</h2>
              <hr className="line"></hr>
-             <h2>Login</h2>
+             <h2><Link className="color-link" to="/login">Login</Link></h2>
 
             <div className="getStartbtn menuover-btn" >
                 <Link className="filllcolor" to="/register">Get API Key</Link>

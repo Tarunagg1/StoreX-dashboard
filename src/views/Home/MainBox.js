@@ -1,10 +1,10 @@
 import React from "react";
 import './home.css';
 import { Link } from "react-router-dom";
-export default function MidBox() {
+export default function MainBox() {
 
     return (
-        <div className="mid-box">
+        <div className="main-box">
 
             <div className="start-para"> 
 

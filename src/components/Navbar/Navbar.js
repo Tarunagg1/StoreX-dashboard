@@ -43,7 +43,7 @@ export default function Navbar(){
                                             <Link to="/login">Login</Link>
                                         </div>
                                         <div className="getStartbtn">
-                                            <Link className="filllcolor" to="/register">Get Api Key</Link>
+                                            <Link className="filllcolor" to="/register">Get API Key</Link>
                                         </div>
                                     </>
                                 )

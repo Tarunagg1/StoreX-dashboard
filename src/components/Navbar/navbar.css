@@ -72,6 +72,12 @@
   border-width: 1px;
 }
 
+.getStartbtn :hover{
+  background-color:var(--buttoncolor);
+  color:white;
+  font-size: 18px;
+}
+
 .filllcolor {
   background: var(--buttoncolor);
   color: var(--white) !important;
@@ -123,7 +129,7 @@
     }
 
     .menuover-btn{
-      margin-top:10px;
+      margin-top:20px;
     }
 
     .line{
@@ -135,21 +141,22 @@
 
     .overlay button{
       border: none;
-      margin-left: 330px;
-      margin-top: 30px;
+      margin-left: 315px;
+      margin-top: 25px;
     }
 
     .overlay img{
-      width:20px;
+      width:25px;
+    }
+    
+    .color-link{
+      color:#3d5170;
     }
 
     .overlay h2{
       margin-left: 30px;
       margin-bottom: 40px;
     }
-
-        
-        
 
       
 }

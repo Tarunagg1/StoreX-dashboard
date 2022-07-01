@@ -1,24 +1,24 @@
 import React, { Fragment } from 'react'
-import Documentationlayout from '../../layouts/documentationLayout/Documentationlayout';
-import './style.css';
+import Footer from '../../components/footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
+// import './home.css';
+// import SideBox from './SideBox';
+// import MidBox from './MidBox';
 
-export default function Documentation() {
+export default function Home() {
   return (
     <Fragment>
-      {/* hidjdi */}
-      <Documentationlayout>
-          <div className="maindocswrapper">
-          <h1>1</h1>
-        <h1>2</h1>
-        <h1>3</h1>
-        <h1>pkokokok</h1>
-        <h1>pkokokok</h1>
-        <h1>pkokokok</h1>
-        <h1>pkokokok</h1>
-        <h1>pkokokok</h1>
-        <h1>pkokokok</h1>
-          </div>
-      </Documentationlayout>
+      <div className="mainContainer">
+          <Navbar />
+          <section className="mainbox section d-flex align-items-center flex-column">
+            <div className='grid-container'>
+               {/* <SideBox/>
+               <MidBox /> */}
+               <div className='blank-box'></div> {/* Blank box */}
+            </div>
+          </section>
+          <Footer />
+      </div>
     </Fragment>
   )
 }

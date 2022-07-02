@@ -8,16 +8,15 @@ import './style.css';
 export default function Documentationlayout({ children }) {
   return (
     <Fragment>
-      <div className="mainContainer">
           <Navbar />
-         <section className="mainbox section d-flex align-items-center flex-column">
              <div className='grid-container'>
               <SideBar />
               <Documentation />
              </div>
-         </section>
-         <Footer />
-      </div>
+            <div className='.flex-container'>
+               <Footer />
+            </div>
+
     </Fragment>
   )
 }

@@ -3,6 +3,7 @@
 
 .footer {
     background: var(--footer);
+    width: 100%;
   }
   
   
@@ -79,6 +80,10 @@
 
       .flex-container{
       flex-direction: column;
+      }
+
+      .footer{
+        width:410px;
       }
   }
 

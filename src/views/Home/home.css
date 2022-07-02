@@ -5,6 +5,11 @@
   transition: 0.5s all linear;
 }
 
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;

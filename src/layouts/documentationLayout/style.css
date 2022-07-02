@@ -6,6 +6,10 @@
 }
 
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .main-box {
     margin-top: 70px;
@@ -51,4 +55,20 @@
 
 .end-para p {
     margin-top: 20px;
+}
+
+@media (max-width:450px) {
+
+    .grid-container {
+        width: 410px;
+    }
+
+}
+
+@media (max-width:900px) and (device-height:1180px) {
+
+    .grid-container {
+        width: auto;
+    }
+
 }

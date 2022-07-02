@@ -13,7 +13,9 @@ export default function Home() {
                <SideBar />
                <MainBox />
             </div>
-            <Footer />
+            <div className='flex-container'>
+                <Footer />
+            </div>
     </Fragment>
   )
 }

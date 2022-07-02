@@ -1,10 +1,4 @@
 
-.mainbox {
-    height: 800px;
-    margin-top: 6rem;
-}
-
-
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -14,8 +8,7 @@
 
 
 .main-box {
-    width: '669px';
-    height: '800px';
+    margin-top: 70px;
     background-color: white;
 }
 
@@ -45,13 +38,13 @@
 }
 
 .mid-para {
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 35px;
     margin-right: 70px;
 }
 
 .end-para {
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 30px;
     margin-right: 70px;
 }

@@ -1,42 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
- .mainbox {
-  height: 800px;
-  margin-top: 6rem;
-}
-
-/*
-.heading {
-  left: 253px;
-  top: 194px;
-  font-family: "Red Hat Display";
-  font-style: normal;
-  text-align: center;
-  font-weight: 700;
-  color: (--buttoncolor);
-  font-size: 28px;
-  line-height: 53px;
-  
-} */
-
-/* .subheading {
-  padding: 10px;
-}
-
-.subheading p {
-  text-align: center;
-  color: var(--black);
-  margin: 10px 5px;
-  font-weight: 400;
-  font-size: 15px;
-}
-
-.section .p12-34 {
-  padding: 12px 24px;
-} */
-
 .buttons {
-  margin-top: 3rem;
+  margin-top: 10rem;
   transition: 0.5s all linear;
 }
 
@@ -47,9 +12,8 @@
 }
 
 .main-box{
-width:'669px';
-height:'800px';
 background-color: white;
+margin-top: 70px;
 }
 
 .main-box p{
@@ -70,6 +34,7 @@ background-color: white;
   font-family: 'Quicksand', sans-serif;
   font-size: 15px;
   margin-left: 30px;
+  margin-top: 30px;
 }
 
 .getStartbtn a {
@@ -108,13 +73,13 @@ background-color: white;
 }
 
 .mid-para{
-  margin-top: 40px;
+  margin-top: 80px;
   margin-left:35px;
   margin-right:70px;
 }
 
 .end-para{
- margin-top: 40px;
+ margin-top: 80px;
  margin-left:30px;
  margin-right:70px;
 }
@@ -123,3 +88,19 @@ background-color: white;
   margin-top: 20px;
 }
 
+
+@media (max-width:450px) {
+
+  .grid-container{
+    width: 410px;
+  }
+
+}
+
+@media (max-width:900px) and (device-height:1180px) {
+
+  .grid-container{
+    width: auto;
+  }
+
+}

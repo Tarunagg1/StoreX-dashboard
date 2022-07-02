@@ -6,7 +6,7 @@ export default function Footer() {
   return (
   <footer className="footer">
 
-    <div className="mainfooterSection">
+    <div className="flex-container">
           
             <div className="footer-menu first-footer-menu">
               <h6 className="footer-item-heading">API</h6>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './navbar.css';
 import { useDispatch} from 'react-redux';
 import { MENU_OVERLAY_OFF } from "../../redux/constants/auth.constannts";
-import Cross from './CrossImage.png';
+import Cross from '../../assets/images/CrossImage.png';
 
 export default function MenuOver(props){
     const dispatch = useDispatch();

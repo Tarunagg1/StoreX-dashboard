@@ -26,11 +26,23 @@
   grid-template-rows: 60px 60px 60px 60px;
 }
 
-.side-bar div :hover {
+.grid-container-dropdown {
+  display: grid;
+  grid-template-columns:auto;
+  grid-template-rows: 50px 50px 50px;
+  text-align:center;
+}
+
+.side-bar .grid-container-sideBar :hover {
   background-color: var(--buttoncolor);
   color: white;
 }
 
+.side-bar .grid-container-dropdown :hover  {
+  background-color: var(--buttoncolor);
+  color: white;
+  margin-left: 0px;
+}
 
 .side-bar a {
   margin-left: 12px;
@@ -43,6 +55,10 @@
   color: black;
 }
 
+.grid-container-dropdown a{
+  color:black;
+}
+
 .active-link {
   background-color: gray;
 }
@@ -50,6 +66,7 @@
 .active-link a {
   color: white;
 }
+
 
 @media (max-width: 450px) {
 

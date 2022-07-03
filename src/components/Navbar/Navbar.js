@@ -4,7 +4,7 @@ import './navbar.css';
 import logo from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import Burger from './BurgerImage.png';
+import Burger from '../../assets/images/BurgerImage.png';
 import MenuOver from './MenuOver';
 import { MENU_OVERLAY_ON } from '../../redux/constants/auth.constannts';
 

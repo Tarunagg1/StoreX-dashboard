@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import './login.css';
 import { loginUser } from '../../redux/actions/auth.Actions';
 import logo from '../../assets/images/logo.png';
-import Cross from './CrossImage.png';
+import Cross from '../../assets/images/CrossImage.png';
 
 export default function Login() {
   const alert = useAlert();

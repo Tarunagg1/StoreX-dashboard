@@ -16,7 +16,6 @@ export default function Documentationlayout({ children }) {
             <div className='.flex-container'>
                <Footer />
             </div>
-
     </Fragment>
   )
 }

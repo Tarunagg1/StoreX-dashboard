@@ -1,136 +1,69 @@
-import React from "react";
-import { Container, Row } from "shards-react";
-import PageTitle from "../../components/common/PageTitle";
-import { DefaultLayout } from '../../layouts';
-// import SmallStats from '../../components/common/SmallStats';
+import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useAlert } from "react-alert";
+import { useDispatch } from 'react-redux'
+import '../Login/login.css';
+import { loginUser } from '../../redux/actions/auth.Actions';
+import logo from '../../assets/images/logo.png';
 
-const Dashboard = () => (
-  <DefaultLayout>
-    <Container fluid className="main-content-container px-4">
-      {/* Page Header */}
-      <Row noGutters className="page-header py-4">
-        <PageTitle sm="4" title="Activities" className="text-sm-left" />
+export default function Dashboard() {
+  const alert = useAlert();
+  const dispatch = useDispatch();
 
-      </Row>
+  const [showPassword, setshowPassword] = useState(false);
 
+  const [data, setData] = useState({
+    email: "tarun@gmail.com",
+    password: "tarun",
+  });
 
-      <div className="row">
-        <div className="col-lg col-md-6 col-sm-6 mb-4">
-          <div className="stats-small stats-small--1 card card-small">
-            <div className="card-body p-0 d-flex">
-              <div className="d-flex flex-column m-auto">
-                <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
-                  <h6 className="stats-small__value count my-3">2,390</h6>
-                </div>
-                <div className="stats-small__data">
-                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                </div>
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    if (!data.email || !data.password) {
+      alert.show("All fields required!");
+    } else {
+      dispatch(loginUser(data));
+    }
+  }
+
+  const InputEvent = (event) => {
+    const { name, value } = event.target;
+    setData((preVal) => {
+      return {
+        ...preVal,
+        [name]: value,
+      };
+    });
+  };
+
+  return (
+    <Fragment>
+      <div className="container">
+        <div className="d-flex align-items-center justify-content-center">
+          <div className="col-md-6 top-10">
+            <Link to="/">
+              <img src={logo} alt="logo" className="logo" srcSet="" />
+            </Link>
+            <h3 className="title">Account</h3>
+            <form className="formContainer" onSubmit={onSubmit}>
+              <div className="form-group first">
+                <label htmlFor="Email">Email</label>
+                <input type="text" className="form-control" name="email" onChange={InputEvent} value={data.email} placeholder="your-email@example.com" id="username" readonly={true} />
               </div>
-              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
+
+              <div className="form-group mt-4">
+                <label htmlFor="password">Api key</label>
+                <input type="text" className="form-control" name="password" onChange={InputEvent} value={data.password} placeholder="Your Password" id="password" required />
+              </div>
+
+              <button className="btn btn-block btn button">Regenrate <i className="material-icons">arrow_forward</i></button>
+            </form>
+            <div className="mt-4 text-center">
+              <span className="text-center">Logout</span>
             </div>
           </div>
         </div>
-        <div className="col-lg col-md-6 col-sm-6 mb-4">
-          <div className="stats-small stats-small--1 card card-small">
-            <div className="card-body p-0 d-flex">
-              <div className="d-flex flex-column m-auto">
-                <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
-                  <h6 className="stats-small__value count my-3">2,390</h6>
-                </div>
-                <div className="stats-small__data">
-                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                </div>
-              </div>
-              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg col-md-6 col-sm-6 mb-4">
-          <div className="stats-small stats-small--1 card card-small">
-            <div className="card-body p-0 d-flex">
-              <div className="d-flex flex-column m-auto">
-                <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
-                  <h6 className="stats-small__value count my-3">2,390</h6>
-                </div>
-                <div className="stats-small__data">
-                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                </div>
-              </div>
-              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg col-md-6 col-sm-6 mb-4">
-          <div className="stats-small stats-small--1 card card-small">
-            <div className="card-body p-0 d-flex">
-              <div className="d-flex flex-column m-auto">
-                <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
-                  <h6 className="stats-small__value count my-3">2,390</h6>
-                </div>
-                <div className="stats-small__data">
-                  <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                </div>
-              </div>
-              <canvas height="120" className="blog-overview-stats-small-1"></canvas>
-            </div>
-          </div>
-        </div>
-
       </div>
-
-      {/* <Row>
-      <Col>
-        <Card small classNameName="mb-4">
-          <CardHeader classNameName="border-bottom">
-            <h6 classNameName="m-0">Active Users</h6>
-          </CardHeader>
-          <CardBody classNameName="p-0 pb-3">
-            <table classNameName="table mb-0">
-              <thead classNameName="bg-light">
-                <tr>
-                  <th scope="col" classNameName="border-0">
-                    #
-                  </th>
-                  <th scope="col" classNameName="border-0">
-                    First Name
-                  </th>
-                  <th scope="col" classNameName="border-0">
-                    Last Name
-                  </th>
-                  <th scope="col" classNameName="border-0">
-                    Country
-                  </th>
-                  <th scope="col" classNameName="border-0">
-                    City
-                  </th>
-                  <th scope="col" classNameName="border-0">
-                    Phone
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ali</td>
-                  <td>Kerry</td>
-                  <td>Russian Federation</td>
-                  <td>Gdańsk</td>
-                  <td>107-0339</td>
-                </tr>
-              </tbody>
-            </table>
-          </CardBody>
-        </Card>
-      </Col>
-    </Row> */}
-
-
-    </Container>
-  </DefaultLayout>
-);
-
-export default Dashboard;
+    </Fragment>
+  )
+}

@@ -1,0 +1,46 @@
+.homeContainer .mainbox {
+  height: 500px;
+  margin-top: 5rem;
+  margin-top: 3rem;
+  padding-top: 5rem;
+}
+
+.homeContainer .heading {
+  top: 194px;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  text-align: center;
+  font-weight: 700;
+  color: (--buttoncolor);
+  font-size: 28px;
+  line-height: 53px;
+}
+
+.homeContainer .subheading {
+  padding: 10px;
+}
+
+.homeContainer .subheading p {
+  text-align: center;
+  color: var(--black);
+  margin: 10px 5px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.homeContainer .section .p12-34 {
+  padding: 12px 24px;
+}
+
+.homeContainer .buttons {
+  margin-top: 1rem !important;
+  transition: 0.5s all linear;
+}
+
+@media (max-width: 500px) {
+  .homeContainer .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

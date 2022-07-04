@@ -47,17 +47,12 @@ article,
 aside,
 footer,
 header,
-nav,
 section {
   display: block;
 }
 
- nav{
-  margin-right:-495px;
-} 
-
-@media (max-width:1500px){
- nav{
-  margin-right: -85px;
- }
+nav{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

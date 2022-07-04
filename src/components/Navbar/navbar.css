@@ -17,9 +17,9 @@
 }
 
 .header .headerInnerRow {
-  width: 90%;
+  width: 100%;
   padding-top: 15px;
-  max-width: 64rem;
+  max-width: 120rem;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -110,8 +110,7 @@
 
   .burger {
     display: flex;
-    /* margin-right: 360px; */
-    margin-left:50px;
+    margin-left:90px;
     margin-top: 5px;
     border: none;
   }

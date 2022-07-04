@@ -110,7 +110,8 @@
 
   .burger {
     display: flex;
-    margin-right: 360px;
+    /* margin-right: 360px; */
+    margin-left:50px;
     margin-top: 5px;
     border: none;
   }
@@ -151,6 +152,7 @@
 
   .color-link {
     color: #3d5170;
+    text-decoration: none;
   }
 
   .overlay h2 {

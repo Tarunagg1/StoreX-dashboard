@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import './login.css';
 import { loginUser } from '../../redux/actions/auth.Actions';
 import logo from '../../assets/images/logo.png';
+import Cross from '../../assets/images/CrossImage.png';
 
 export default function Login() {
   const alert = useAlert();
@@ -40,6 +41,8 @@ export default function Login() {
 
   return (
     <Fragment>
+            <Link className='cross' alt="cross" to='/'><img src={Cross}/></Link>
+
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
           <div className="col-md-6 top-10">

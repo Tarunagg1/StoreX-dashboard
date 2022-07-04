@@ -1,6 +1,6 @@
 /* header */
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
 .header {
   position: fixed;
@@ -37,7 +37,7 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin-left: 10px;  /* Positioned image more towards left side */
+  margin-left: 10px; /* Positioned image more towards left side */
 }
 
 .headerInnerRow .left img {
@@ -50,7 +50,7 @@
   display: inline-block;
   margin-right: 1rem;
   transition: 0.5s all linear;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 15px;
 }
 
@@ -72,6 +72,12 @@
   border-width: 1px;
 }
 
+.getStartbtn :hover {
+  background-color: var(--buttoncolor);
+  color: white;
+  font-size: 18px;
+}
+
 .filllcolor {
   background: var(--buttoncolor);
   color: var(--white) !important;
@@ -83,6 +89,14 @@
   transition: 0.5s all linear;
 }
 
+.burger {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
 @media (max-width: 645px) {
   .headerInnerRow .getStartbtn {
     display: none;
@@ -90,7 +104,57 @@
   .right .toggle-sidebarHome {
     display: block !important;
   }
-    .headerInnerRow .left{
-      margin-left: 5;
-    }
+  .headerInnerRow .left {
+    margin-left: 5;
+  }
+
+  .burger {
+    display: flex;
+    margin-right: 360px;
+    margin-top: 5px;
+    border: none;
+  }
+
+  .overlay {
+    display: block;
+    background-color: whitesmoke;
+    overflow: auto;
+    height: 100%;
+    padding: 0.5rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    transition: all 500ms ease-in-out 0s;
+    z-index: 20;
+  }
+
+  .menuover-btn {
+    margin-top: 20px;
+  }
+
+  .line {
+    align-items: center;
+    width: 80%;
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
+
+  .overlay button {
+    border: none;
+    margin-left: 315px;
+    margin-top: 25px;
+  }
+
+  .overlay img {
+    width: 25px;
+  }
+
+  .color-link {
+    color: #3d5170;
+  }
+
+  .overlay h2 {
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
 }

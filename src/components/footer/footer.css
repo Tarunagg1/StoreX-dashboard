@@ -1,78 +1,104 @@
-
 /* footer */
 
 .footer {
-    background: var(--footer);
-  }
-  
-  .mainfooterSection {
-    color: hsla(0, 0%, 100%, 0.8);
-    font-weight: 100;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
+  background: var(--footer);
+  width: 100%;
+}
+
+.footer-menu {
+  width: 400px;
+  transition: 0.5s all linear;
+  text-align: left;
+}
+
+.first-footer-menu {
+  margin-left: 225px;
+}
+
+.second-footer-menu {
+  margin-bottom: 125px;
+}
+
+.third-footer-menu {
+  margin-bottom: 80px;
+}
+
+.footer-menu .footer-item-heading {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 33px;
+  color: var(--white);
+}
+
+.footer-menu .footer-item {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-menu .footer-item .footer-itemLink {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.flex-container {
+  color: hsla(0, 0%, 100%, 0.8);
+  font-weight: 100;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 450px) {
   .footer-menu {
-    width: 400px;
-    transition: 0.5s all linear;
-    text-align: left;
+    margin-left: 10px;
   }
-  
-  .first-footer-menu{
-    margin-left: 225px;
+  .first-footer-menu {
+    margin-left: 10px;
   }
 
-  .second-footer-menu{
-    margin-bottom:145px; 
+  .second-footer-menu {
+    margin-bottom: 0;
   }
 
-  .third-footer-menu{
-    margin-bottom: 105px;
+  .third-footer-menu {
+    margin-bottom: 200px;
   }
 
-  .footer-menu .footer-item-heading{
-    font-family: "Red Hat Display";
-    font-style: normal;
-    margin-top: 30px;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 33px;
-    color: var(--white);
-
+  .flex-container {
+    flex-direction: column;
   }
 
-  
-  .footer-menu .footer-item {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  .footer {
+    width: 410px;
   }
-  
-  .footer-menu .footer-item .footer-itemLink {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
+}
+
+@media (max-width: 900px) and (device-height: 1180px) {
+  .footer-menu {
+    width: 800px;
   }
 
-  
-
-  @media (max-width: 450px) {
-
-    .footer-menu{
-      margin-left: 10px;
-    }
-    .first-footer-menu {
-        margin-left:10px;
-        margin-top:450px ;
-      }
-    
-      .second-footer-menu {
-        margin-bottom:0;
-      }
-    
-      .third-footer-menu {
-        margin-bottom:0;
-      }
+  .first-footer-menu {
+    margin-left: 30px;
   }
-  
+
+  .second-footer-menu {
+    margin-left: 30px;
+    margin-bottom: 0px;
+  }
+
+  .third-footer-menu {
+    margin-left: 30px;
+    margin-bottom: 515px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+}

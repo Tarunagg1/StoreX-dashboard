@@ -85,3 +85,25 @@ h2 {
   order: 1;
   flex-grow: 0;
 }
+
+.cross {
+  border: none;
+  margin-top: 30px;
+  margin-left: 1450px;
+}
+
+.cross img {
+  width: 30px;
+  margin-top: 20px;
+}
+
+@media (max-width: 450px) {
+  .cross {
+    margin-left: 323px;
+  }
+
+  .cross img {
+    width: 25px;
+    margin-top: 33px;
+  }
+}

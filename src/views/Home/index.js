@@ -7,7 +7,7 @@ import './style.css';
 export default function Home() {
   return (
     <Fragment>
-      <div className="mainContainer">
+      <div className="homeContainer">
         <Navbar />
         <section className="mainbox section d-flex align-items-center flex-column">
           <h1 className="heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>

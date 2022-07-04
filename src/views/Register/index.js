@@ -2,11 +2,14 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import '../Login/login.css';
 import logo from '../../assets/images/logo.png';
+import Cross from '../../assets/images/CrossImage.png';
 
 
 export default function Register() {
   return (
     <Fragment>
+      <Link className='cross' alt="cross" to='/'><img src={Cross} /></Link>
+
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
           <div className="col-md-6 top-5">

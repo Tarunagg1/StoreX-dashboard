@@ -52,6 +52,12 @@ section {
   display: block;
 }
 
-nav{
+ nav{
   margin-right:-495px;
+} 
+
+@media (max-width:1500px){
+ nav{
+  margin-right: -85px;
+ }
 }

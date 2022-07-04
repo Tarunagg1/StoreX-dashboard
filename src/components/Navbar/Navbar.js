@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="headerInnerRow">
           <div className="left">
             <Link to="/">
-              <img src={logo} alt="logoo" srcSet="" />
+              <img src={logo} alt="logo" srcSet="" />
             </Link>
           </div>
 

@@ -10,89 +10,88 @@
 } */
 
 .mainbox {
-    height: 500px;
-    margin-top: 5rem;
-    margin-top: 3rem;
-    padding-top: 5rem;
+  height: 500px;
+  margin-top: 5rem;
+  margin-top: 3rem;
+  padding-top: 5rem;
+}
+
+.heading {
+  width: 934px;
+  height: 53px;
+  left: 253px;
+  top: 194px;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  text-align: center;
+  font-weight: 700;
+  color: (--buttoncolor);
+  font-size: 28px;
+  line-height: 53px;
+  /* padding-top: 4px; */
+}
+
+.subheading {
+  padding: 10px;
+}
+
+.subheading p {
+  text-align: center;
+  color: var(--black);
+  margin: 10px 5px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.section .p12-34 {
+  padding: 12px 24px;
+}
+
+.buttons {
+  margin-top: 3rem;
+  transition: 0.5s all linear;
+}
+
+/* footer */
+
+.footer {
+  /* width: 100%; */
+  /* max-width: 100%; */
+  /* position: relative; */
+  /* top: 5.3rem; */
+  background: var(--footer);
+}
+
+.footer-menu {
+  width: 33.33333%;
+  text-align: center;
+  transition: 0.5s all linear;
+}
+
+.footer-menu .footer-item-heading {
+  text-decoration: none;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+@media (max-width: 450px) {
+  .mainbox .buttons {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* height: 81px; */
+    justify-content: space-between;
   }
-  
-  .heading {
-    width: 934px;
-    height: 53px;
-    left: 253px;
-    top: 194px;
-    font-family: "Red Hat Display";
-    font-style: normal;
-    text-align: center;
-    font-weight: 700;
-    color: (--buttoncolor);
-    font-size: 28px;
-    line-height: 53px;
-    /* padding-top: 4px; */
+
+  .mainbox {
+    height: auto;
   }
-  
-  .subheading {
-    padding: 10px;
+
+  .mainbox .getStartbtn {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
-  
-  .subheading p {
-    text-align: center;
-    color: var(--black);
-    margin: 10px 5px;
-    font-weight: 400;
-    font-size: 15px;
+
+  .footer-menu {
+    width: 50%;
   }
-  
-  .section .p12-34 {
-    padding: 12px 24px;
-  }
-  
-  .buttons {
-    margin-top: 3rem;
-    transition: 0.5s all linear;
-  }
-  
-  /* footer */
-  
-  .footer {
-    /* width: 100%; */
-    /* max-width: 100%; */
-    /* position: relative; */
-    /* top: 5.3rem; */
-    background: var(--footer);
-  }
-  
-    .footer-menu {
-    width: 33.33333%;
-    text-align: center;
-    transition: 0.5s all linear;
-  }
-  
-  .footer-menu .footer-item-heading {
-      text-decoration: none;
-    color: hsla(0, 0%, 100%, 0.6);
-  }
-  
-  @media (max-width: 450px) {
-    .mainbox .buttons {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      /* height: 81px; */
-      justify-content: space-between;
-    }
-  
-    .mainbox {
-      height: auto;
-    }
-  
-    .mainbox .getStartbtn {
-      padding-top: 1rem;
-      padding-bottom: 2rem;
-    }
-  
-    .footer-menu {
-      width: 50%;
-    }
-  }
-  
+}

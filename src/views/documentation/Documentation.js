@@ -1,23 +1,20 @@
 import React, { Fragment } from 'react'
 import Footer from '../../components/footer/Footer';
-import Navbar from '../../components/Navbar/Navbar';
-// import './home.css';
-import SideBox from './SideBox';
-import MidBox from './MidBox';
+import Navbar from '../../components/Navbar/Navbar'
+import './home.css';
+import SideBar from '../../components/sidebar/Sidebar';
+import MainBox from './MainBox';
 
 export default function Home() {
   return (
     <Fragment>
-      <div className="mainContainer">
-          <Navbar />
-          <section className="mainbox section d-flex align-items-center flex-column">
-            <div className='grid-container'>
-               <SideBox/>
-               <MidBox />
-               <div className='blank-box'></div> {/* Blank box */}
-            </div>
-          </section>
-          <Footer />
+      <Navbar />
+      <div className="grid-container">
+        <SideBar />
+        <MainBox />
+      </div>
+      <div className="flex-container">
+        <Footer />
       </div>
     </Fragment>
   )

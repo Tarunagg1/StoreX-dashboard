@@ -31,8 +31,8 @@ export default function Navbar() {
             <img src={Burger} alt="menu" width="50px" />
           </button>
 
-          <nav className="right">
-            <div className="manuItems">
+          <nav>
+            <div>
               {isAuthencated ? (
                 <div className="getStartbtn">
                   <Link className="filllcolor" to="/register">

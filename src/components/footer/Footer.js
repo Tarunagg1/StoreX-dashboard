@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { Github } from "react-bootstrap-icons";
+import { Twitter } from "react-bootstrap-icons";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="flex-container">
+      <div className="flex-container-footer">
         <div className="footer-menu first-footer-menu">
           <h6 className="footer-item-heading">API</h6>
 
@@ -67,13 +69,13 @@ export default function Footer() {
 
           <div className="footer-item">
             <Link className="footer-itemLink" to="/register">
-              Twitter
+              Twitter <Twitter className="boot-icon" />
             </Link>
           </div>
 
           <div className="footer-item">
             <Link className="footer-itemLink" to="/register">
-              Github
+              Github <Github className="boot-icon" />
             </Link>
           </div>
         </div>

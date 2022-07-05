@@ -141,9 +141,16 @@
 
   .overlay button {
     border: none;
-    margin-left: 315px;
-    margin-top: 25px;
+    /* margin-left: 315px;
+    margin-top: 25px; */
   }
+
+   .flex-container-cross{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: 35px;
+   }
 
   .overlay img {
     width: 25px;

@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import "./login.css";
 import { loginUser } from "../../redux/actions/auth.Actions";
 import logo from "../../assets/images/logo.png";
-import Cross from "../../assets/images/CrossImage.png";
+import { ArrowRight } from "react-bootstrap-icons";
+import { XLg } from "react-bootstrap-icons";
 
 export default function Login() {
   const alert = useAlert();
@@ -39,9 +40,11 @@ export default function Login() {
 
   return (
     <Fragment>
-      <Link className="cross" alt="cross" to="/">
-        <img src={Cross} />
-      </Link>
+      <div className="flex-container-login">
+        <Link className="cross" alt="cross" to="/">
+           <XLg />
+        </Link>
+      </div>
 
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
@@ -82,13 +85,13 @@ export default function Login() {
               <div className="d-flex mb-4 float-right">
                 <span>
                   <Link to="/forgotpassword" className="link">
-                    Forgot your Password?{" "}
+                    Forgot your Password ?{" "}
                   </Link>
                 </span>
               </div>
 
               <button className="btn btn-block btn button">
-                Continue <i className="material-icons">arrow_forward</i>
+                Continue  <ArrowRight />
               </button>
             </form>
             <div className="mt-4 text-center">

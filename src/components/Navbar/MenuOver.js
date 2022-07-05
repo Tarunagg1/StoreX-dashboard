@@ -9,9 +9,12 @@ export default function MenuOver(props) {
   const dispatch = useDispatch();
   return (
     <div className="overlay" style={{ top: props.top }}>
-      <button onClick={() => dispatch({ type: MENU_OVERLAY_OFF })}>
-        <img src={Cross} alt="menu" />
-      </button>
+
+      <div className="flex-container-cross">
+        <button onClick={() => dispatch({ type: MENU_OVERLAY_OFF })}>
+          <img src={Cross} alt="menu" />
+        </button>
+      </div>
 
       <h2>
         <Link

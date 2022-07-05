@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Burger from "../../assets/images/BurgerImage.png";
 import MenuOver from "./MenuOver";
 import { MENU_OVERLAY_ON } from "../../redux/constants/auth.constannts";
+import { ArrowRight } from "react-bootstrap-icons";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -37,7 +38,7 @@ export default function Navbar() {
                 <div className="getStartbtn">
                   <Link className="filllcolor" to="/register">
                     Go to Account{" "}
-                    <i className="material-icons">arrow_forward</i>
+                    <ArrowRight />
                   </Link>
                 </div>
               ) : (

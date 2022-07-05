@@ -59,7 +59,7 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 410px) {
   .footer-menu {
     margin-left: 10px;
   }

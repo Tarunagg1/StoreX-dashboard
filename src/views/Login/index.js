@@ -5,8 +5,7 @@ import { useDispatch } from "react-redux";
 import "./login.css";
 import { loginUser } from "../../redux/actions/auth.Actions";
 import logo from "../../assets/images/logo.png";
-import { ArrowRight } from "react-bootstrap-icons";
-import { XLg } from "react-bootstrap-icons";
+import { ArrowRight,XLg } from "react-bootstrap-icons";
 
 export default function Login() {
   const alert = useAlert();

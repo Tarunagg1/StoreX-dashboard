@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "../Login/login.css";
 import './register.css';
 import logo from "../../assets/images/logo.png";
-import { ArrowRight } from "react-bootstrap-icons"
-import { XLg } from "react-bootstrap-icons";
+import { ArrowRight,XLg } from "react-bootstrap-icons"
 
 export default function Register() {
   return (

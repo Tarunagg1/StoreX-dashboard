@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import { useAlert } from "react-alert";
 import '../Login/login.css';
 import logo from '../../assets/images/logo.png';
+import {ArrowRight,XLg} from 'react-bootstrap-icons';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 export default function ResetPassword() {
+
+    const RightIcon = motion(ArrowRight, { forwardMotionProps: true })
+    const [hover,setHover]=useState(false);
     const alert = useAlert();
 
     const [data, setData] = useState({
@@ -34,6 +39,11 @@ export default function ResetPassword() {
 
     return (
         <Fragment>
+            <div className="flex-container-login">
+                <Link className="cross" alt="cross" to="/">
+                    <XLg />
+                </Link>
+            </div>
             <div className="container">
                 <div className="d-flex align-items-center justify-content-center">
                     <div className="col-md-6 top-10">
@@ -46,10 +56,10 @@ export default function ResetPassword() {
                                 <label htmlFor="Email">Please enter your email address</label>
                                 <input type="text" className="form-control" name="email" onChange={InputEvent} value={data.email} placeholder="your-email@example.com" id="username" required />
                             </div>
-                            <button className="btn btn-block btn button">Send Password Reset Link <i className="material-icons">arrow_forward</i></button>
+                            <motion.button whileHover={{ scale: 1.1 }} onHoverStart={e => { setHover(true) }} onHoverEnd={e => { setHover(false) }} className="btn btn-block btn button">Send Password Reset Link  <RightIcon animate={hover?{scale:1.3,x:50}:{scale:1.3,x:10}} /></motion.button>
                         </form>
                         <div className="mt-4 text-center">
-                            <span className="text-center">Don't have an Account? <Link className="link" to="/login">Back to login</Link></span>
+                            <span className="text-center">Don't have an account? <Link className="link" to="/login">Back to login</Link></span>
                         </div>
                     </div>
                 </div>
@@ -57,3 +67,5 @@ export default function ResetPassword() {
         </Fragment>
     )
 }
+
+// style = {{ marginLeft: hover }}

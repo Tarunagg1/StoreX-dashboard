@@ -14,7 +14,7 @@ export default function SideBar() {
         <div className={active === "Get_started" ? "current-link" : "basic-link"}>
           {" "}
           <Link
-            to="/"
+            to="/get-started"
             onClick={() =>
               dispatch({ type: ACTIVE_LINK, payload: "Get_started" })
             }
@@ -36,7 +36,7 @@ export default function SideBar() {
         <div className={active === "Authentication" ? "current-link" : "basic-link"}>
           {" "}
           <Link
-            to="/"
+            to="/authentication"
             onClick={() =>
               dispatch({ type: ACTIVE_LINK, payload: "Authentication" })
             }
@@ -47,7 +47,7 @@ export default function SideBar() {
         <div className={active === "Endpoints" ? "current-link" : "basic-link"}>
           {" "}
           <Link
-            to="/documentation"
+            to="/endpoints"
             onClick={() =>
               dispatch({ type: ACTIVE_LINK, payload: "Endpoints" })
             }
@@ -58,7 +58,7 @@ export default function SideBar() {
         <div className={active === "Client_libraries" ? "current-link" : "basic-link"}>
           {" "}
           <Link
-            to="/documentation"
+            to="/client-libraries"
             onClick={() => {
               dispatch({ type: ACTIVE_LINK, payload: "Client_libraries" });
             }}
@@ -70,7 +70,7 @@ export default function SideBar() {
             {" "}
             <Link
               className="dropdown"
-              to="/documentation"
+              to="/client-libraries/node"
               onClick={() => dispatch({ type: ACTIVE_LINK, payload: "Node.js" })}
             >
               Node.js

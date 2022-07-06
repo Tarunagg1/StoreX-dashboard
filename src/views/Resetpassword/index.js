@@ -4,11 +4,8 @@ import { useAlert } from "react-alert";
 import "../Login/login.css";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
-import { motion } from "framer-motion/dist/framer-motion";
 
 export default function ResetPassword() {
-  const RightIcon = motion(ArrowRight, { forwardMotionProps: true });
-  const [hover, setHover] = useState(false);
   const alert = useAlert();
 
   const [data, setData] = useState({
@@ -62,23 +59,12 @@ export default function ResetPassword() {
                   required
                 />
               </div>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                onHoverStart={e => {
-                  setHover(true);
-                }}
-                onHoverEnd={e => {
-                  setHover(false);
-                }}
+              <button
                 className="btn btn-block btn button"
               >
                 Send Password Reset Link{" "}
-                <RightIcon
-                  animate={
-                    hover ? { scale: 1.3, x: 50 } : { scale: 1.3, x: 10 }
-                  }
-                />
-              </motion.button>
+                <ArrowRight />
+              </button>
             </form>
             <div className="mt-4 text-center">
               <span className="text-center">
@@ -95,4 +81,3 @@ export default function ResetPassword() {
   );
 }
 
-// style = {{ marginLeft: hover }}

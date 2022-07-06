@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import "./login.css";
 import { loginUser } from "../../redux/actions/auth.Actions";
 import logo from "../../assets/images/logo.png";
-import { ArrowRight,XLg } from "react-bootstrap-icons";
+import { ArrowRight, XLg } from "react-bootstrap-icons";
 
 export default function Login() {
   const alert = useAlert();
@@ -41,13 +41,13 @@ export default function Login() {
     <Fragment>
       <div className="flex-container-login">
         <Link className="cross" alt="cross" to="/">
-           <XLg />
+          <XLg />
         </Link>
       </div>
 
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
-          <div className="col-md-6 top-10">
+          <div className="col-md-6 top-2">
             <Link to="/">
               <img src={logo} alt="logo" className="logo" srcSet="" />
             </Link>
@@ -90,7 +90,7 @@ export default function Login() {
               </div>
 
               <button className="btn btn-block btn button">
-                Continue  <ArrowRight />
+                Continue <ArrowRight />
               </button>
             </form>
             <div className="mt-4 text-center">

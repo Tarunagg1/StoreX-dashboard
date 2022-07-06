@@ -12,6 +12,10 @@ p {
   margin-top: 5%;
 }
 
+.top-2 {
+  margin-top: 2%;
+}
+
 .logo {
   width: 189px;
   height: 61px;
@@ -92,26 +96,22 @@ h2 {
   font-size: 30px;
 }
 
-
-.flex-container-login{
- display: flex;
- flex-wrap: wrap;
- justify-content: flex-end;
- margin-right: 35px;
+.flex-container-login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-right: 35px;
 }
 
- @media (max-width: 450px) {
-  .flex-container-login{
+@media (max-width: 450px) {
+  .flex-container-login {
     flex-direction: row;
     margin-right: 20px;
   }
-
 }
 
-@media (max-width: 900px) and (device-height: 1180px){
-  .flex-container-login{
-  flex-direction: row;
+@media (max-width: 900px) and (device-height: 1180px) {
+  .flex-container-login {
+    flex-direction: row;
   }
 }
-
-

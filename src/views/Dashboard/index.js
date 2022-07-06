@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useDispatch } from "react-redux";
 import "../Login/login.css";
-import { loginUser } from "../../redux/actions/auth.Actions";
+import { logoutUserAction } from "../../redux/actions/auth.Actions";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 
@@ -20,11 +20,6 @@ export default function Dashboard() {
 
   const onSubmit = async event => {
     event.preventDefault();
-    if (!data.email || !data.password) {
-      alert.show("All fields required!");
-    } else {
-      dispatch(loginUser(data));
-    }
   };
 
   const InputEvent = event => {
@@ -35,6 +30,10 @@ export default function Dashboard() {
         [name]: value
       };
     });
+  };
+
+  const onLogout = () => {
+    dispatch(logoutUserAction());
   };
 
   return (
@@ -85,7 +84,9 @@ export default function Dashboard() {
               </button>
             </form>
             <div className="mt-4 text-center">
-              <span className="text-center">Logout</span>
+              <button className="text-center btn btn-block" onClick={onLogout}>
+                Logout
+              </button>
             </div>
           </div>
         </div>

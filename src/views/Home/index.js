@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { ArrowRight} from 'react-bootstrap-icons';
 import "./style.css";
 
 export default function Home() {
@@ -27,14 +28,14 @@ export default function Home() {
           <div className="buttons">
             <div className="getStartbtn mainbutton">
               <Link to="/documentation" className="p12-34">
-                Documentation &nbsp;{" "}
-                <i className="material-icons">arrow_forward</i>
+                Documentation{'  '}
+                <ArrowRight />
               </Link>
             </div>
             <div className="getStartbtn mainbutton">
               <Link className="filllcolor p12-34" to="/register">
-                Get Api Keys &nbsp; &nbsp; &nbsp;{" "}
-                <i className="material-icons">arrow_forward</i>
+                Get API Keys {'   '}
+                <ArrowRight />
               </Link>
             </div>
           </div>

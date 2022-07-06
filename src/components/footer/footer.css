@@ -44,7 +44,7 @@
   font-size: 20px;
 }
 
-.flex-container {
+.flex-container-footer {
   color: hsla(0, 0%, 100%, 0.8);
   font-weight: 100;
   align-items: center;
@@ -54,7 +54,12 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 450px) {
+.boot-icon{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 410px) {
   .footer-menu {
     margin-left: 10px;
   }
@@ -98,7 +103,8 @@
     margin-bottom: 515px;
   }
 
-  .flex-container {
-    flex-direction: column;
+  .flex-container-footer {
+    flex-direction: row;  
+    /* was set to column */
   }
 }

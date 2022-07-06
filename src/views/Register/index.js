@@ -1,15 +1,18 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "../Login/login.css";
+import './register.css';
 import logo from "../../assets/images/logo.png";
-import Cross from "../../assets/images/CrossImage.png";
+import { ArrowRight,XLg } from "react-bootstrap-icons"
 
 export default function Register() {
   return (
     <Fragment>
-      <Link className="cross" alt="cross" to="/">
-        <img src={Cross} />
-      </Link>
+      <div className="flex-container-login">
+        <Link className="cross" alt="cross" to="/">
+         <XLg />
+        </Link>
+      </div>
 
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
@@ -63,15 +66,14 @@ export default function Register() {
               </div> */}
 
               <button className="btn btn-block btn button">
-                Continue account {"  "}{" "}
-                <i className="material-icons">arrow_forward</i>
+                Continue  <ArrowRight />
               </button>
             </form>
             <div className="mt-4 text-center">
               <span className="text-center">
-                Have an Account?{" "}
+               Already have an account?{" "}
                 <Link className="link" to="/login">
-                  Signin
+                  Login
                 </Link>
               </span>
             </div>

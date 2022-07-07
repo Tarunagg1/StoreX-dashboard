@@ -1,15 +1,14 @@
-import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_SUCCESS } from '../constants/auth.constannts';
+import { getAuthToken, removeToken, setAuthToken } from '../../utils/common/localStorege';
+import { LOGIN_ERROR, LOGIN_START, LOGIN_SUCCESS, LOGOUT_SUCCESS,} from '../constants/auth.constannts';
 
 export const loginUser = (user) => async (dispatch) => {
     dispatch({ type: LOGIN_START, payload: true });
     try {
         // const { data } = await axiosinstance.post('/how/admin/auth/login', User);
 
-        dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true } });
-
-        // localStorage.setItem('token', data.data.token);
-        // localStorage.setItem('user', JSON.stringify(data.data.how));
-
+        const token = "irhhoherhiurheiuhrihruirhrihriurhighgh";
+        setAuthToken(token)
+        dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true, token } });
     } catch (error) {
         dispatch({ type: LOGIN_ERROR, payload: false });
 
@@ -34,7 +33,20 @@ export const loginUser = (user) => async (dispatch) => {
 }
 
 
-export const logoutUserAction = (user) => async (dispatch) => {
-    dispatch({ type: LOGOUT_SUCCESS });
-    // dispatch({ type: LOGOUT_START, payload: true });
+export const isuserLogiIn = () => {
+    return async (dispatch) => {
+        const token = getAuthToken();
+        console.log(token);
+        if (token) {
+            dispatch({ type: LOGIN_SUCCESS, payload: { token, isAuthencated: true } })
+        } else {
+            dispatch({ type: LOGIN_ERROR, payload: { error: 'failed to Login' } })
+        }
+    }
 }
+
+export const logoutUserAction = (user) => async (dispatch) => {
+    removeToken();
+    dispatch({ type: LOGOUT_SUCCESS });
+}
+

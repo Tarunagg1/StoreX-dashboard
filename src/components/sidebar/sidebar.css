@@ -1,46 +1,82 @@
-.sidebar {
-  flex: 2;
-  background: rgb(5, 68, 104);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 258px;
-  height: 100%;
-  padding: 20px 0;
-  transition: all 0.5s ease;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0px;
 }
 
-.sidebar ul {
-  margin-top: 65px;
-}
-.sidebar ul li a {
-  display: block;
-  padding: 13px 30px;
-  border-bottom: 1px solid #10558d;
-  color: rgb(241, 237, 237);
-  font-size: 16px;
-  position: relative;
-}
-.sidebar ul li a .icon {
-  color: #dee4ec;
-  width: 30px;
-  display: inline-block;
+.side-bar {
+  width: 200px;
+  height: 800px;
+  margin-top: 90px;
+  color: "#f2f3f4" !important;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-  color: #0c7db1;
-
-  background: white;
-  border-right: 2px solid rgb(5, 68, 104);
+.side-bar div {
+  padding-top: 15px;
+  font-size: 20px;
+  padding-bottom: 15px;
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
 }
 
-.sidebar ul li a:hover .icon,
-.sidebar ul li a.active .icon {
-  color: #0c7db1;
+.current-link div {
+  color: #fff;
 }
 
-.sidebar ul li a:hover:before,
-.sidebar ul li a.active:before {
-  display: block;
+.grid-container-sideBar {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 60px 60px 60px 60px;
+}
+
+.side-bar .grid-container-sideBar .basic-link:hover {
+  background-color: var(--buttoncolor);
+}
+
+.side-bar .grid-container-sideBar a:hover {
+  color: white;
+}
+
+.side-bar a {
+  padding-left: 7px;
+  text-decoration: none;
+}
+
+.grid-container-sideBar a {
+  color: black;
+}
+
+.active {
+  background-color: gray;
+}
+
+.active div {
+  color: white;
+  text-decoration: none;
+}
+
+.button {
+  border: none;
+}
+
+.basic-link a {
+  text-decoration: none;
+}
+
+.basic-link .dropdown {
+  margin-left: 70px;
+}
+.current-link .dropdown {
+  margin-left: 70px;
+}
+
+@media (max-width: 450px) {
+  .side-bar {
+    width: 0;
+    height: 0;
+  }
+
+  .side-bar .dropdown {
+    display: none;
+  }
 }

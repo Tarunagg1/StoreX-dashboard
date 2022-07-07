@@ -1,5 +1,7 @@
 /* header */
 
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
 .header {
   position: fixed;
   left: 0;
@@ -11,20 +13,20 @@
   border-color: rgba(0, 0, 0, 0.1);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  height: 85px;
+  height: 100px;
 }
 
 .header .headerInnerRow {
-  width: 90%;
-  margin-right: auto;
-  padding-top: 6px;
-  margin-left: auto;
-  max-width: 64rem;
+  width: 100%;
+  padding-top: 15px;
+  max-width: 120rem;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   align-items: center;
+
+  /* margin-left & right :  auto removed*/
 }
 
 .headerInnerRow .left {
@@ -35,6 +37,7 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+  margin-left: 10px; /* Positioned image more towards left side */
 }
 
 .headerInnerRow .left img {
@@ -47,6 +50,8 @@
   display: inline-block;
   margin-right: 1rem;
   transition: 0.5s all linear;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
 }
 
 .getStartbtn a {
@@ -67,6 +72,12 @@
   border-width: 1px;
 }
 
+.getStartbtn :hover {
+  background-color: var(--buttoncolor);
+  color: white;
+  font-size: 18px;
+}
+
 .filllcolor {
   background: var(--buttoncolor);
   color: var(--white) !important;
@@ -78,11 +89,80 @@
   transition: 0.5s all linear;
 }
 
+.burger {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
 @media (max-width: 645px) {
   .headerInnerRow .getStartbtn {
     display: none;
   }
   .right .toggle-sidebarHome {
     display: block !important;
+  }
+  .headerInnerRow .left {
+    margin-left: 5;
+  }
+
+  .burger {
+    display: flex;
+    margin-left:90px;
+    margin-top: 5px;
+    border: none;
+  }
+
+  .overlay {
+    display: block;
+    background-color: whitesmoke;
+    overflow: auto;
+    height: 100%;
+    padding: 0.5rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    transition: all 500ms ease-in-out 0s;
+    z-index: 20;
+  }
+
+  .menuover-btn {
+    margin-top: 20px;
+  }
+
+  .line {
+    align-items: center;
+    width: 80%;
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
+
+  .overlay button {
+    border: none;
+    /* margin-left: 315px;
+    margin-top: 25px; */
+  }
+
+   .flex-container-cross{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: 35px;
+   }
+
+  .overlay img {
+    width: 25px;
+  }
+
+  .color-link {
+    color: #3d5170;
+    text-decoration: none;
+  }
+
+  .overlay h2 {
+    margin-left: 30px;
+    margin-bottom: 40px;
   }
 }

@@ -12,6 +12,10 @@ p {
   margin-top: 5%;
 }
 
+.top-2 {
+  margin-top: 2%;
+}
+
 .logo {
   width: 189px;
   height: 61px;
@@ -64,10 +68,16 @@ h2 {
   background-color: var(--buttoncolor);
   color: var(--pureWhite);
   border-radius: 5px;
-  font-size: 15px;
-  height: 55px !important;
+  font-size: 18px;
+  height: 52px !important;
   width: 100%;
+  font-weight: 500;
   border: none;
+}
+
+button:disabled,
+button[disabled] {
+  cursor: disabled;
 }
 
 .formContainer .button:hover {
@@ -84,4 +94,30 @@ h2 {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+.cross {
+  border: none;
+  color: gray;
+  font-size: 30px;
+}
+
+.flex-container-login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-right: 35px;
+}
+
+@media (max-width: 450px) {
+  .flex-container-login {
+    flex-direction: row;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 900px) and (device-height: 1180px) {
+  .flex-container-login {
+    flex-direction: row;
+  }
 }

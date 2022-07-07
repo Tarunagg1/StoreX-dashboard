@@ -1,34 +1,62 @@
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import Footer from '../../components/footer/Footer';
-import Navbar from '../../components/Navbar/Navbar';
-import './home.css';
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import { ArrowRight } from "react-bootstrap-icons";
+import "./style.css";
+import { useSelector } from 'react-redux';
 
 export default function Home() {
+
+  const { isAuthencated } = useSelector(state => state.Auth);
+
   return (
     <Fragment>
-      <div className="mainContainer">
+      <div className="homeContainer">
         <Navbar />
         <section className="mainbox section d-flex align-items-center flex-column">
-          <h1 className="heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
+          <h1 className="heading">
+            Access to APIs, Documentation, SDK implemenation and API key
+            generation in one place.
+          </h1>
 
           <div className="subheading">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos iure laborum. </p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos iure laborum. </p>
+            <p>
+              StorX helps you securely encrypt, fragment and then distribute
+              important data across multiple hosting nodes spread worldwide.
+            </p>
           </div>
           <div className="buttons">
             <div className="getStartbtn mainbutton">
-              <Link to="/documentation" className="p12-34">Documentation &nbsp;  <i className="material-icons">arrow_forward</i></Link>
+              <Link to="/get-started" className="p12-34">
+                Documentation{"  "}
+                <ArrowRight />
+              </Link>
             </div>
-            <div className="getStartbtn mainbutton">
-              <Link className="filllcolor p12-34" to="/register">Get Api Keys &nbsp; &nbsp; &nbsp;  <i className="material-icons">arrow_forward</i></Link>
-            </div>
+            {
+              isAuthencated ? (
+                <div className="getStartbtn mainbutton">
+                  <Link className="filllcolor p12-34" to="/credential">
+                    Dashboard {"   "}
+                    <ArrowRight />
+                  </Link>
+                </div>
+              ) : (
+                <div className="getStartbtn mainbutton">
+                  <Link className="filllcolor p12-34" to="/login">
+                    Get started {"   "}
+                    <ArrowRight />
+                  </Link>
+                </div>
+
+              )
+            }
+
           </div>
         </section>
 
         <Footer />
       </div>
-
     </Fragment>
-  )
+  );
 }

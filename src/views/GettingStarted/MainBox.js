@@ -1,11 +1,10 @@
 import React from "react";
-import "./home.css";
 import { Link } from "react-router-dom";
 export default function MainBox() {
   return (
     <div className="main-box">
       <div className="start-para">
-        <h4>Documentation</h4>
+        <h4>Getting Started</h4>
         <p>
           Lorem Ipsum is simply dummy text of printing and typesetting industry.
           when an unknown printer took a galley of type and scrambled it to make

@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <div className="buttons">
             <div className="getStartbtn mainbutton">
-              <Link to="/documentation" className="p12-34">
+              <Link to="/get-started" className="p12-34">
                 Documentation{"  "}
                 <ArrowRight />
               </Link>

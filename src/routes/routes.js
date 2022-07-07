@@ -6,7 +6,6 @@ import dashboardRoutes from './dashboard.routes';
 import documentRoutes from './document.routes';
 
 
-
 export default [
   ...AuthRoutes,
   ...dashboardRoutes,

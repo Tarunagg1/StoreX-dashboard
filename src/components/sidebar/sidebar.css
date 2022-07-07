@@ -14,55 +14,59 @@
 .side-bar div {
   padding-top: 15px;
   font-size: 20px;
-   padding-bottom: 15px; 
+  padding-bottom: 15px;
   font-family: "Quicksand", sans-serif;
   cursor: pointer;
+}
+
+.current-link div {
+  color: #fff;
 }
 
 .grid-container-sideBar {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 60px 60px 60px 60px; 
+  grid-template-rows: 60px 60px 60px 60px;
 }
 
-.side-bar .grid-container-sideBar :hover {
+.side-bar .grid-container-sideBar .basic-link:hover {
   background-color: var(--buttoncolor);
 }
 
-.side-bar .grid-container-sideBar :hover a{
-   color:white;
+.side-bar .grid-container-sideBar a:hover {
+  color: white;
 }
 
-
 .side-bar a {
-  margin-left: 12px;
+  padding-left: 7px;
+  text-decoration: none;
 }
 
 .grid-container-sideBar a {
   color: black;
 }
 
-.current-link {
+.active {
   background-color: gray;
 }
 
-.button{
-  border: none;
-}
-
-.current-link a {
+.active div {
   color: white;
   text-decoration: none;
 }
 
-.basic-link a{
+.button {
+  border: none;
+}
+
+.basic-link a {
   text-decoration: none;
 }
 
-.basic-link .dropdown{
+.basic-link .dropdown {
   margin-left: 70px;
 }
-.current-link .dropdown{
+.current-link .dropdown {
   margin-left: 70px;
 }
 
@@ -72,7 +76,7 @@
     height: 0;
   }
 
-  .side-bar .dropdown{
+  .side-bar .dropdown {
     display: none;
   }
 }

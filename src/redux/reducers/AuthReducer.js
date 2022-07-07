@@ -7,7 +7,9 @@ import {
   LOGOUT_SUCCESS,
   MENU_OVERLAY_OFF,
   MENU_OVERLAY_ON,
-  ACTIVE_LINK
+  ACTIVE_LINK,
+  SET_LOADING_TRUE,
+  SET_LOADING_FALSE
 } from "../constants/auth.constannts";
 
 const initState = {
@@ -53,6 +55,12 @@ const AuthReducer = (state = initState, action) => {
       return { ...state, MenuOver: "-1000px" };
     case ACTIVE_LINK:
       return { ...state, activeLink: payload };
+
+
+    case SET_LOADING_TRUE:
+      return { ...state, loading: true };
+    case SET_LOADING_FALSE:
+      return { ...state, loading: false };
     default:
       return state;
   }

@@ -68,10 +68,16 @@ h2 {
   background-color: var(--buttoncolor);
   color: var(--pureWhite);
   border-radius: 5px;
-  font-size: 15px;
-  height: 55px !important;
+  font-size: 18px;
+  height: 52px !important;
   width: 100%;
+  font-weight: 500;
   border: none;
+}
+
+button:disabled,
+button[disabled] {
+  cursor: disabled;
 }
 
 .formContainer .button:hover {

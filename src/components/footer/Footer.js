@@ -22,24 +22,6 @@ export default function Footer() {
               Documentation
             </Link>
           </div>
-
-          <div className="footer-item">
-            <Link className="footer-itemLink" to="/register">
-              Sources
-            </Link>
-          </div>
-
-          <div className="footer-item">
-            <Link className="footer-itemLink" to="/register">
-              Lorem Ipsum
-            </Link>
-          </div>
-
-          <div className="footer-item">
-            <Link className="footer-itemLink" to="/register">
-              Get API
-            </Link>
-          </div>
         </div>
 
         <div className="footer-menu second-footer-menu">

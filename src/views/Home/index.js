@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { ArrowRight} from 'react-bootstrap-icons';
+import { ArrowRight } from "react-bootstrap-icons";
 import "./style.css";
 
 export default function Home() {
@@ -12,29 +12,26 @@ export default function Home() {
         <Navbar />
         <section className="mainbox section d-flex align-items-center flex-column">
           <h1 className="heading">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Access to APIs, Documentation, SDK implemenation and API key
+            generation in one place.
           </h1>
 
           <div className="subheading">
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Dignissimos iure laborum.{" "}
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Dignissimos iure laborum.{" "}
+              StorX helps you securely encrypt, fragment and then distribute
+              important data across multiple hosting nodes spread worldwide.
             </p>
           </div>
           <div className="buttons">
             <div className="getStartbtn mainbutton">
               <Link to="/documentation" className="p12-34">
-                Documentation{'  '}
+                Documentation{"  "}
                 <ArrowRight />
               </Link>
             </div>
             <div className="getStartbtn mainbutton">
               <Link className="filllcolor p12-34" to="/register">
-                Get API Keys {'   '}
+                Get API Keys {"   "}
                 <ArrowRight />
               </Link>
             </div>

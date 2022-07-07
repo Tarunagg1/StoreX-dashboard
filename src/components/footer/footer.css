@@ -13,6 +13,7 @@
 
 .first-footer-menu {
   margin-left: 225px;
+  margin-bottom: 125px;
 }
 
 .second-footer-menu {
@@ -54,7 +55,7 @@
   flex-wrap: wrap;
 }
 
-.boot-icon{
+.boot-icon {
   font-size: 20px;
   margin-bottom: 5px;
 }
@@ -65,6 +66,7 @@
   }
   .first-footer-menu {
     margin-left: 10px;
+    margin-bottom: 0;
   }
 
   .second-footer-menu {
@@ -91,6 +93,7 @@
 
   .first-footer-menu {
     margin-left: 30px;
+    margin-bottom: 0;
   }
 
   .second-footer-menu {
@@ -104,7 +107,7 @@
   }
 
   .flex-container-footer {
-    flex-direction: row;  
+    flex-direction: row;
     /* was set to column */
   }
 }

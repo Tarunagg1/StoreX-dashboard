@@ -39,29 +39,8 @@ MainFooter.propTypes = {
 
 MainFooter.defaultProps = {
   contained: false,
-  copyright: "Copyright © 2022 StoreX",
-  menuItems: [
-    {
-      title: "Home",
-      to: "#"
-    },
-    {
-      title: "Services",
-      to: "#"
-    },
-    {
-      title: "About",
-      to: "#"
-    },
-    {
-      title: "Products",
-      to: "#"
-    },
-    {
-      title: "Blog",
-      to: "#"
-    }
-  ]
+  copyright: "Copyright © 2022 StorX",
+  menuItems: []
 };
 
 export default MainFooter;

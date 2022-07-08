@@ -16,14 +16,32 @@ export default function Register() {
 
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
-          <div className="col-md-6 top-2">
+          <div className="col-md-6">
             <Link to="/">
               <img src={logo} alt="logo" className="logo" srcSet="" />
             </Link>
             <h3 className="title">Create your account</h3>
             <form className="formContainer" onSubmit={null}>
               <div className="form-group">
-                <label htmlFor="email">Name</label>
+                <label htmlFor="email">Firstname</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="john"
+                  id="example"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Lastname</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="john"
+                  id="example"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">CompanyName</label>
                 <input
                   type="text"
                   className="form-control"

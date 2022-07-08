@@ -1,12 +1,49 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Container, Row, Col, Card, CardBody } from "shards-react";
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { styled } from '@mui/material/styles';
 import './keys.css';
-
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import PageTitle from "../../components/common/PageTitle";
 import { DefaultLayout } from '../../layouts';
+import { Link } from 'react-router-dom';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+
+const IsolatedMenu = props => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  return (
+    <Fragment>
+      <IconButton
+        aria-label="more"
+        id="long-button"
+        aria-expanded={open ? 'true' : undefined}
+        aria-haspopup="true"
+        onClick={event => setAnchorEl(event.currentTarget)}
+      >
+        <MoreHorizIcon />
+      </IconButton>
+      <Menu
+        id="long-menu"
+        MenuListProps={{
+          'aria-labelledby': 'long-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={() => setAnchorEl(null)}
+      >
+
+        <MenuItem>Regenrate</MenuItem>
+        <MenuItem>View logs</MenuItem>
+
+      </Menu>
+    </Fragment>
+  )
+}
 
 
 const IOSSwitch = styled((props) => (
@@ -71,27 +108,34 @@ const Credentials = () => {
     <DefaultLayout>
       <Container fluid className="main-content-container px-4">
         {/* Page Header */}
-        <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="API Keys" className="text-sm-left" />
+
+        <PageTitle sm="5" title="API Keys" className="page-heading mt-5" />
+
+        <Row noGutters className="page-header mt-3">
+          <p>Viewing test API keys. Toggle to view live keys.</p>
+          <FormControlLabel
+            label="Test mode"
+            control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
+          />
         </Row>
 
-        <div className="row mt-4">
+        {/* <div className="row mt-4">
           <div className="col-md-1"></div>
           <div className="col-lg-9">
             <div className="card card-small mb-4">
               <div className="card-header border-bottom">
                 <div className="row d-flex justify-content-between align-items-center px-2">
-                    <h6 className="m-0">Keys Details</h6>
-                    <FormControlLabel
-                      control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
-                      label="Live mode"
-                    />
+                  <h6 className="m-0">Keys Details</h6>
+                  <FormControlLabel
+                    control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
+                    label="Live mode"
+                  />
                 </div>
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item p-3">
                   <div className="row">
-                    {/* <div className="col">
+                    <div className="col">
                       <form>
                         <div className="form-row">
                           <div className="form-group col-md-6">
@@ -130,7 +174,7 @@ const Credentials = () => {
 
                         <button type="submit" className="btn btn-accent">Update Account</button>
                       </form>
-                    </div> */}
+                    </div>
 
                   </div>
                 </li>
@@ -138,56 +182,82 @@ const Credentials = () => {
             </div>
           </div>
 
-        </div>
-        {/* <Row>
+        </div> */}
+        <Row className="mt-4">
           <Col>
-          <Card small className="mb-4">
+            <Card small className="mb-4">
               <CardBody className="p-0 pb-3">
-                <table className="table mb-0">
-                  <thead className="bg-light">
-                    <tr>
-                      <th scope="col" className="border-0">
-                        #
-                      </th>
-                      <th scope="col" className="border-0">
-                        Name
-                      </th>
-                      <th scope="col" className="border-0">
-                        Creation date
-                      </th>
-                      <th scope="col" className="border-0">
-                        Client ID
-                      </th>
-                      <th scope="col" className="border-0">
-                        Status
-                      </th>
-
-                      <th scope="col" className="border-0">
-                        Actions
-                      </th>
-
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>something</td>
-                      <td>20-06-2022</td>
-                      <td>ojfiajviee6fw964f9wf1wg819wg1w981</td>
-                      <td>Active</td>
-                      <td className="flex">
-                        <Switch color="warning" />
-                        <i className="material-icons iconCustom">edit</i>
-                        <i className="material-icons iconCustom">delete</i>
-                        <i className="material-icons iconCustom">download</i>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="mb-0">
+                  <div className="bg-light">
+                    <div className="keysHeaderBoxText">
+                      <span className="headingKey">Standard keys</span>
+                      <span>These keys will allow you to authenticate API requests. <Link to="/get-started">Learn more</Link></span>
+                    </div>
+                  </div>
+                  <div className="ContentBlock">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <td>
+                            <span className="ContentTopic">NAME</span>
+                          </td>
+                          <td>
+                            <span className="ContentTopic">TOKEN</span>
+                          </td>
+                          <td>
+                            <span className="ContentTopic">LAST USED</span>
+                          </td>
+                          <td>
+                            <span className="ContentTopic">CREATED</span>
+                          </td>
+                          <td></td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="tdFirst">
+                            <span className="bold">Publishable key</span>
+                          </td>
+                          <td className="keyBoxTd">
+                            <div className="keyBoxDivMain">
+                              <p className="keysTextID">pxihiuf0UrQbnny6AySbmOAHUJodojspofjjojoijiojoijoavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</p>
+                            </div>
+                          </td>
+                          <td>
+                            <span>Mar 22, 2021</span>
+                          </td>
+                          <td>
+                            <span>Mar 22, 2021</span>
+                          </td>
+                          <td>
+                            <IsolatedMenu />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span className="bold">Secret key</span>
+                          </td>
+                          <td className="keyBoxSmall">
+                            <p className="keysTextID">pxobXf0UrQbnny6AySbmOAHUJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</p>
+                          </td>
+                          <td>
+                            <span>Mar 22, 2021</span>
+                          </td>
+                          <td>
+                            <span>Mar 22, 2021</span>
+                          </td>
+                          <td>
+                            <IsolatedMenu />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </CardBody>
             </Card>
           </Col>
-        </Row> */}
+        </Row>
 
 
       </Container>

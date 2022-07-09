@@ -215,25 +215,6 @@ const Credentials = () => {
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="tdFirst">
-                            <span className="bold">Publishable key</span>
-                          </td>
-                          <td className="keyBoxTd">
-                            <div className="keyBoxDivMain">
-                              <p className="keysTextID">pxihiuf0UrQbnny6AySbmOAHUJodojspofjjojoijiojoijoavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</p>
-                            </div>
-                          </td>
-                          <td>
-                            <span>Mar 22, 2021</span>
-                          </td>
-                          <td>
-                            <span>Mar 22, 2021</span>
-                          </td>
-                          <td>
-                            <IsolatedMenu />
-                          </td>
-                        </tr>
-                        <tr>
                           <td>
                             <span className="bold">Secret key</span>
                           </td>

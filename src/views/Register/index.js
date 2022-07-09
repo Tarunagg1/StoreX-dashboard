@@ -23,7 +23,7 @@ export default function Register() {
             <h3 className="title">Create your account</h3>
             <form className="formContainer" onSubmit={null}>
               <div className="form-group">
-                <label htmlFor="email">Firstname</label>
+                <label htmlFor="email">First Name</label>
                 <input
                   type="text"
                   className="form-control"
@@ -32,16 +32,16 @@ export default function Register() {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Lastname</label>
+                <label htmlFor="email">Last Name</label>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="john"
+                  placeholder="Deo"
                   id="example"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">CompanyName</label>
+                <label htmlFor="email">Company Name</label>
                 <input
                   type="text"
                   className="form-control"
@@ -64,7 +64,7 @@ export default function Register() {
                 <input
                   type="password"
                   className="form-control"
-                  placeholder="Your Password"
+                  placeholder="Enter password"
                   id="password"
                 />
               </div>
@@ -74,7 +74,7 @@ export default function Register() {
                 <input
                   type="password"
                   className="form-control"
-                  placeholder="confirm Your Password"
+                  placeholder="Enter password"
                   id="password"
                 />
               </div>

@@ -16,12 +16,12 @@ export default function () {
       to: "/get-started",
     },
     {
-      title: "developers",
+      title: "Developers",
       htmlBefore: '<i class="material-icons">person</i>',
       to: "/comingsoon",
     },
     {
-      title: "settings",
+      title: "Settings",
       htmlBefore: '<i class="material-icons">settings</i>',
       to: "/comingsoon",
     }

@@ -13,6 +13,7 @@ import "./login.css";
 
 
 export default function Login() {
+
   const alert = useAlert();
   const dispatch = useDispatch();
   const { loading } = useSelector(state => state.Auth);
@@ -60,6 +61,7 @@ export default function Login() {
     try {
       dispatch({ type: SET_LOADING_TRUE });
 
+
       const isLoginStartSuccessfully = await axiosinstance.post('/login', { email: data.email });
       const keys = await generateNewKeys(data.password);
 
@@ -87,14 +89,14 @@ export default function Login() {
 
     } catch (error) {
       dispatch({ type: SET_LOADING_FALSE });
-      if (error.response.status === 400) {
+      if (error.response && error.response.data && error.response.status === 400) {
         alert.error(error.response.data.error);
         return;
-      } else if (error.response.status !== 200) {
+      } else if (error.response && error.response.data && error.response.status !== 200) {
         alert.error(error.response.data.error);
         return;
       } else {
-        alert.error(error.response.data.error);
+        alert.error("Something went wrong");
       }
     }
 

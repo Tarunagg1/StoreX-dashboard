@@ -3,7 +3,7 @@ import { getAuthToken } from '../common/localStorege';
 
 const token = getAuthToken();
 
-const REACT_APP_API_BASE_URL = process.REACT_APP_ENV === "production" ? process.env.REACT_APP_API_URL_PROD : process.env.REACT_APP_API_URL_dev;
+const REACT_APP_API_BASE_URL = process.env.REACT_APP_ENV === "production" ? process.env.REACT_APP_API_URL_PROD : process.env.REACT_APP_API_URL_dev;
 
 const axiosinstance = axios.create({
     baseURL: REACT_APP_API_BASE_URL,

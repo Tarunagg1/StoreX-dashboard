@@ -1,8 +1,7 @@
 import { getAuthToken, removeToken } from '../../utils/common/localStorege';
 import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, } from '../constants/auth.constannts';
-import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt'
-import bip39 from "bip39";
-// import AesUtil from "../../lib/AesUtil.ts";
+// import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt'
+// import bip39 from "bip39";
 
 
 export const isuserLogiIn = () => {
@@ -17,41 +16,41 @@ export const isuserLogiIn = () => {
 }
 
 
-export const registerUserAction = async (data) => {
-    const hashObj = passToHash({ password: data.password });
-    const encPass = encryptText(hashObj.hash);
-    const encSalt = encryptText(hashObj.salt);
+// export const registerUserAction = async (data) => {
+//     const hashObj = passToHash({ password: data.password });
+//     const encPass = encryptText(hashObj.hash);
+//     const encSalt = encryptText(hashObj.salt);
 
-    // Setup mnemonic
-    const mnemonic = bip39.generateMnemonic(256);
-    const encMnemonic = encryptTextWithKey(
-        mnemonic,
-        this.state.register.password
-    );
+//     // Setup mnemonic
+//     const mnemonic = bip39.generateMnemonic(256);
+//     const encMnemonic = encryptTextWithKey(
+//         mnemonic,
+//         data.password
+//     );
 
-    //Generate keys
-    const {
-        privateKeyArmored,
-        publicKeyArmored: codpublicKey,
-        revocationCertificate: codrevocationKey,
-    } = await generateNewKeys();
+//     //Generate keys
+//     const {
+//         privateKeyArmored,
+//         publicKeyArmored: codpublicKey,
+//         revocationCertificate: codrevocationKey,
+//     } = await generateNewKeys();
 
-    //Datas
-    // const encPrivateKey = AesUtil.encrypt(
-    //     privateKeyArmored,
-    //     this.state.register.password,
-    //     false
-    // );
+//     //Datas
+//     // const encPrivateKey = AesUtil.encrypt(
+//     //     privateKeyArmored,
+//     //     this.state.register.password,
+//     //     false
+//     // );
 
 
-    return async (dispatch) => {
-        try {
+//     return async (dispatch) => {
+//         try {
 
-        } catch (error) {
+//         } catch (error) {
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 export const logoutUserAction = (user) => async (dispatch) => {

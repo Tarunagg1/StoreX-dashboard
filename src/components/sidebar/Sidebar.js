@@ -2,7 +2,7 @@ import React from "react";
 import "./sidebar.css";
 import { useSelector, useDispatch } from "react-redux";
 import { ACTIVE_LINK } from "../../redux/constants/auth.constannts";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function SideBar() {
     const active = useSelector(state => state.Auth.activeLink);
@@ -69,7 +69,11 @@ export default function SideBar() {
                         to="/client-libraries/node"
                         onClick={() => dispatch({ type: ACTIVE_LINK, payload: "Node.js" })}
                     >
-                        Node.js
+                        <span>
+                        &diams;
+                        {/* <i class="material-icons">key</i> */}
+                        </span>
+                        <span class="dropdownMenuName">Nodejs</span>
                     </NavLink>
                 </div>
             </div>

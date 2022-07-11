@@ -19,17 +19,8 @@ const Profile = () => (
             </div>
 
             <div className="row">
-                <div className="col-lg-4">
-                    <div className="card card-small mb-4 pt-3">
-                        <div className="card-header border-bottom text-center">
-                            <div className="mb-3 mx-auto">
-                                <img className="rounded-circle" src="https://designrevision.com/demo/shards-dashboard-lite/images/avatars/0.jpg" alt="User Avatar" width="110" /> </div>
-                            <h4 className="mb-0">Sierra Brooks</h4>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="col-lg-8">
+         
+                <div className="col-lg-8 mx-auto mt-5">
                     <div className="card card-small mb-4">
                         <div className="card-header border-bottom">
                             <h6 className="m-0">Account Details</h6>
@@ -58,23 +49,8 @@ const Profile = () => (
                                             <div className="form-group">
                                                 <label htmlFor="feInputAddress">Address</label>
                                                 <input type="text" className="form-control" id="feInputAddress" placeholder="1234 Main St" /> </div>
-                                            <div className="form-row">
-                                                <div className="form-group col-md-6">
-                                                    <label htmlFor="feInputCity">City</label>
-                                                    <input type="text" className="form-control" id="feInputCity" /> </div>
-                                                <div className="form-group col-md-4">
-                                                    <label htmlFor="feInputState">State</label>
-                                                    <select id="feInputState" className="form-control">
-                                                        <option selected>Choose...</option>
-                                                        <option>...</option>
-                                                    </select>
-                                                </div>
-                                                <div className="form-group col-md-2">
-                                                    <label htmlFor="inputZip">Zip</label>
-                                                    <input type="text" className="form-control" id="inputZip" /> </div>
-                                            </div>
 
-                                            <button type="submit" className="btn btn-accent">Update Account</button>
+                                            <button type="submit" className="btn btn-accent">Edit details</button>
                                         </form>
                                     </div>
                                 </div>

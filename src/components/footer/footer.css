@@ -81,9 +81,6 @@
     flex-direction: column;
   }
 
-  .footer {
-    width: 410px;
-  }
 }
 
 @media (max-width: 900px) and (device-height: 1180px) {

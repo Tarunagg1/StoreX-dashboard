@@ -36,7 +36,7 @@ export default function Home() {
             {
               isAuthencated ? (
                 <div className="getStartbtn mainbutton">
-                  <Link className="filllcolor p12-34" to="/credential">
+                  <Link className="filllcolor p12-34" to="/credentials">
                     Dashboard {"   "}
                     <ArrowRight />
                   </Link>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Login/login.css";
 import "./register.css";
@@ -6,6 +6,13 @@ import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 
 export default function Register() {
+  const [registerData, setRegisterData] = useState({
+    name:"",
+    lastname:"",
+    email:"",
+    
+  });
+
   return (
     <Fragment>
       <div className="flex-container-login">
@@ -28,6 +35,7 @@ export default function Register() {
                   type="text"
                   className="form-control"
                   placeholder="john"
+                  name="name"
                   id="example"
                 />
               </div>
@@ -37,6 +45,7 @@ export default function Register() {
                   type="text"
                   className="form-control"
                   placeholder="Deo"
+                  name="lastname"
                   id="example"
                 />
               </div>
@@ -46,6 +55,7 @@ export default function Register() {
                   type="text"
                   className="form-control"
                   placeholder="john"
+                  name="companyname"
                   id="example"
                 />
               </div>
@@ -56,6 +66,7 @@ export default function Register() {
                   className="form-control"
                   placeholder="your-email@example.com"
                   id="example"
+                  name="email"
                 />
               </div>
 
@@ -66,6 +77,8 @@ export default function Register() {
                   className="form-control"
                   placeholder="Enter password"
                   id="password"
+                  name="password"
+
                 />
               </div>
 
@@ -76,6 +89,7 @@ export default function Register() {
                   className="form-control"
                   placeholder="Enter password"
                   id="password"
+                  name="cpassword"
                 />
               </div>
 

@@ -1,7 +1,6 @@
 .homeContainer .mainbox {
-  height: 70vh;
-  /* margin-top: 5rem; */
-  margin-top: 3rem;
+  margin: 175px 0px;
+  /* height: 50vh; */
   /* padding-top: 5rem; */
   justify-content: center;
 }

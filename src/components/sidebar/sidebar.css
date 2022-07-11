@@ -63,11 +63,25 @@
   text-decoration: none;
 }
 
-.basic-link .dropdown {
-  margin-left: 70px;
-}
+.basic-link .dropdown,
 .current-link .dropdown {
-  margin-left: 70px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.dropdown.active {
+  color: #fff;
+}
+
+.current-link .dropdown:hover,
+.basic-link .dropdown:hover {
+  background-color: var(--buttoncolor);
+}
+
+.dropdown .dropdownMenuName {
+  margin-left: 15px;
 }
 
 @media (max-width: 450px) {

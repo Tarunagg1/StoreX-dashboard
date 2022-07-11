@@ -12,5 +12,19 @@ export const getAuthToken = () => {
 }
 
 
+export const setKeyToLocalStorage = (key, data) => {
+    localStorage.setItem(key, data)
+}
+
+export const getKeyToLocalStorage = (key) => {
+    return localStorage.getItem(key)
+}
+
+export const removeKeyFromLocalStorage = (key) => {
+    localStorage.removeItem(key);
+}
 
 
+export const clearAllKeysFromLocalStorage = () => {
+    localStorage.clear();
+}

@@ -11,39 +11,11 @@ import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import Tooltip from '@mui/material/Tooltip';
+import { useAlert } from "react-alert";
 
 
-const IsolatedMenu = props => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  return (
-    <Fragment>
-      <IconButton
-        aria-label="more"
-        id="long-button"
-        aria-expanded={open ? 'true' : undefined}
-        aria-haspopup="true"
-        onClick={event => setAnchorEl(event.currentTarget)}
-      >
-        <MoreHorizIcon />
-      </IconButton>
-      <Menu
-        id="long-menu"
-        MenuListProps={{
-          'aria-labelledby': 'long-button',
-        }}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={() => setAnchorEl(null)}
-      >
 
-        <MenuItem>Regenrate</MenuItem>
-        <MenuItem>View logs</MenuItem>
-
-      </Menu>
-    </Fragment>
-  )
-}
 
 
 const IOSSwitch = styled((props) => (
@@ -98,12 +70,57 @@ const IOSSwitch = styled((props) => (
 }));
 
 
+const IsolatedMenu = props => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  return (
+    <Fragment>
+      <IconButton
+        aria-label="more"
+        id="long-button"
+        aria-expanded={open ? 'true' : undefined}
+        aria-haspopup="true"
+        onClick={event => setAnchorEl(event.currentTarget)}
+      >
+        <MoreHorizIcon />
+      </IconButton>
+      <Menu
+        id="long-menu"
+        MenuListProps={{
+          'aria-labelledby': 'long-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={() => setAnchorEl(null)}
+      >
+
+        <MenuItem>Regenrate</MenuItem>
+        <MenuItem>View logs</MenuItem>
+
+      </Menu>
+    </Fragment>
+  )
+}
+
 const Credentials = () => {
-  const [toggler, settoggler] = useState(true);
+  const alert = useAlert();
+  const [isTestMode, setIsTestMode] = useState(true);
+  const [isKeyChnageLoading, setIsKeyChnageLoading] = useState(false);
+
 
   const handleTogglerChange = () => {
-    settoggler((prev) => !prev);
+    setIsTestMode((prev) => !prev);
   }
+
+  const copyToClipBoard = async copyMe => {
+    try {
+      await navigator.clipboard.writeText(copyMe);
+      alert.success("Copied successfully!!")
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <DefaultLayout>
       <Container fluid className="main-content-container px-4">
@@ -112,10 +129,10 @@ const Credentials = () => {
         <PageTitle sm="5" title="API Keys" className="page-heading mt-5" />
 
         <Row noGutters className="page-header mt-3">
-          <p>Viewing test API keys. Toggle to view live keys.</p>
+          <p>{isTestMode ? "Viewing test API keys. Toggle to view Live keys." : "Viewing Live API keys. Toggle to view test keys."} </p>
           <FormControlLabel
             label="Test mode"
-            control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
+            control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={isTestMode} />}
           />
         </Row>
 
@@ -195,7 +212,7 @@ const Credentials = () => {
                     </div>
                   </div>
                   <div className="ContentBlock">
-                    <table class="table">
+                    <table className="table">
                       <thead>
                         <tr>
                           <td>
@@ -214,23 +231,49 @@ const Credentials = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            <span className="bold">Secret key</span>
-                          </td>
-                          <td className="keyBoxSmall">
-                            <p className="keysTextID">pxobXf0UrQbnny6AySbmOAHUJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</p>
-                          </td>
-                          <td>
-                            <span>Mar 22, 2021</span>
-                          </td>
-                          <td>
-                            <span>Mar 22, 2021</span>
-                          </td>
-                          <td>
-                            <IsolatedMenu />
-                          </td>
-                        </tr>
+                        {
+                          isTestMode ? (
+                            <tr>
+                              <td>
+                                <span className="bold">Secret key</span>
+                              </td>
+                              <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
+                                <td className="keyBoxSmall">
+                                  <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_test_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                                </td>
+                              </Tooltip>
+                              <td>
+                                <span>Mar 22, 2021</span>
+                              </td>
+                              <td>
+                                <span>Mar 23, 2021</span>
+                              </td>
+                              <td>
+                                <IsolatedMenu />
+                              </td>
+                            </tr>
+                          ) : (
+                            <tr>
+                              <td>
+                                <span className="bold">Secret key</span>
+                              </td>
+                              <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
+                                <td className="keyBoxSmall">
+                                  <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_live_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                                </td>
+                              </Tooltip>
+                              <td>
+                                <span>Mar 30, 2021</span>
+                              </td>
+                              <td>
+                                <span>Mar 31, 2021</span>
+                              </td>
+                              <td>
+                                <IsolatedMenu />
+                              </td>
+                            </tr>
+                          )
+                        }
                       </tbody>
                     </table>
                   </div>

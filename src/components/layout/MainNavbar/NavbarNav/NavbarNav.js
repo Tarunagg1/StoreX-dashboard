@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Nav } from "shards-react";
 
-import Notifications from "./Notifications";
+// import Notifications from "./Notifications";
 import UserActions from "./UserActions";
 import LoadingBar from 'react-top-loading-bar'
 

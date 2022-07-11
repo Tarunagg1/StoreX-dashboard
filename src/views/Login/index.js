@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import "./login.css";
-import { loginUser } from "../../redux/actions/auth.Actions";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 import axiosinstance from '../../utils/axios/index'
 import { decryptText, encryptText, generateNewKeys, passToHash } from '../../utils/common/crypt';
 import Preloader from "../../assets/images/login_preloader.gif";
-import { SET_LOADING_FALSE, SET_LOADING_TRUE } from '../../redux/constants/auth.constannts';
+import { LOGIN_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE } from '../../redux/constants/auth.constannts';
+import { setAuthToken } from '../../utils/common/localStorege';
 
 
 export default function Login() {
@@ -23,8 +23,8 @@ export default function Login() {
 
 
   const [data, setData] = useState({
-    email: "",
-    password: ""
+    email: "ashish1@gmail.com",
+    password: "Ashish@123"
   });
 
 
@@ -61,33 +61,41 @@ export default function Login() {
       dispatch({ type: SET_LOADING_TRUE });
 
       const isLoginStartSuccessfully = await axiosinstance.post('/login', { email: data.email });
-
       const keys = await generateNewKeys(data.password);
+
       // Check password
-      const salt = decryptText(isLoginStartSuccessfully.data.body.sKey);
+      const salt = decryptText(isLoginStartSuccessfully.data.sKey);
       const hashObj = passToHash({ password: data.password, salt });
       const encPass = encryptText(hashObj.hash);
 
+      // access key payload and call api
       const getAccessTokens = await axiosinstance.post('/access', {
         email: data.email,
         password: encPass,
         // tfa: twoFactorCode,
-        privateKey: keys.privateKeyArmoredEncrypted,
+        privateKey: keys.privateKeyArmored,
         publicKey: keys.publicKeyArmored,
         revocateKey: keys.revocationCertificate,
       });
 
+      if (getAccessTokens.data.user.registerCompleted) {
+        setAuthToken(getAccessTokens.data.token);
+        dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true, token: getAccessTokens.data.token } });
+      } else {
+        alert.error("your account is not authorized please check your mail");
+      }
+
     } catch (error) {
+      console.log(error);
       dispatch({ type: SET_LOADING_FALSE });
-      dispatch(loginUser());
       if (error.response.status === 400) {
-        alert.show("Cannot connect to server");
+        alert.error(error.response.data.error);
         return;
       } else if (error.response.status !== 200) {
-        alert.show("This account doesn't exists");
+        alert.error(error.response.data.error);
         return;
       } else {
-        alert.show("unknown error try again");
+        alert.error(error.response.data.error);
       }
     }
 
@@ -159,7 +167,7 @@ export default function Login() {
               <button
                 disabled={!valid || loading}
                 className="btn btn-block btn button">
-                {loading ? <><span>Sign In <ArrowRight /> </span><img src={Preloader} /></> : "Sign In"}
+                {loading ? <><span>Sign In <ArrowRight /> </span><img alt="laoder" src={Preloader} /></> : "Sign In"}
 
                 {/* Sing In <ArrowRight /> <img src={Preloader} /> */}
               </button>

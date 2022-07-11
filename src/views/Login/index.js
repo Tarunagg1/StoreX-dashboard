@@ -2,7 +2,6 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import "./login.css";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 import axiosinstance from '../../utils/axios/index'
@@ -10,6 +9,7 @@ import { decryptText, encryptText, generateNewKeys, passToHash } from '../../uti
 import Preloader from "../../assets/images/login_preloader.gif";
 import { LOGIN_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE } from '../../redux/constants/auth.constannts';
 import { setAuthToken } from '../../utils/common/localStorege';
+import "./login.css";
 
 
 export default function Login() {
@@ -86,7 +86,6 @@ export default function Login() {
       }
 
     } catch (error) {
-      console.log(error);
       dispatch({ type: SET_LOADING_FALSE });
       if (error.response.status === 400) {
         alert.error(error.response.data.error);

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../documentation/home.css";
+
 export default function MainBox() {
   return (
     <div className="main-box">

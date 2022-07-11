@@ -5,12 +5,12 @@ import {
   DropdownMenu,
   DropdownItem,
   Collapse,
-  NavItem
+  NavItem, NavLink
 } from "shards-react";
 import { connect } from 'react-redux';
 import { logoutUserAction } from '../../../../redux/actions/auth.Actions';
 import { bindActionCreators } from 'redux'
-
+import {Link} from 'react-router-dom';
 
 class UserActions extends Component {
 
@@ -41,7 +41,7 @@ class UserActions extends Component {
   render() {
     return (
       <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
-        <DropdownToggle style={{ cursor: 'pointer', marginTop: '10px' }} caret className="text-nowrap px-3">
+        <DropdownToggle style={{ cursor: 'pointer', marginTop: '10px' }} caret tag={NavLink} className="text-nowrap px-3">
           {/* <img
             className="user-avatar rounded-circle mr-2"
             src={require("./../../../../assets/images/0.jpg")}
@@ -50,7 +50,7 @@ class UserActions extends Component {
           <span className=" d-md-inline-block">tarun@gmail.com</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={this.state.visible}>
-          <DropdownItem to="profile">
+          <DropdownItem tag={Link}  to="profile">
             <i className="material-icons">&#xE7FD;</i> Profile
           </DropdownItem>
 

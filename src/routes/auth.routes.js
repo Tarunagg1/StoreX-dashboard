@@ -1,8 +1,9 @@
-// Layout Types
-import Home from '../views/Home';
-import Login from '../views/Login';
-import Register from '../views/Register';
-import ResetPassword from '../views/Resetpassword';
+import React from 'react';
+
+const Home = React.lazy(() => import('../views/Home'));
+const Login = React.lazy(() => import('../views/Login'));
+const Register = React.lazy(() => import('../views/Register'));
+const ResetPassword = React.lazy(() => import('../views/Resetpassword'));
 
 // Route Views
 

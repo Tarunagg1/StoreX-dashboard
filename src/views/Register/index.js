@@ -4,14 +4,39 @@ import "../Login/login.css";
 import "./register.css";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from 'react-redux';
+import { useAlert } from 'react-alert';
 
 export default function Register() {
+  const { loading, errorMessage, successMessage } = useSelector(state => state.Auth);
+  const alert = useAlert();
+  const dispatch = useDispatch();
+
+
   const [registerData, setRegisterData] = useState({
-    name:"",
-    lastname:"",
-    email:"",
-    
+    name: "",
+    lastname: "",
+    email: "",
+    companyname: "",
+    password: "",
+    cpassword: ""
   });
+
+
+  const InputEvent = event => {
+    const { name, value } = event.target;
+    setRegisterData(preVal => {
+      return {
+        ...registerData,
+        [name]: value
+      };
+    });
+  };
+
+  const onSubmit = async event => {
+    event.preventDefault();
+    console.log(registerData);
+  }
 
   return (
     <Fragment>
@@ -28,7 +53,7 @@ export default function Register() {
               <img src={logo} alt="logo" className="logo" srcSet="" />
             </Link>
             <h3 className="title">Create your account</h3>
-            <form className="formContainer" onSubmit={null}>
+            <form className="formContainer" onSubmit={onSubmit}>
               <div className="form-group">
                 <label htmlFor="email">First Name</label>
                 <input
@@ -36,7 +61,7 @@ export default function Register() {
                   className="form-control"
                   placeholder="john"
                   name="name"
-                  id="example"
+                  onChange={InputEvent}
                 />
               </div>
               <div className="form-group">
@@ -46,7 +71,7 @@ export default function Register() {
                   className="form-control"
                   placeholder="Deo"
                   name="lastname"
-                  id="example"
+                  onChange={InputEvent}
                 />
               </div>
               <div className="form-group">
@@ -56,7 +81,7 @@ export default function Register() {
                   className="form-control"
                   placeholder="john"
                   name="companyname"
-                  id="example"
+                  onChange={InputEvent}
                 />
               </div>
               <div className="form-group">
@@ -65,8 +90,8 @@ export default function Register() {
                   type="text"
                   className="form-control"
                   placeholder="your-email@example.com"
-                  id="example"
                   name="email"
+                  onChange={InputEvent}
                 />
               </div>
 
@@ -76,7 +101,7 @@ export default function Register() {
                   type="password"
                   className="form-control"
                   placeholder="Enter password"
-                  id="password"
+                  onChange={InputEvent}
                   name="password"
 
                 />
@@ -88,14 +113,10 @@ export default function Register() {
                   type="password"
                   className="form-control"
                   placeholder="Enter password"
-                  id="password"
+                  onChange={InputEvent}
                   name="cpassword"
                 />
               </div>
-
-              {/* <div className="d-flex mb-2 float-right">
-                <span>Have an Account? <Link to="/login">SignIn</Link></span>
-              </div> */}
 
               <button className="btn btn-block btn button">
                 Continue <ArrowRight />

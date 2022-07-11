@@ -1,8 +1,9 @@
+import React from 'react';
 
-// Route Views
-import Credentials from '../views/Credentials';
-import Dashboard from '../views/Dashboard';
-import Profile from '../views/Profile';
+const Credentials = React.lazy(() => import('../views/Credentials'));
+const Dashboard = React.lazy(() => import('../views/Dashboard'));
+const Profile = React.lazy(() => import('../views/Profile'));
+
 
 export default [
     {

@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux'
 
 
 const AuthPrivateRoute = (props) => {
-    console.log(props);
     const user = useSelector(state => state.Auth.isAuthencated);
-
     return user ? (
         <Route path={props.path} exact={props.exact} component={props.component} />
     ) : (
@@ -25,4 +23,4 @@ const GuestPrivateRoute = (props) => {
 
 
 
-export {AuthPrivateRoute,GuestPrivateRoute};
+export { AuthPrivateRoute, GuestPrivateRoute };

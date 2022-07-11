@@ -1,7 +1,8 @@
-// Route Views
-import Documentation from "../views/documentation/Documentation";
-import GetStarted from "../views/GettingStarted";
-import Authentication from "../views/Authentication";
+import React from 'react';
+
+const GetStarted = React.lazy(() => import('../views/GettingStarted'));
+const Documentation = React.lazy(() => import('../views/documentation/Documentation'));
+const Authentication = React.lazy(() => import('../views/Authentication'));
 
 export default [
   {

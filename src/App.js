@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes/routes";
 import {
@@ -14,6 +14,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/shards-dashboards.1.1.0.min.css";
 import { isuserLogiIn } from "./redux/actions/auth.Actions";
+import Mainloader from './components/Mainloader.js';
 
 const options = {
   timeout: 5000,
@@ -34,38 +35,41 @@ const App = () => {
   }, []);
 
   return (
-    <Provider template={AlertTemplate} {...options}>
-      <Fragment>
-        <Router>
-          <Switch>
-            {routes.map((route, index) => {
-              return route.routeGuard === "authGuard" ? (
-                <AuthPrivateRoute
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                />
-              ) : route.routeGuard === "Guestroute" ? (
-                <GuestPrivateRoute
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                />
-              ) : (
-                <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                />
-              );
-            })}
-          </Switch>
-        </Router>
-      </Fragment>
-    </Provider>
+    <Suspense fallback={<Mainloader />}>
+
+      <Provider template={AlertTemplate} {...options}>
+        <Fragment>
+          <Router>
+            <Switch>
+              {routes.map((route, index) => {
+                return route.routeGuard === "authGuard" ? (
+                  <AuthPrivateRoute
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component}
+                  />
+                ) : route.routeGuard === "Guestroute" ? (
+                  <GuestPrivateRoute
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component}
+                  />
+                ) : (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component}
+                  />
+                );
+              })}
+            </Switch>
+          </Router>
+        </Fragment>
+      </Provider>
+    </Suspense>
   );
 };
 

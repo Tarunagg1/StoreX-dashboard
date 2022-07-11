@@ -12,7 +12,8 @@ import {
   SET_LOADING_FALSE,
   REGISTRATION_START,
   REGISTRATION_SUCCESS,
-  REGISTRATION_ERROR
+  REGISTRATION_ERROR,
+  CLEAR_MESSAGES
 } from "../constants/auth.constannts";
 
 const initState = {
@@ -69,6 +70,9 @@ const AuthReducer = (state = initState, action) => {
       return { ...state, MenuOver: "-1000px" };
     case ACTIVE_LINK:
       return { ...state, activeLink: payload };
+
+    case CLEAR_MESSAGES:
+      return { ...state, loading: false,errorMessage:null,successMessage:null };
 
 
     case SET_LOADING_TRUE:

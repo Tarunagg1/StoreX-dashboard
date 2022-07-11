@@ -1,7 +1,8 @@
 import { getAuthToken, removeToken } from '../../utils/common/localStorege';
 import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, } from '../constants/auth.constannts';
-// import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt'
-// import bip39 from "bip39";
+import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt'
+import AesFunctions from '../../lib/AesUtil';
+// import * as bip39 from "bip39";
 
 
 export const isuserLogiIn = () => {
@@ -36,11 +37,11 @@ export const isuserLogiIn = () => {
 //     } = await generateNewKeys();
 
 //     //Datas
-//     // const encPrivateKey = AesUtil.encrypt(
-//     //     privateKeyArmored,
-//     //     this.state.register.password,
-//     //     false
-//     // );
+//     const encPrivateKey = AesFunctions.encrypt(
+//         privateKeyArmored,
+//         this.state.register.password,
+//         false
+//     );
 
 
 //     return async (dispatch) => {

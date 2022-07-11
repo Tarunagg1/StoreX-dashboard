@@ -13,7 +13,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import { useAlert } from "react-alert";
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -93,10 +93,8 @@ const IsolatedMenu = props => {
         open={open}
         onClose={() => setAnchorEl(null)}
       >
-
         <MenuItem>Regenrate</MenuItem>
         <MenuItem>View logs</MenuItem>
-
       </Menu>
     </Fragment>
   )
@@ -110,6 +108,10 @@ const Credentials = () => {
 
   const handleTogglerChange = () => {
     setIsTestMode((prev) => !prev);
+    setIsKeyChnageLoading(true);
+    setTimeout(() => {
+      setIsKeyChnageLoading(false)
+    }, 1000);
   }
 
   const copyToClipBoard = async copyMe => {
@@ -136,70 +138,6 @@ const Credentials = () => {
           />
         </Row>
 
-        {/* <div className="row mt-4">
-          <div className="col-md-1"></div>
-          <div className="col-lg-9">
-            <div className="card card-small mb-4">
-              <div className="card-header border-bottom">
-                <div className="row d-flex justify-content-between align-items-center px-2">
-                  <h6 className="m-0">Keys Details</h6>
-                  <FormControlLabel
-                    control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={toggler} />}
-                    label="Live mode"
-                  />
-                </div>
-              </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item p-3">
-                  <div className="row">
-                    <div className="col">
-                      <form>
-                        <div className="form-row">
-                          <div className="form-group col-md-6">
-                            <label htmlFor="feFirstName">First Name</label>
-                            <input type="text" className="form-control" id="feFirstName" placeholder="First Name" value="Sierra" /> </div>
-                          <div className="form-group col-md-6">
-                            <label htmlFor="feLastName">Last Name</label>
-                            <input type="text" className="form-control" id="feLastName" placeholder="Last Name" value="Brooks" /> </div>
-                        </div>
-                        <div className="form-row">
-                          <div className="form-group col-md-6">
-                            <label htmlFor="feEmailAddress">Email</label>
-                            <input type="email" className="form-control" id="feEmailAddress" placeholder="Email" value="sierra@example.com" /> </div>
-                          <div className="form-group col-md-6">
-                            <label htmlFor="fePassword">Password</label>
-                            <input type="password" className="form-control" id="fePassword" placeholder="Password" /> </div>
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="feInputAddress">Address</label>
-                          <input type="text" className="form-control" id="feInputAddress" placeholder="1234 Main St" /> </div>
-                        <div className="form-row">
-                          <div className="form-group col-md-6">
-                            <label htmlFor="feInputCity">City</label>
-                            <input type="text" className="form-control" id="feInputCity" /> </div>
-                          <div className="form-group col-md-4">
-                            <label htmlFor="feInputState">State</label>
-                            <select id="feInputState" className="form-control">
-                              <option selected>Choose...</option>
-                              <option>...</option>
-                            </select>
-                          </div>
-                          <div className="form-group col-md-2">
-                            <label htmlFor="inputZip">Zip</label>
-                            <input type="text" className="form-control" id="inputZip" /> </div>
-                        </div>
-
-                        <button type="submit" className="btn btn-accent">Update Account</button>
-                      </form>
-                    </div>
-
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div> */}
         <Row className="mt-4">
           <Col>
             <Card small className="mb-4">
@@ -232,14 +170,24 @@ const Credentials = () => {
                       </thead>
                       <tbody>
                         {
-                          isTestMode ? (
+                          isKeyChnageLoading ? (
+                            <td colspan="12" style={{ textAlign: 'center' }}>
+                              <CircularProgress disableShrink size={40} value={100} />
+                            </td>
+                          ) : (
                             <tr>
                               <td>
                                 <span className="bold">Secret key</span>
                               </td>
                               <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
                                 <td className="keyBoxSmall">
-                                  <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_test_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                                  {
+                                    isTestMode ? (
+                                      <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_test_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                                    ) : (
+                                      <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_loive_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                                    )
+                                  }
                                 </td>
                               </Tooltip>
                               <td>
@@ -252,27 +200,8 @@ const Credentials = () => {
                                 <IsolatedMenu />
                               </td>
                             </tr>
-                          ) : (
-                            <tr>
-                              <td>
-                                <span className="bold">Secret key</span>
-                              </td>
-                              <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
-                                <td className="keyBoxSmall">
-                                  <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_live_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
-                                </td>
-                              </Tooltip>
-                              <td>
-                                <span>Mar 30, 2021</span>
-                              </td>
-                              <td>
-                                <span>Mar 31, 2021</span>
-                              </td>
-                              <td>
-                                <IsolatedMenu />
-                              </td>
-                            </tr>
                           )
+
                         }
                       </tbody>
                     </table>

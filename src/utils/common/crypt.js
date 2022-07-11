@@ -2,7 +2,6 @@ import CryptoJS from 'crypto-js';
 import * as openpgp from 'openpgp';
 
 
-
 // Method to hash password. If salt is passed, use it, in other case use crypto lib for generate salt
 function passToHash(passObject) {
     try {
@@ -62,12 +61,15 @@ async function generateNewKeys() {
         curve: 'ed25519'
     });
 
+    window.Buffer = window.Buffer || require("buffer").Buffer;
+
     return {
         privateKeyArmored,
-        publicKeyArmored: Buffer.from(publicKeyArmored).toString('base64'),
+        publicKeyArmored: Buffer.from(publicKeyArmored, "base64").toString('base64'),
         revocationCertificate: Buffer.from(revocationCertificate).toString('base64')
     };
 }
+
 
 
 export {

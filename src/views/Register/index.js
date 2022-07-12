@@ -5,21 +5,19 @@ import "./register.css";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from 'react-redux';
-import { useAlert } from 'react-alert';
 
 export default function Register() {
   const { loading, errorMessage, successMessage } = useSelector(state => state.Auth);
-  const alert = useAlert();
   const dispatch = useDispatch();
 
 
   const [registerData, setRegisterData] = useState({
-    name: "",
-    lastname: "",
-    email: "",
-    companyname: "",
-    password: "",
-    cpassword: ""
+    name: "tarun",
+    lastname: "aggarwal",
+    email: "tarun@gmaill.com",
+    companyname: "tarun",
+    password: "tarun",
+    cpassword: "tarun"
   });
 
 
@@ -36,6 +34,7 @@ export default function Register() {
   const onSubmit = async event => {
     event.preventDefault();
     console.log(registerData);
+    // dispatch(registerUserAction(registerData));
   }
 
   return (
@@ -62,6 +61,7 @@ export default function Register() {
                   placeholder="john"
                   name="name"
                   onChange={InputEvent}
+                  value={registerData.name}
                 />
               </div>
               <div className="form-group">
@@ -72,6 +72,8 @@ export default function Register() {
                   placeholder="Deo"
                   name="lastname"
                   onChange={InputEvent}
+                  value={registerData.lastname}
+
                 />
               </div>
               <div className="form-group">
@@ -82,6 +84,8 @@ export default function Register() {
                   placeholder="john"
                   name="companyname"
                   onChange={InputEvent}
+                  value={registerData.companyname}
+
                 />
               </div>
               <div className="form-group">
@@ -92,6 +96,7 @@ export default function Register() {
                   placeholder="your-email@example.com"
                   name="email"
                   onChange={InputEvent}
+                  value={registerData.email}
                 />
               </div>
 
@@ -103,7 +108,7 @@ export default function Register() {
                   placeholder="Enter password"
                   onChange={InputEvent}
                   name="password"
-
+                  value={registerData.password}
                 />
               </div>
 
@@ -115,6 +120,7 @@ export default function Register() {
                   placeholder="Enter password"
                   onChange={InputEvent}
                   name="cpassword"
+                  value={registerData.cpassword}
                 />
               </div>
 

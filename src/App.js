@@ -6,8 +6,6 @@ import {
   GuestPrivateRoute
 } from "./utils/privateRoutes/PrivateRoute";
 
-import { positions, Provider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 
@@ -16,10 +14,8 @@ import "./assets/css/shards-dashboards.1.1.0.min.css";
 import { isuserLogiIn } from "./redux/actions/auth.Actions";
 import Mainloader from './components/Mainloader.js';
 
-const options = {
-  timeout: 5000,
-  position: positions.BOTTOM_RIGHT
-};
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -36,39 +32,37 @@ const App = () => {
 
   return (
     <Suspense fallback={<Mainloader />}>
-
-      <Provider template={AlertTemplate} {...options}>
-        <Fragment>
-          <Router>
-            <Switch>
-              {routes.map((route, index) => {
-                return route.routeGuard === "authGuard" ? (
-                  <AuthPrivateRoute
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.component}
-                  />
-                ) : route.routeGuard === "Guestroute" ? (
-                  <GuestPrivateRoute
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.component}
-                  />
-                ) : (
-                  <Route
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.component}
-                  />
-                );
-              })}
-            </Switch>
-          </Router>
-        </Fragment>
-      </Provider>
+      <Fragment>
+        <ToastContainer />
+        <Router>
+          <Switch>
+            {routes.map((route, index) => {
+              return route.routeGuard === "authGuard" ? (
+                <AuthPrivateRoute
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              ) : route.routeGuard === "Guestroute" ? (
+                <GuestPrivateRoute
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              ) : (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              );
+            })}
+          </Switch>
+        </Router>
+      </Fragment>
     </Suspense>
   );
 };

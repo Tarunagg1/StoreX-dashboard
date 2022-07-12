@@ -12,10 +12,10 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
-import { useAlert } from "react-alert";
+import { toast } from 'react-toastify';
 import CircularProgress from '@mui/material/CircularProgress';
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { genrateAndRegenrateKeysAction } from '../../redux/actions/auth.Actions';
 
 
 const IOSSwitch = styled((props) => (
@@ -101,10 +101,10 @@ const IsolatedMenu = props => {
 }
 
 const Credentials = () => {
-  const alert = useAlert();
   const [isTestMode, setIsTestMode] = useState(true);
   const [isKeyChnageLoading, setIsKeyChnageLoading] = useState(false);
-
+  const { user, loading } = useSelector(state => state.Auth);
+  const dispatch = useDispatch();
 
   const handleTogglerChange = () => {
     setIsTestMode((prev) => !prev);
@@ -117,11 +117,16 @@ const Credentials = () => {
   const copyToClipBoard = async copyMe => {
     try {
       await navigator.clipboard.writeText(copyMe);
-      alert.success("Copied successfully!!")
+      toast.success("Copied successfully!!")
     } catch (err) {
       console.log(err);
     }
   };
+
+
+  const genrateAndRegenrateKeys = () => {
+    dispatch(genrateAndRegenrateKeysAction(isTestMode))
+  }
 
   return (
     <DefaultLayout>
@@ -159,19 +164,20 @@ const Credentials = () => {
                           <td>
                             <span className="ContentTopic">TOKEN</span>
                           </td>
-                          <td>
+                          {/* <td>
                             <span className="ContentTopic">LAST USED</span>
                           </td>
                           <td>
                             <span className="ContentTopic">CREATED</span>
+                          </td> */}
+                          <td>
                           </td>
-                          <td></td>
                         </tr>
                       </thead>
                       <tbody>
                         {
-                          isKeyChnageLoading ? (
-                            <td colspan="12" style={{ textAlign: 'center' }}>
+                          isKeyChnageLoading || loading ? (
+                            <td colSpan="3" style={{ textAlign: 'center' }}>
                               <CircularProgress disableShrink size={40} value={100} />
                             </td>
                           ) : (
@@ -179,24 +185,29 @@ const Credentials = () => {
                               <td>
                                 <span className="bold">Secret key</span>
                               </td>
-                              <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
-                                <td className="keyBoxSmall">
-                                  {
-                                    isTestMode ? (
-                                      <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_test_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                              <td className="keyBoxSmall">
+                                {
+                                  isTestMode ? (
+                                    user.testApplicationKey === null ? (
+                                      <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Test key</button>
                                     ) : (
-                                      <span onClick={() => copyToClipBoard("hello world")} className="keysTextID">StorX_loive_pxobXf0UrQbnny6AySbmOAHUoirjojrjirjgigrjrijifokfokolpfdmmgemgoikermjowrjfowijfoiwjiojgiwrjoliwjJooavYy73zNcqKSkuFJsaAIvPTbZ6you8FYcd0009qCmGHw</span>
+                                      <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
+                                        <span onClick={() => copyToClipBoard(user.testApplicationKey)} className="keysTextID">{user.testApplicationKey}</span>
+                                      </Tooltip>
                                     )
-                                  }
-                                </td>
-                              </Tooltip>
-                              <td>
-                                <span>Mar 22, 2021</span>
+
+                                  ) : (
+                                    user.liveApplicationKey === null ? (
+                                      <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Live key</button>
+                                    ) : (
+                                      <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
+                                        <span onClick={() => copyToClipBoard(user.liveApplicationKey)} className="keysTextID">{user.liveApplicationKey}</span>
+                                      </Tooltip>
+                                    )
+                                  )
+                                }
                               </td>
-                              <td>
-                                <span>Mar 23, 2021</span>
-                              </td>
-                              <td>
+                              <td className="isolatedMenu">
                                 <IsolatedMenu />
                               </td>
                             </tr>

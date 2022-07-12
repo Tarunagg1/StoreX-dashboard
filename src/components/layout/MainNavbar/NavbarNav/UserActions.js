@@ -7,13 +7,12 @@ import {
   Collapse,
   NavItem, NavLink
 } from "shards-react";
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { logoutUserAction } from '../../../../redux/actions/auth.Actions';
 import { bindActionCreators } from 'redux'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class UserActions extends Component {
-
 
   constructor(props) {
     // this.dispatch = useDispatch();
@@ -47,10 +46,10 @@ class UserActions extends Component {
             src={require("./../../../../assets/images/0.jpg")}
             alt="User Avatar"
           />{" "} */}
-          <span className=" d-md-inline-block">tarun@gmail.com</span>
+          <span className=" d-md-inline-block">{this.props.user.email}</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={this.state.visible}>
-          <DropdownItem tag={Link}  to="profile">
+          <DropdownItem tag={Link} to="profile">
             <i className="material-icons">&#xE7FD;</i> Profile
           </DropdownItem>
 
@@ -64,13 +63,14 @@ class UserActions extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return { user: state.Auth.user };
+};
+
 const mapDispatchToProps = (dispatch) => {
-  // return {
-  //   logoutUser: () => dispatch(logoutUser),
-  // }
 
   return bindActionCreators({ logoutUserAction }, dispatch)
 }
 
 
-export default connect(null, mapDispatchToProps)(UserActions);
+export default connect(mapStateToProps, mapDispatchToProps)(UserActions);

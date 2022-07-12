@@ -20,7 +20,7 @@
 // ENCDATA:   encrypted data as base64 string (format mentioned on top)
 
 // load the build-in crypto functions
-const _crypto = require('crypto-js');
+const _crypto = require('crypto');
 
 // encrypt/decrypt functions
 const AesFunctions = {

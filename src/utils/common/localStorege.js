@@ -1,14 +1,14 @@
 export const setAuthToken = (token) => {
-    localStorage.setItem('authToken', token)
+    localStorage.setItem('SXtoken', token)
 }
 
-export const removeToken = (token) => {
-    localStorage.removeItem('authToken')
+export const removeToken = () => {
+    localStorage.removeItem('SXtoken')
 }
 
 
 export const getAuthToken = () => {
-    return localStorage.getItem('authToken')
+    return localStorage.getItem('SXtoken')
 }
 
 
@@ -16,7 +16,7 @@ export const setKeyToLocalStorage = (key, data) => {
     localStorage.setItem(key, data)
 }
 
-export const getKeyToLocalStorage = (key) => {
+export const getDataFromLocalStorage = (key) => {
     return localStorage.getItem(key)
 }
 

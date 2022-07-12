@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
@@ -8,13 +7,14 @@ import axiosinstance from '../../utils/axios/index'
 import { decryptText, encryptText, generateNewKeys, passToHash } from '../../utils/common/crypt';
 import Preloader from "../../assets/images/login_preloader.gif";
 import { LOGIN_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE } from '../../redux/constants/auth.constannts';
-import { setAuthToken } from '../../utils/common/localStorege';
+import { setAuthToken, setKeyToLocalStorage } from '../../utils/common/localStorege';
 import "./login.css";
+import { toast } from 'react-toastify';
+
 
 
 export default function Login() {
 
-  const alert = useAlert();
   const dispatch = useDispatch();
   const { loading } = useSelector(state => state.Auth);
 
@@ -54,14 +54,15 @@ export default function Login() {
 
   const onSubmit = async event => {
     event.preventDefault();
+
+    // dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true, token: "getAccessTokens.data.token" } });
+
     if (!data.email || !data.password) {
       alert.show("All fields required or invalid");
       return
     }
     try {
       dispatch({ type: SET_LOADING_TRUE });
-
-
       const isLoginStartSuccessfully = await axiosinstance.post('/login', { email: data.email });
       const keys = await generateNewKeys(data.password);
 
@@ -74,7 +75,6 @@ export default function Login() {
       const getAccessTokens = await axiosinstance.post('/access', {
         email: data.email,
         password: encPass,
-        // tfa: twoFactorCode,
         privateKey: keys.privateKeyArmored,
         publicKey: keys.publicKeyArmored,
         revocateKey: keys.revocationCertificate,
@@ -82,21 +82,23 @@ export default function Login() {
 
       if (getAccessTokens.data.user.registerCompleted) {
         setAuthToken(getAccessTokens.data.token);
-        dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true, token: getAccessTokens.data.token } });
+        setKeyToLocalStorage("SXuser", JSON.stringify(getAccessTokens.data.user));
+        // console.log(getAccessTokens.data);
+        dispatch({ type: LOGIN_SUCCESS, payload: { user: getAccessTokens.data.user, isAuthencated: true, token: getAccessTokens.data.token } });
       } else {
-        alert.error("your account is not authorized please check your mail");
+        toast.error("your account is not authorized please check your mail");
       }
 
     } catch (error) {
       dispatch({ type: SET_LOADING_FALSE });
       if (error.response && error.response.data && error.response.status === 400) {
-        alert.error(error.response.data.error);
+        toast.error(error.response.data.error);
         return;
       } else if (error.response && error.response.data && error.response.status !== 200) {
-        alert.error(error.response.data.error);
+        toast.error(error.response.data.error);
         return;
       } else {
-        alert.error("Something went wrong");
+        toast.error("Something went wrong");
       }
     }
 
@@ -143,7 +145,7 @@ export default function Login() {
                 />
               </div>
 
-              <div className="form-group mt-4">
+              <div className="form-group mt-4 passwordbox">
                 <label htmlFor="password">Password</label>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -155,6 +157,11 @@ export default function Login() {
                   id="password"
                   required
                 />
+                <div className="input-group-btn hideShowMainBox">
+                  <button type="button" className="showHidePassShow" onClick={() => setshowPassword(!showPassword)}>
+                    {showPassword ? <i className="fa fa-eye" aria-hidden="true"></i> : <i className="fa fa-eye-slash" aria-hidden="true"></i>}
+                  </button>
+                </div>
               </div>
 
               <div className="d-flex mb-4 float-right">
@@ -169,8 +176,6 @@ export default function Login() {
                 disabled={!valid || loading}
                 className="btn btn-block btn button">
                 {loading ? <><span>Sign In <ArrowRight /> </span><img alt="laoder" src={Preloader} /></> : "Sign In"}
-
-                {/* Sing In <ArrowRight /> <img src={Preloader} /> */}
               </button>
             </form>
             <div className="mt-4 text-center">

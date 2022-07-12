@@ -3864,7 +3864,7 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
-"crypto-js@^4.1.1":
+"crypto-js@^4.0.0":
   "integrity" "sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw=="
   "resolved" "https://registry.npmjs.org/crypto-js/-/crypto-js-4.1.1.tgz"
   "version" "4.1.1"
@@ -3873,11 +3873,6 @@
   "integrity" "sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA=="
   "resolved" "https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-2.0.0.tgz"
   "version" "2.0.0"
-
-"crypto@^1.0.1":
-  "integrity" "sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig=="
-  "resolved" "https://registry.npmjs.org/crypto/-/crypto-1.0.1.tgz"
-  "version" "1.0.1"
 
 "css-blank-pseudo@^3.0.3":
   "integrity" "sha512-VS90XWtsHGqoM0t4KpH053c4ehxZ2E6HtGI7x68YFV0pTo/QmkV/YFA+NnlvK8guxZVNWGQhVNJGC39Q8XF4OQ=="
@@ -9147,10 +9142,10 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react-toastify@^9.0.4":
-  "integrity" "sha512-MYmJ1V5F6DEU+TFxBb+pGGsveFPt4tjr4yK+TopXkU3sXPD9F2tFhX+G2HBLZpqObT2O6Z9jbXSg3JpaxuWtWw=="
-  "resolved" "https://registry.npmjs.org/react-toastify/-/react-toastify-9.0.4.tgz"
-  "version" "9.0.4"
+"react-toastify@^9.0.5":
+  "integrity" "sha512-dszPCeQINY+Nm6HmsiAXT/7wsazPqv0S/RuhIYLAW+fTKcd3T1iRjZG0XqrN9nvAzqaE5J6uxMaiBrOevxjY8g=="
+  "resolved" "https://registry.npmjs.org/react-toastify/-/react-toastify-9.0.5.tgz"
+  "version" "9.0.5"
   dependencies:
     "clsx" "^1.1.1"
 

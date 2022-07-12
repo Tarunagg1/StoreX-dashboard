@@ -1,11 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAlert } from "react-alert";
 import '../Login/login.css';
 import logo from '../../assets/images/logo.png';
 
 export default function ResetPassword() {
-    const alert = useAlert();
 
     const [data, setData] = useState({
         email: "",

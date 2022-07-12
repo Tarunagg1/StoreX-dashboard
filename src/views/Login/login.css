@@ -109,6 +109,22 @@ button[disabled] {
   margin-right: 35px;
 }
 
+.passwordbox {
+  position: relative;
+}
+
+.hideShowMainBox {
+  position: absolute;
+  right: 1%;
+  top: 38%;
+}
+
+.hideShowMainBox button {
+  border: none;
+  height: 4px;
+  font-size: 30px;
+}
+
 @media (max-width: 450px) {
   .flex-container-login {
     flex-direction: row;

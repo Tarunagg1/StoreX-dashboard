@@ -6,7 +6,7 @@ export default function () {
       to: "/dashboard",
     },
     {
-      title: "Credentials",
+      title: "Api keys",
       htmlBefore: '<i class="material-icons">key</i>',
       to: "/credentials",
     },

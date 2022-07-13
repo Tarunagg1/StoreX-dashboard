@@ -93,7 +93,7 @@ const IsolatedMenu = props => {
         open={open}
         onClose={() => setAnchorEl(null)}
       >
-        <MenuItem>Regenrate</MenuItem>
+        <MenuItem onClick={() => props.genrateAndRegenrateKeys(props.isTestMode)}>Regenrate</MenuItem>
         <MenuItem>View logs</MenuItem>
       </Menu>
     </Fragment>
@@ -102,13 +102,27 @@ const IsolatedMenu = props => {
 
 const Credentials = () => {
   const [isTestMode, setIsTestMode] = useState(true);
+  const [showCredentials, setShowCredentials] = useState(false);
+
   const [isKeyChnageLoading, setIsKeyChnageLoading] = useState(false);
   const { user, loading } = useSelector(state => state.Auth);
   const dispatch = useDispatch();
 
   const handleTogglerChange = () => {
+    setShowCredentials(false);
     setIsTestMode((prev) => !prev);
     setIsKeyChnageLoading(true);
+    setTimeout(() => {
+      setIsKeyChnageLoading(false)
+    }, 1000);
+  }
+
+
+  const toggleCredentials = () => {
+    setShowCredentials((prev) => !prev);
+    setIsKeyChnageLoading(true);
+
+
     setTimeout(() => {
       setIsKeyChnageLoading(false)
     }, 1000);
@@ -125,7 +139,8 @@ const Credentials = () => {
 
 
   const genrateAndRegenrateKeys = () => {
-    dispatch(genrateAndRegenrateKeysAction(isTestMode))
+    dispatch(genrateAndRegenrateKeysAction(isTestMode));
+    setShowCredentials(false)
   }
 
   return (
@@ -174,7 +189,7 @@ const Credentials = () => {
                           </td>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody key={`keysTbody`}>
                         {
                           isKeyChnageLoading || loading ? (
                             <td colSpan="3" style={{ textAlign: 'center' }}>
@@ -191,24 +206,43 @@ const Credentials = () => {
                                     user.testApplicationKey === null ? (
                                       <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Test key</button>
                                     ) : (
-                                      <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
-                                        <span onClick={() => copyToClipBoard(user.testApplicationKey)} className="keysTextID">{user.testApplicationKey}</span>
-                                      </Tooltip>
+                                      showCredentials ? (
+                                        <>
+                                          <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
+                                            <span onClick={() => copyToClipBoard(user.testApplicationKey)} className="keysTextID">{user.testApplicationKey}</span>
+                                          </Tooltip>
+                                          
+                                          <span className="genrageKayButton showHidekey hideKey" onClick={toggleCredentials}>Hide test key</span>
+                                        </>
+                                      ) : (
+                                        <div className="keySecretBlur">
+                                          <span className="genrageKayButton showHidekey" onClick={toggleCredentials}>Revel test key</span>
+                                        </div>
+                                      )
                                     )
 
                                   ) : (
                                     user.liveApplicationKey === null ? (
                                       <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Live key</button>
                                     ) : (
-                                      <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
-                                        <span onClick={() => copyToClipBoard(user.liveApplicationKey)} className="keysTextID">{user.liveApplicationKey}</span>
-                                      </Tooltip>
+                                      showCredentials ? (
+                                        <>
+                                          <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
+                                          <span onClick={() => copyToClipBoard(user.liveApplicationKey)} className="keysTextID">{user.liveApplicationKey}</span>
+                                          </Tooltip>
+                                          <span className="genrageKayButton showHidekey hideKey" onClick={toggleCredentials}>Hide test key</span>
+                                        </>
+                                      ) : (
+                                        <div className="keySecretBlur">
+                                          <span className="genrageKayButton showHidekey" onClick={toggleCredentials}>Revel test key</span>
+                                        </div>
+                                      )
                                     )
                                   )
                                 }
                               </td>
                               <td className="isolatedMenu">
-                                <IsolatedMenu />
+                                <IsolatedMenu isTestMode={isTestMode} genrateAndRegenrateKeys={genrateAndRegenrateKeys} />
                               </td>
                             </tr>
                           )
@@ -222,8 +256,6 @@ const Credentials = () => {
             </Card>
           </Col>
         </Row>
-
-
       </Container>
     </DefaultLayout>
   )

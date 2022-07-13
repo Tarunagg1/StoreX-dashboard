@@ -4,13 +4,6 @@ import { DefaultLayout } from '../../layouts';
 
 const Profile = () => (
     <DefaultLayout>
-        {/* <div className="alert alert-success alert-dismissible fade show mb-0" role="alert">
-            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-            <i className="fa fa-check mx-2"></i>
-            <strong>Success!</strong> Your profile has been updated! </div> */}
-
         <Container fluid classNameName="main-content-container px-4">
             <div className="page-header row no-gutters py-4">
                 <div className="col-12 col-sm-4 text-center text-sm-left mb-0">
@@ -19,7 +12,6 @@ const Profile = () => (
             </div>
 
             <div className="row">
-         
                 <div className="col-lg-8 mx-auto mt-5">
                     <div className="card card-small mb-4">
                         <div className="card-header border-bottom">

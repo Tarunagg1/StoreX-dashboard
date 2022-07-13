@@ -1,11 +1,8 @@
 import { toast } from 'react-toastify';
 import { clearAllKeysFromLocalStorage, getAuthToken, getDataFromLocalStorage, removeToken } from '../../utils/common/localStorege';
-import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE, } from '../constants/auth.constannts';
+import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE, SET_USER_UPDATE_DETAILS, } from '../constants/auth.constannts';
 import axiosinstance from '../../utils/axios/index'
-// import { encryptText, generateNewKeys, passToHash } from '../../utils/common/crypt'
-// import AesFunctions from '../../lib/AesUtil';
-// import axiosinstance from '../../utils/axios';
-// const bip39 = require("bip39");
+import store from '../index';
 
 export const isuserLogiIn = () => {
     return async (dispatch) => {
@@ -14,7 +11,9 @@ export const isuserLogiIn = () => {
         if (token && user) {
             dispatch({ type: LOGIN_SUCCESS, payload: { token, isAuthencated: true, user } })
         } else {
-            dispatch(logoutUserAction());
+            if(token){
+                dispatch(logoutUserAction());
+            }
             dispatch({ type: LOGIN_ERROR, payload: { error: 'failed to Login' } })
         }
     }
@@ -95,19 +94,28 @@ export const genrateAndRegenrateKeysAction = (testmode) => {
             dispatch({ type: SET_LOADING_TRUE });
             // access key payload and call api
             let url = testmode ? "/test-access-key" : "/live-access-key"
-            const resp = await axiosinstance.post(url);
+            const { data } = await axiosinstance.post(url);
+
+            let { Auth: { user } } = store.getState();
+
+            for (let key in data) {
+                user[key] = data[key];
+            }
+
             dispatch({ type: SET_LOADING_FALSE });
+            dispatch({ type: SET_USER_UPDATE_DETAILS, payload: user });
+
         } catch (error) {
-            dispatch({ type: SET_LOADING_FALSE });
             console.log(error);
+            dispatch({ type: SET_LOADING_FALSE });
             if (error.response && error.response.data && error.response.status === 400) {
-                //   alert.error(error.response.data.error);
+                toast.error(error.response.data.error);
                 return;
             } else if (error.response && error.response.data && error.response.status !== 200) {
-                //   alert.error(error.response.data.error);
+                toast.error(error.response.data.error);
                 return;
             } else {
-                //   alert.error("Something went wrong");
+                toast.error("Something went wrong");
             }
         }
     }

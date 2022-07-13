@@ -26,6 +26,7 @@ const App = () => {
 
   useEffect(() => {
     if (!au.isAuthencated) {
+      console.log('gyg');
       dispatch(isuserLogiIn());
     }
   }, []);

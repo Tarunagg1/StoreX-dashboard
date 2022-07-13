@@ -4,8 +4,6 @@ import { logoutUserAction } from '../../redux/actions/auth.Actions';
 import { getAuthToken } from '../common/localStorege';
 
 
-const token = getAuthToken();
-
 const REACT_APP_API_BASE_URL = process.env.REACT_APP_ENV === "production" ? process.env.REACT_APP_API_URL_PROD : process.env.REACT_APP_API_URL_dev;
 
 const axiosinstance = axios.create({
@@ -15,7 +13,7 @@ const axiosinstance = axios.create({
 axiosinstance.interceptors.request.use((req) => {
     const { Auth: { token } } = store.getState();
     if (token) {
-        req.headers.Authorization = `Beare ${token}`;
+        req.headers.Authorization = `Bearer ${token}`;
     }
     return req;
 })

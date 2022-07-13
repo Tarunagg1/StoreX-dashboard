@@ -1,3 +1,4 @@
+import { setKeyToLocalStorage } from '../../utils/common/localStorege';
 import {
   LOGIN_ERROR,
   LOGIN_START,
@@ -13,7 +14,8 @@ import {
   REGISTRATION_START,
   REGISTRATION_SUCCESS,
   REGISTRATION_ERROR,
-  CLEAR_MESSAGES
+  CLEAR_MESSAGES,
+  SET_USER_UPDATE_DETAILS
 } from "../constants/auth.constannts";
 
 const initState = {
@@ -37,7 +39,7 @@ const AuthReducer = (state = initState, action) => {
         ...state,
         loading: false,
         token: payload.token,
-        user:payload.user,
+        user: payload.user,
         // user:payload.user,
         isAuthencated: payload.isAuthencated
       };
@@ -51,6 +53,10 @@ const AuthReducer = (state = initState, action) => {
       return { ...state, loading: false, successMessage: payload.successMessage };
     case REGISTRATION_ERROR:
       return { ...state, loading: false, errorMessage: payload.errorMessage };
+
+    case SET_USER_UPDATE_DETAILS:
+      setKeyToLocalStorage("SXuser",JSON.stringify(payload));
+      return { ...state, user:payload };
 
     case LOGOUT_START:
       return { ...state, loading: true };
@@ -74,7 +80,7 @@ const AuthReducer = (state = initState, action) => {
       return { ...state, activeLink: payload };
 
     case CLEAR_MESSAGES:
-      return { ...state, loading: false,errorMessage:null,successMessage:null };
+      return { ...state, loading: false, errorMessage: null, successMessage: null };
 
 
     case SET_LOADING_TRUE:

@@ -3,6 +3,10 @@ import { clearAllKeysFromLocalStorage, getAuthToken, getDataFromLocalStorage, re
 import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE, SET_USER_UPDATE_DETAILS, } from '../constants/auth.constannts';
 import axiosinstance from '../../utils/axios/index'
 import store from '../index';
+import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt';
+import {generateMnemonic} from 'bip39';
+// import AesFunctions from '../../lib/AesUtil';
+
 
 export const isuserLogiIn = () => {
     return async (dispatch) => {
@@ -26,67 +30,67 @@ const readReferalCookie = () => {
 }
 
 
-// export const registerUserAction = (data) => {
-//     return async (dispatch) => {
-//         const hashObj = passToHash({ password: data.password });
-//         const encPass = encryptText(hashObj.hash);
-//         const encSalt = encryptText(hashObj.salt);
+export const registerUserAction = (data) => {
+    return async (dispatch) => {
+        const hashObj = passToHash({ password: data.password });
+        const encPass = encryptText(hashObj.hash);
+        const encSalt = encryptText(hashObj.salt);
 
-//         // Setup mnemonic
-//         // const mnemonic = bip39.generateMnemonic(256);
-//         // const encMnemonic = encryptTextWithKey(
-//         //     mnemonic,
-//         //     data.password
-//         // );
+        // Setup mnemonic
+        const mnemonic = generateMnemonic(256);
+        const encMnemonic = encryptTextWithKey(
+            mnemonic,
+            data.password
+        );
 
-//         //Generate keys
-//         const {
-//             privateKeyArmored,
-//             publicKeyArmored: codpublicKey,
-//             revocationCertificate: codrevocationKey,
-//         } = await generateNewKeys();
+        //Generate keys
+        const {
+            privateKeyArmored,
+            publicKeyArmored: codpublicKey,
+            revocationCertificate: codrevocationKey,
+        } = await generateNewKeys();
 
-//         //Datas
-//         const encPrivateKey = AesFunctions.encrypt(
-//             privateKeyArmored,
-//             data.password,
-//             false
-//         );
+        // //Datas
+        // const encPrivateKey = AesFunctions.encrypt(
+        //     privateKeyArmored,
+        //     data.password,
+        //     false
+        // );
 
-//         let body = {
-//             name: data.name,
-//             lastname: data.lastname,
-//             email: data.email,
-//             password: encPass,
-//             // mnemonic: encMnemonic,
-//             salt: encSalt,
-//             referral: readReferalCookie(),
-//             privateKey: encPrivateKey,
-//             publicKey: codpublicKey,
-//             revocationKey: codrevocationKey,
-//         }
+        let body = {
+            name: data.name,
+            lastname: data.lastname,
+            // email: data.email,
+            // password: encPass,
+            // // mnemonic: encMnemonic,
+            // salt: encSalt,
+            // referral: readReferalCookie(),
+            // privateKey: encPrivateKey,
+            // publicKey: codpublicKey,
+            // revocationKey: codrevocationKey,
+        }
 
-//         try {
-//             dispatch({ type: SET_LOADING_TRUE });
-//             // access key payload and call api
-//             const resp = await axiosinstance.post('/register', body);
-//             console.log(resp);
-//             dispatch({ type: SET_LOADING_FALSE });
-//         } catch (error) {
-//             dispatch({ type: SET_LOADING_FALSE });
-//             console.log(error);
-//             if (error.response && error.response.data && error.response.status === 400) {
-//                 //   alert.error(error.response.data.error);
-//                 return;
-//             } else if (error.response && error.response.data && error.response.status !== 200) {
-//                 //   alert.error(error.response.data.error);
-//                 return;
-//             } else {
-//                 //   alert.error("Something went wrong");
-//             }
-//         }
-//     }
-// }
+        try {
+            dispatch({ type: SET_LOADING_TRUE });
+            // access key payload and call api
+            const resp = await axiosinstance.post('/register', body);
+            console.log(resp);
+            dispatch({ type: SET_LOADING_FALSE });
+        } catch (error) {
+            dispatch({ type: SET_LOADING_FALSE });
+            console.log(error);
+            if (error.response && error.response.data && error.response.status === 400) {
+                //   alert.error(error.response.data.error);
+                return;
+            } else if (error.response && error.response.data && error.response.status !== 200) {
+                //   alert.error(error.response.data.error);
+                return;
+            } else {
+                //   alert.error("Something went wrong");
+            }
+        }
+    }
+}
 
 export const genrateAndRegenrateKeysAction = (testmode) => {
     return async (dispatch) => {

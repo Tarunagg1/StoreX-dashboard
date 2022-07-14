@@ -71,3 +71,8 @@ section {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+.card,
+.card-small {
+  box-shadow: none !important;
+}

@@ -48,6 +48,7 @@ class MainSidebar extends React.Component {
       <Col
         tag="aside"
         className={classes}
+        style={{boxShadow: "none"}}
         lg={{ size: 2 }}
         md={{ size: 3 }}
       >

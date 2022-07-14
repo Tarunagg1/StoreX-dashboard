@@ -11,6 +11,8 @@
     "axios": "^0.27.2",
     "bip39": "^3.0.3",
     "classnames": "^2.2.6",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.0.0",
     "flux": "^4.0.3",
     "lodash.find": "^4.6.0",
@@ -28,7 +30,8 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "shards-react": "^1.0.3",
-    "shortid": "^2.2.14"
+    "shortid": "^2.2.14",
+    "stream": "^0.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

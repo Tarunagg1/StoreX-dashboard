@@ -47,7 +47,7 @@ export default function Register() {
 
       <div className="container">
         <div className="d-flex align-items-center justify-content-center">
-          <div className="col-md-6">
+          <div className="box-mainauth col-md-6 top-2" style={{ marginTop: "5px" }}>
             <Link to="/">
               <img src={logo} alt="logo" className="logo" srcSet="" />
             </Link>

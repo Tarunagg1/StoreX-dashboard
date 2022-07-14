@@ -49,9 +49,9 @@ class UserActions extends Component {
           <span className=" d-md-inline-block">{this.props.user.email}</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={this.state.visible}>
-          <DropdownItem tag={Link} to="profile">
+          {/* <DropdownItem tag={Link} to="profile">
             <i className="material-icons">&#xE7FD;</i> Profile
-          </DropdownItem>
+          </DropdownItem> */}
 
           <DropdownItem divider />
           <DropdownItem onClick={this.logout} className="text-danger">

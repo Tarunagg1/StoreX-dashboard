@@ -4,9 +4,8 @@ import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, SET_LOADING_FALSE, SET_LOAD
 import axiosinstance from '../../utils/axios/index'
 import store from '../index';
 import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt';
-import {generateMnemonic} from 'bip39';
+import { generateMnemonic } from 'bip39';
 // import AesFunctions from '../../lib/AesUtil';
-
 
 export const isuserLogiIn = () => {
     return async (dispatch) => {
@@ -15,7 +14,7 @@ export const isuserLogiIn = () => {
         if (token && user) {
             dispatch({ type: LOGIN_SUCCESS, payload: { token, isAuthencated: true, user } })
         } else {
-            if(token){
+            if (token) {
                 dispatch(logoutUserAction());
             }
             dispatch({ type: LOGIN_ERROR, payload: { error: 'failed to Login' } })
@@ -96,6 +95,7 @@ export const genrateAndRegenrateKeysAction = (testmode) => {
     return async (dispatch) => {
         try {
             dispatch({ type: SET_LOADING_TRUE });
+
             // access key payload and call api
             let url = testmode ? "/test-access-key" : "/live-access-key"
             const { data } = await axiosinstance.post(url);
@@ -108,6 +108,12 @@ export const genrateAndRegenrateKeysAction = (testmode) => {
 
             dispatch({ type: SET_LOADING_FALSE });
             dispatch({ type: SET_USER_UPDATE_DETAILS, payload: user });
+
+            if (testmode) {
+                toast.success("Test api keys generated successfully")
+            } else {
+                toast.success("Live api keys generated successfully")
+            }
 
         } catch (error) {
             console.log(error);
@@ -126,7 +132,6 @@ export const genrateAndRegenrateKeysAction = (testmode) => {
 }
 
 export const logoutUserAction = () => async (dispatch) => {
-    console.log('logour');
     removeToken();
     clearAllKeysFromLocalStorage();
     toast.warning("Session logout");

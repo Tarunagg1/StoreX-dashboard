@@ -112,6 +112,7 @@ const Credentials = () => {
     setShowCredentials(false);
     setIsTestMode((prev) => !prev);
     setIsKeyChnageLoading(true);
+  
     setTimeout(() => {
       setIsKeyChnageLoading(false)
     }, 1000);
@@ -131,7 +132,7 @@ const Credentials = () => {
   const copyToClipBoard = async copyMe => {
     try {
       await navigator.clipboard.writeText(copyMe);
-      toast.success("Copied successfully!!")
+      toast.success("Copied successfully!!");
     } catch (err) {
       console.log(err);
     }
@@ -139,7 +140,11 @@ const Credentials = () => {
 
 
   const genrateAndRegenrateKeys = () => {
-    dispatch(genrateAndRegenrateKeysAction(isTestMode));
+    setIsKeyChnageLoading(true);
+    setTimeout(() => {
+      dispatch(genrateAndRegenrateKeysAction(isTestMode));
+      setIsKeyChnageLoading(false);
+    }, 1000);
     setShowCredentials(false)
   }
 
@@ -151,7 +156,7 @@ const Credentials = () => {
         <PageTitle sm="5" title="API Keys" className="page-heading mt-5" />
 
         <Row noGutters className="page-header mt-3">
-          <p>{isTestMode ? "Viewing test API keys. Toggle to view Live keys." : "Viewing Live API keys. Toggle to view test keys."} </p>
+          <p>{isTestMode ? "Viewing test API keys. Toggle to   view Live keys." : "Viewing Live API keys. Toggle to view test keys."} </p>
           <FormControlLabel
             label="Test mode"
             control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={isTestMode} />}
@@ -211,7 +216,7 @@ const Credentials = () => {
                                           <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
                                             <span onClick={() => copyToClipBoard(user.testApplicationKey)} className="keysTextID">{user.testApplicationKey}</span>
                                           </Tooltip>
-                                          
+
                                           <span className="genrageKayButton showHidekey hideKey" onClick={toggleCredentials}>Hide test key</span>
                                         </>
                                       ) : (
@@ -228,7 +233,7 @@ const Credentials = () => {
                                       showCredentials ? (
                                         <>
                                           <Tooltip sx={{ fontSize: "200px" }} title="Click to copy" placement="right">
-                                          <span onClick={() => copyToClipBoard(user.liveApplicationKey)} className="keysTextID">{user.liveApplicationKey}</span>
+                                            <span onClick={() => copyToClipBoard(user.liveApplicationKey)} className="keysTextID">{user.liveApplicationKey}</span>
                                           </Tooltip>
                                           <span className="genrageKayButton showHidekey hideKey" onClick={toggleCredentials}>Hide test key</span>
                                         </>

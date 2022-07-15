@@ -47,9 +47,15 @@ export default function Navbar() {
                     <Link to="/login">Login</Link>
                   </div>
                   <div className="getStartbtn">
-                    <Link className="filllcolor" to="/register">
-                      Get API Key
-                    </Link>
+                    {
+                      isAuthencated ? (
+                        <Link className="filllcolor" to="https://storx.io/new">
+                          Get API Key
+                        </Link>
+                      ) : (
+                        <a className="filllcolor" target="_blank" href="https://storx.io/new"> Get API Key </a>
+                      )
+                    }
                   </div>
                 </>
               )}

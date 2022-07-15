@@ -1,10 +1,14 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import { getAuthToken } from '../common/localStorege';
 
 
 const AuthPrivateRoute = (props) => {
-    const user = useSelector(state => state.Auth.isAuthencated);
+    // const data = useSelector(state => state.Auth);
+    // console.log(data);
+    const user = getAuthToken();
+    // console.log(user);
     return user ? (
         <Route path={props.path} exact={props.exact} component={props.component} />
     ) : (

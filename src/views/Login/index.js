@@ -55,7 +55,8 @@ export default function Login() {
   const onSubmit = async event => {
     event.preventDefault();
 
-    // dispatch({ type: LOGIN_SUCCESS, payload: { isAuthencated: true, token: "getAccessTokens.data.token" } });
+    // dispatch({ type: LOGIN_SUCCESS, payload: { user: {email:"tarun@hgmail.com",testApplicationKey:"okjdjojiv",liveApplicationKey:null}, isAuthencated: true, token: "getAccessTokens.data.token" } });
+    // return;
 
     if (!data.email || !data.password) {
       alert.show("All fields required or invalid");

@@ -14,7 +14,7 @@ import "./assets/css/shards-dashboards.1.1.0.min.css";
 import { isuserLogiIn } from "./redux/actions/auth.Actions";
 import Mainloader from './components/Mainloader.js';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -26,7 +26,6 @@ const App = () => {
 
   useEffect(() => {
     if (!au.isAuthencated) {
-      console.log('gyg');
       dispatch(isuserLogiIn());
     }
   }, []);

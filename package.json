@@ -11,8 +11,6 @@
     "axios": "^0.27.2",
     "bip39": "^3.0.3",
     "classnames": "^2.2.6",
-    "crypto": "^1.0.1",
-    "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.0.0",
     "flux": "^4.0.3",
     "lodash.find": "^4.6.0",
@@ -34,10 +32,9 @@
     "stream": "^0.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build:prod": "cross-env REACT_APP_BASENAME=/demo/shards-dashboard-lite-react REACT_APP_GAID=UA-115105611-1 npm run build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,5 +45,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.0"
+  }
 }

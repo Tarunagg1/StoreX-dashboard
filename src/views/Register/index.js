@@ -5,6 +5,7 @@ import "./register.css";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from 'react-redux';
+import { registerUserAction } from '../../redux/actions/auth.Actions';
 
 export default function Register() {
   const { loading, errorMessage, successMessage } = useSelector(state => state.Auth);
@@ -33,8 +34,7 @@ export default function Register() {
 
   const onSubmit = async event => {
     event.preventDefault();
-    console.log(registerData);
-    // dispatch(registerUserAction(registerData));
+    dispatch(registerUserAction(registerData));
   }
 
   return (

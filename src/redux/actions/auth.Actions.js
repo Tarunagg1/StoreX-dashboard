@@ -5,7 +5,7 @@ import axiosinstance from '../../utils/axios/index'
 import store from '../index';
 import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt';
 import { generateMnemonic } from 'bip39';
-// import AesFunctions from '../../lib/AesUtil';
+import AesFunctions from '../../lib/AesUtil';
 
 export const isuserLogiIn = () => {
     return async (dispatch) => {
@@ -37,43 +37,49 @@ export const registerUserAction = (data) => {
 
         // Setup mnemonic
         const mnemonic = generateMnemonic(256);
-        const encMnemonic = encryptTextWithKey(
-            mnemonic,
-            data.password
-        );
+        // const encMnemonic = encryptTextWithKey(
+        //     mnemonic,
+        //     data.password
+        // );
+        
+        console.log(mnemonic);
 
         //Generate keys
-        const {
-            privateKeyArmored,
-            publicKeyArmored: codpublicKey,
-            revocationCertificate: codrevocationKey,
-        } = await generateNewKeys();
+        // const {
+        //     privateKeyArmored,
+        //     publicKeyArmored: codpublicKey,
+        //     revocationCertificate: codrevocationKey,
+        // } = await generateNewKeys();
 
-        // //Datas
+        // console.log(privateKeyArmored);
+
+        // enc Data
+
         // const encPrivateKey = AesFunctions.encrypt(
         //     privateKeyArmored,
         //     data.password,
         //     false
         // );
 
-        let body = {
-            name: data.name,
-            lastname: data.lastname,
-            // email: data.email,
-            // password: encPass,
-            // // mnemonic: encMnemonic,
-            // salt: encSalt,
-            // referral: readReferalCookie(),
-            // privateKey: encPrivateKey,
-            // publicKey: codpublicKey,
-            // revocationKey: codrevocationKey,
-        }
+        // let body = {
+        //     name: data.name,
+        //     lastname: data.lastname,
+        //     email: data.email,
+        //     password: encPass,
+        //     mnemonic: encMnemonic,
+        //     salt: encSalt,
+        //     referral: readReferalCookie(),
+        //     privateKey: encPrivateKey,
+        //     publicKey: codpublicKey,
+        //     revocationKey: codrevocationKey,
+        // }
+        // console.log(body);
 
         try {
             dispatch({ type: SET_LOADING_TRUE });
             // access key payload and call api
-            const resp = await axiosinstance.post('/register', body);
-            console.log(resp);
+            // const resp = await axiosinstance.post('/register', body);
+            // console.log(resp);
             dispatch({ type: SET_LOADING_FALSE });
         } catch (error) {
             dispatch({ type: SET_LOADING_FALSE });

@@ -20,7 +20,7 @@ const Dashboard = () => (
             <div className="card-body p-0 d-flex">
               <div className="d-flex flex-column m-auto">
                 <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <span className="stats-small__label text-uppercase">Total no of hits</span>
                   <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
                 <div className="stats-small__data">
@@ -36,7 +36,7 @@ const Dashboard = () => (
             <div className="card-body p-0 d-flex">
               <div className="d-flex flex-column m-auto">
                 <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <span className="stats-small__label text-uppercase">success API requests</span>
                   <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
                 <div className="stats-small__data">
@@ -52,7 +52,7 @@ const Dashboard = () => (
             <div className="card-body p-0 d-flex">
               <div className="d-flex flex-column m-auto">
                 <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <span className="stats-small__label text-uppercase">API error distribution</span>
                   <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
                 <div className="stats-small__data">
@@ -68,7 +68,7 @@ const Dashboard = () => (
             <div className="card-body p-0 d-flex">
               <div className="d-flex flex-column m-auto">
                 <div className="stats-small__data text-center">
-                  <span className="stats-small__label text-uppercase">Posts</span>
+                  <span className="stats-small__label text-uppercase"> response time</span>
                   <h6 className="stats-small__value count my-3">2,390</h6>
                 </div>
                 <div className="stats-small__data">

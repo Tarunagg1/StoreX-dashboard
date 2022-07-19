@@ -1,10 +1,12 @@
 import React from 'react';
+import Clientlibrary from '../views/Clientlibrary';
+import Endpoints from '../views/Endpoints';
 
 const GetStarted = React.lazy(() => import('../views/GettingStarted'));
 const Documentation = React.lazy(() => import('../views/documentation/Documentation'));
 const Authentication = React.lazy(() => import('../views/Authentication'));
 
-export default [
+let routes = [
   {
     path: "/documentation",
     component: Documentation,
@@ -22,17 +24,18 @@ export default [
   },
   {
     path: "/endpoints",
-    component: Documentation,
+    component: Endpoints,
     routeGuard: "NoAuthGuard"
   },
   {
     path: "/client-libraries",
-    component: Documentation,
+    component: Clientlibrary,
     routeGuard: "NoAuthGuard"
   },
   {
     path: "/client-libraries/node",
-    component: Documentation,
+    component: Clientlibrary,
     routeGuard: "NoAuthGuard"
   }
 ];
+export default routes;

@@ -7,7 +7,7 @@ import documentRoutes from './document.routes';
 
 
 
-export default [
+let routes = [
   ...AuthRoutes,
   ...dashboardRoutes,
   ...documentRoutes,
@@ -16,3 +16,6 @@ export default [
     component: Errors,
   }
 ];
+
+
+export default routes;

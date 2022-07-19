@@ -7,15 +7,7 @@ export default function MainBox() {
     <div className="main-box">
       <div className="start-para">
         <h4>Getting Started</h4>
-        <p>
-          Lorem Ipsum is simply dummy text of printing and typesetting industry.
-          when an unknown printer took a galley of type and scrambled it to make
-          a type specimen book.It uses a dictionary of over 200 Latin words,
-          combined with a handful of model sentence structures, to generate
-          Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
-          therefore always free from repetition, injected humour, or
-          non-characteristic words etc.
-        </p>
+        <p> To get started you'll need an API key.  </p>
       </div>
 
       <div className="getStartbtn">
@@ -25,25 +17,18 @@ export default function MainBox() {
       </div>
 
       <div className="mid-para">
-        <p>
-          It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised in the 1960s with the release of Letraset sheets
-          containing Lorem Ipsum passages, and more recently with desktop
-          publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum.
-        </p>
+        <p>There are 2 ways where you can this API key to integrate into your system.</p>
       </div>
 
-      <div className="end-para">
-        <h4>Lorem Ipsum</h4>
-        <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English.
-        </p>
+      <div style={{ marginTop: '0px' }} className="end-para">
+        <ul className="ml-2rem">
+          <li>
+            <p>First is the standard REST API way where with the help of this API key to access all StorX storage APIs. </p>
+          </li>
+          <li>
+            <p>Second is using the node package storx-storage-sdk if you node based system. You can directly use storage function of this library and integrate in to your app.</p>
+          </li>
+        </ul>
       </div>
     </div>
   );

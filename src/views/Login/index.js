@@ -24,8 +24,8 @@ export default function Login() {
 
 
   const [data, setData] = useState({
-    email: "ashish1@gmail.com",
-    password: "Ashish@123"
+    email: "",
+    password: ""
   });
 
 
@@ -165,13 +165,13 @@ export default function Login() {
                 </div>
               </div>
 
-              <div className="d-flex mb-4 float-right">
+              {/* <div className="d-flex mb-4 float-right">
                 <span>
                   <Link to="/forgotpassword" className="link">
                     Forgot your Password ?{" "}
                   </Link>
                 </span>
-              </div>
+              </div> */}
 
               <button
                 disabled={!valid || loading}

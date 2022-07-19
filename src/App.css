@@ -76,3 +76,15 @@ section {
 .card-small {
   box-shadow: none !important;
 }
+
+.ml-2rem{
+  margin-left: 2rem;
+}
+
+.CodeMirror {
+  min-height: 50vh;
+  min-width: 45vw;
+  font-size: 18px;
+  line-height: 1.6;
+  padding-top: 20px;
+}

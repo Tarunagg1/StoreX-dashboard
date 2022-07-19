@@ -1,47 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import "../documentation/home.css";
+
+
 export default function MainBox() {
   return (
     <div className="main-box">
       <div className="start-para">
         <h4>Authentication</h4>
         <p>
-          Lorem Ipsum is simply dummy text of printing and typesetting industry.
-          when an unknown printer took a galley of type and scrambled it to make
-          a type specimen book.It uses a dictionary of over 200 Latin words,
-          combined with a handful of model sentence structures, to generate
-          Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
-          therefore always free from repetition, injected humour, or
-          non-characteristic words etc.
+          Authentication is handled with a simple API key.
         </p>
+        <p>
+          Your API key is:
+        </p>
+
+        <div className="getStartbtn" style={{ margin: "0px" }}>
+          <Link className="filllcolor" to="/register">
+            Get API Key
+          </Link>
+        </div>
       </div>
 
-      <div className="getStartbtn">
-        <Link className="filllcolor" to="/register">
-          Get API Key
-        </Link>
-      </div>
 
       <div className="mid-para">
-        <p>
-          It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised in the 1960s with the release of Letraset sheets
-          containing Lorem Ipsum passages, and more recently with desktop
-          publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum.
-        </p>
+        <p>You can attach your API key to a request in this way:</p>
       </div>
 
-      <div className="end-para">
-        <h4>Lorem Ipsum</h4>
-        <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English.
-        </p>
+      <div style={{ marginTop: '0px' }} className="end-para">
+        <ul className="ml-2rem">
+          <li>
+            <p>Via the x-api-key HTTP header.</p>
+          </li>
+        </ul>
+      </div>
+      <div className="mid-para">
+        <p>We prefer this method so that your API key isn't visible to others in logs or via request sniffing.</p>
+        <p>If you don't send your API key correctly, or your API key is invalid, you will receive a 401 - Unauthorized HTTP error.</p>
       </div>
     </div>
   );

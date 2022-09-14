@@ -7,10 +7,9 @@ import {
   Collapse,
   NavItem, NavLink
 } from "shards-react";
-import { connect, Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import { logoutUserAction } from '../../../../redux/actions/auth.Actions';
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom';
 
 class UserActions extends Component {
 

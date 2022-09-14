@@ -4,21 +4,21 @@ import "../Login/login.css";
 import "./register.css";
 import logo from "../../assets/images/logo.png";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { registerUserAction } from '../../redux/actions/auth.Actions';
 
 export default function Register() {
-  const { loading, errorMessage, successMessage } = useSelector(state => state.Auth);
+  // const { loading, errorMessage, successMessage } = useSelector(state => state.Auth);
   const dispatch = useDispatch();
 
 
   const [registerData, setRegisterData] = useState({
-    name: "tarun",
-    lastname: "aggarwal",
-    email: "tarun@gmaill.com",
-    companyname: "tarun",
-    password: "tarun",
-    cpassword: "tarun"
+    name: "",
+    lastname: "",
+    email: "",
+    companyname: "",
+    password: "",
+    cpassword: ""
   });
 
 

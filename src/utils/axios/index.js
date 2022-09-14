@@ -1,10 +1,11 @@
 import axios from 'axios';
 import store from '../../redux';
 import { logoutUserAction } from '../../redux/actions/auth.Actions';
-import { getAuthToken } from '../common/localStorege';
+// import { getAuthToken } from '../common/localStorege';
 
-
+console.log( process.env.REACT_APP_ENV );
 const REACT_APP_API_BASE_URL = process.env.REACT_APP_ENV === "production" ? process.env.REACT_APP_API_URL_PROD : process.env.REACT_APP_API_URL_dev;
+console.log(REACT_APP_API_BASE_URL);
 
 const axiosinstance = axios.create({
     baseURL: REACT_APP_API_BASE_URL,

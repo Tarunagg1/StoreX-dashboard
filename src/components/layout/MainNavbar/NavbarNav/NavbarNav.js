@@ -6,7 +6,7 @@ import UserActions from "./UserActions";
 import LoadingBar from 'react-top-loading-bar'
 
 
-export default () => {
+export default function Navbar() {
   const [progress, setProgressBar] = useState(50);
 
   setTimeout(() => {

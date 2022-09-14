@@ -1,4 +1,4 @@
-export default function () {
+const navItems = () => {
   return [
     {
       title: "Overview",
@@ -27,3 +27,7 @@ export default function () {
     }
   ];
 }
+
+
+
+export default navItems;

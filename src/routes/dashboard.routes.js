@@ -5,20 +5,22 @@ const Dashboard = React.lazy(() => import('../views/Dashboard'));
 const Profile = React.lazy(() => import('../views/Profile'));
 
 
-export default [
-    {
-        path: "/dashboard",
-        component: Dashboard,
-        routeGuard: 'authGuard'
-    },
-    {
-        path: "/credentials",
-        component: Credentials,
-        routeGuard: 'authGuard'
-    },
-    {
-        path: "/profile",
-        component: Profile,
-        routeGuard: 'authGuard'
-    }
+const routes = [
+  {
+    path: "/dashboard",
+    component: Dashboard,
+    routeGuard: 'authGuard'
+  },
+  {
+    path: "/credentials",
+    component: Credentials,
+    routeGuard: 'authGuard'
+  },
+  {
+    path: "/profile",
+    component: Profile,
+    routeGuard: 'authGuard'
+  }
 ];
+
+export default routes;

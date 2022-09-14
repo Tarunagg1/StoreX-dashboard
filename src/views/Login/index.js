@@ -182,9 +182,9 @@ export default function Login() {
             <div className="mt-4 text-center">
               <span className="text-center">
                 Don't have an Account?{" "}
-                <Link className="link" to="/register">
+                <a className="link" target="_blank" href="http://109.169.55.25:3000/new">
                   Signup
-                </Link>
+                </a>
               </span>
             </div>
           </div>

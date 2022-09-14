@@ -53,7 +53,7 @@ export default function Navbar() {
                           Get API Key
                         </Link>
                       ) : (
-                        <a className="filllcolor" target="_blank" href="https://storx.io/new"> Get API Key </a>
+                        <a className="filllcolor" target="_blank" href="http://109.169.55.25:3000/new"> Get API Key </a>
                       )
                     }
                   </div>

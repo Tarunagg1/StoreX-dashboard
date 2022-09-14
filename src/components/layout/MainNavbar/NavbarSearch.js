@@ -3,6 +3,8 @@ import {
   Form,
 } from "shards-react";
 
-export default () => (
+const fun = () => (
   <Form className="main-navbar__search w-100 d-none d-md-flex d-lg-flex"></Form>
 );
+
+export default fun;

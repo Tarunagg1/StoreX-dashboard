@@ -106,13 +106,14 @@ const Credentials = () => {
 
   const [isKeyChnageLoading, setIsKeyChnageLoading] = useState(false);
   const { user, loading } = useSelector(state => state.Auth);
+
   const dispatch = useDispatch();
 
   const handleTogglerChange = () => {
     setShowCredentials(false);
     setIsTestMode((prev) => !prev);
     setIsKeyChnageLoading(true);
-  
+
     setTimeout(() => {
       setIsKeyChnageLoading(false)
     }, 1000);
@@ -184,12 +185,6 @@ const Credentials = () => {
                           <td>
                             <span className="ContentTopic">TOKEN</span>
                           </td>
-                          {/* <td>
-                            <span className="ContentTopic">LAST USED</span>
-                          </td>
-                          <td>
-                            <span className="ContentTopic">CREATED</span>
-                          </td> */}
                           <td>
                           </td>
                         </tr>
@@ -208,7 +203,7 @@ const Credentials = () => {
                               <td className="keyBoxSmall">
                                 {
                                   isTestMode ? (
-                                    user.testApplicationKey === null ? (
+                                    user.testApplicationKey === undefined || user.testApplicationKey === null ? (
                                       <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Test key</button>
                                     ) : (
                                       showCredentials ? (
@@ -227,7 +222,7 @@ const Credentials = () => {
                                     )
 
                                   ) : (
-                                    user.liveApplicationKey === null ? (
+                                    user.liveApplicationKey === undefined || user.liveApplicationKey === null ? (
                                       <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Live key</button>
                                     ) : (
                                       showCredentials ? (

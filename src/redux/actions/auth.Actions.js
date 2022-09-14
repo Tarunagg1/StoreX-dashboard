@@ -3,9 +3,9 @@ import { clearAllKeysFromLocalStorage, getAuthToken, getDataFromLocalStorage, re
 import { LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT_SUCCESS, SET_LOADING_FALSE, SET_LOADING_TRUE, SET_USER_UPDATE_DETAILS, } from '../constants/auth.constannts';
 import axiosinstance from '../../utils/axios/index'
 import store from '../index';
-import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt';
-import { generateMnemonic } from 'bip39';
-import AesFunctions from '../../lib/AesUtil';
+// import { encryptText, encryptTextWithKey, generateNewKeys, passToHash } from '../../utils/common/crypt';
+// import { generateMnemonic } from 'bip39';
+// import AesFunctions from '../../lib/AesUtil';
 
 export const isuserLogiIn = () => {
     return async (dispatch) => {
@@ -23,79 +23,79 @@ export const isuserLogiIn = () => {
 }
 
 
-const readReferalCookie = () => {
-    const cookie = document.cookie.match(/(^| )REFERRAL=([^;]+)/);
-    return cookie ? cookie[2] : null;
-}
+// const readReferalCookie = () => {
+//     const cookie = document.cookie.match(/(^| )REFERRAL=([^;]+)/);
+//     return cookie ? cookie[2] : null;
+// }
 
 
-export const registerUserAction = (data) => {
-    return async (dispatch) => {
-        const hashObj = passToHash({ password: data.password });
-        const encPass = encryptText(hashObj.hash);
-        const encSalt = encryptText(hashObj.salt);
+// export const registerUserAction = (data) => {
+//     return async (dispatch) => {
+//         const hashObj = passToHash({ password: data.password });
+//         const encPass = encryptText(hashObj.hash);
+//         const encSalt = encryptText(hashObj.salt);
 
-        // Setup mnemonic
-        const mnemonic = generateMnemonic(256);
-        // const encMnemonic = encryptTextWithKey(
-        //     mnemonic,
-        //     data.password
-        // );
-        
-        console.log(mnemonic);
+//         // Setup mnemonic
+//         const mnemonic = generateMnemonic(256);
+//         // const encMnemonic = encryptTextWithKey(
+//         //     mnemonic,
+//         //     data.password
+//         // );
 
-        //Generate keys
-        // const {
-        //     privateKeyArmored,
-        //     publicKeyArmored: codpublicKey,
-        //     revocationCertificate: codrevocationKey,
-        // } = await generateNewKeys();
+//         console.log(mnemonic);
 
-        // console.log(privateKeyArmored);
+//         //Generate keys
+//         // const {
+//         //     privateKeyArmored,
+//         //     publicKeyArmored: codpublicKey,
+//         //     revocationCertificate: codrevocationKey,
+//         // } = await generateNewKeys();
 
-        // enc Data
+//         // console.log(privateKeyArmored);
 
-        // const encPrivateKey = AesFunctions.encrypt(
-        //     privateKeyArmored,
-        //     data.password,
-        //     false
-        // );
+//         // enc Data
 
-        // let body = {
-        //     name: data.name,
-        //     lastname: data.lastname,
-        //     email: data.email,
-        //     password: encPass,
-        //     mnemonic: encMnemonic,
-        //     salt: encSalt,
-        //     referral: readReferalCookie(),
-        //     privateKey: encPrivateKey,
-        //     publicKey: codpublicKey,
-        //     revocationKey: codrevocationKey,
-        // }
-        // console.log(body);
+//         // const encPrivateKey = AesFunctions.encrypt(
+//         //     privateKeyArmored,
+//         //     data.password,
+//         //     false
+//         // );
 
-        try {
-            dispatch({ type: SET_LOADING_TRUE });
-            // access key payload and call api
-            // const resp = await axiosinstance.post('/register', body);
-            // console.log(resp);
-            dispatch({ type: SET_LOADING_FALSE });
-        } catch (error) {
-            dispatch({ type: SET_LOADING_FALSE });
-            console.log(error);
-            if (error.response && error.response.data && error.response.status === 400) {
-                //   alert.error(error.response.data.error);
-                return;
-            } else if (error.response && error.response.data && error.response.status !== 200) {
-                //   alert.error(error.response.data.error);
-                return;
-            } else {
-                //   alert.error("Something went wrong");
-            }
-        }
-    }
-}
+//         // let body = {
+//         //     name: data.name,
+//         //     lastname: data.lastname,
+//         //     email: data.email,
+//         //     password: encPass,
+//         //     mnemonic: encMnemonic,
+//         //     salt: encSalt,
+//         //     referral: readReferalCookie(),
+//         //     privateKey: encPrivateKey,
+//         //     publicKey: codpublicKey,
+//         //     revocationKey: codrevocationKey,
+//         // }
+//         // console.log(body);
+
+//         try {
+//             dispatch({ type: SET_LOADING_TRUE });
+//             // access key payload and call api
+//             // const resp = await axiosinstance.post('/register', body);
+//             // console.log(resp);
+//             dispatch({ type: SET_LOADING_FALSE });
+//         } catch (error) {
+//             dispatch({ type: SET_LOADING_FALSE });
+//             console.log(error);
+//             if (error.response && error.response.data && error.response.status === 400) {
+//                 //   alert.error(error.response.data.error);
+//                 return;
+//             } else if (error.response && error.response.data && error.response.status !== 200) {
+//                 //   alert.error(error.response.data.error);
+//                 return;
+//             } else {
+//                 //   alert.error("Something went wrong");
+//             }
+//         }
+//     }
+// }
 
 export const genrateAndRegenrateKeysAction = (testmode) => {
     return async (dispatch) => {

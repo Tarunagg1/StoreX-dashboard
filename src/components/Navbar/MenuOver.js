@@ -53,9 +53,8 @@ export default function MenuOver(props) {
       </h2>
 
       <div className="getStartbtn menuover-btn">
-        <Link className="filllcolor" to="/register">
-          Get API Key
-        </Link>
+      <a className="filllcolor" target="_blank" rel="noreferrer" href="http://109.169.55.25:3000/new"> Get API Key </a>
+
       </div>
     </div>
   );

@@ -14,17 +14,17 @@ const navItems = () => {
       title: "Documentation",
       htmlBefore: '<i class="material-icons">dock</i>',
       to: "/get-started",
-    },
-    {
-      title: "Developers",
-      htmlBefore: '<i class="material-icons">person</i>',
-      to: "/comingsoon",
-    },
-    {
-      title: "Settings",
-      htmlBefore: '<i class="material-icons">settings</i>',
-      to: "/comingsoon",
     }
+    // {
+    //   title: "Developers",
+    //   htmlBefore: '<i class="material-icons">person</i>',
+    //   to: "/comingsoon",
+    // },
+    // {
+    //   title: "Settings",
+    //   htmlBefore: '<i class="material-icons">settings</i>',
+    //   to: "/comingsoon",
+    // }
   ];
 }
 

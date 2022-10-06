@@ -101,7 +101,7 @@ const IsolatedMenu = props => {
 }
 
 const Credentials = () => {
-  const [isTestMode, setIsTestMode] = useState(true);
+  const [isTestMode, setIsTestMode] = useState(false);
   const [showCredentials, setShowCredentials] = useState(false);
 
   const [isKeyChnageLoading, setIsKeyChnageLoading] = useState(false);
@@ -140,7 +140,7 @@ const Credentials = () => {
   };
 
 
-  const genrateAndRegenrateKeys = () => {
+  const generateAndRegenerateKeys = () => {
     setIsKeyChnageLoading(true);
     setTimeout(() => {
       dispatch(genrateAndRegenrateKeysAction(isTestMode));
@@ -157,11 +157,11 @@ const Credentials = () => {
         <PageTitle sm="5" title="API Keys" className="page-heading mt-5" />
 
         <Row noGutters className="page-header mt-3">
-          <p>{isTestMode ? "Viewing test API keys. Toggle to   view Live keys." : "Viewing Live API keys. Toggle to view test keys."} </p>
-          <FormControlLabel
+          <p style={{ paddingTop: '10px', paddingBottom: '10px' }}>{isTestMode ? "Viewing test API keys. Toggle to   view Live keys." : "Viewing Live API keys. Toggle to view test keys."} </p>
+          {/* <FormControlLabel
             label="Test mode"
-            control={<IOSSwitch sx={{ m: 1 }} onChange={handleTogglerChange} checked={isTestMode} />}
-          />
+            control={<IOSSwitch sx={{ m: 1 }} onChange={null} checked={isTestMode} />}
+          /> */}
         </Row>
 
         <Row className="mt-4">
@@ -204,7 +204,7 @@ const Credentials = () => {
                                 {
                                   isTestMode ? (
                                     user.testApplicationKey === undefined || user.testApplicationKey === null ? (
-                                      <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Test key</button>
+                                      <button className="genrageKayButton" onClick={generateAndRegenerateKeys}>Generate Test key</button>
                                     ) : (
                                       showCredentials ? (
                                         <>
@@ -216,14 +216,14 @@ const Credentials = () => {
                                         </>
                                       ) : (
                                         <div className="keySecretBlur">
-                                          <span className="genrageKayButton showHidekey" onClick={toggleCredentials}>Revel test key</span>
+                                          <span className="genrageKayButton showHidekey" onClick={toggleCredentials}>Reveal test key</span>
                                         </div>
                                       )
                                     )
 
                                   ) : (
                                     user.liveApplicationKey === undefined || user.liveApplicationKey === null ? (
-                                      <button className="genrageKayButton" onClick={genrateAndRegenrateKeys}>Genrate Live key</button>
+                                      <button className="genrageKayButton" onClick={generateAndRegenerateKeys}>Generate Live key</button>
                                     ) : (
                                       showCredentials ? (
                                         <>
@@ -234,7 +234,7 @@ const Credentials = () => {
                                         </>
                                       ) : (
                                         <div className="keySecretBlur">
-                                          <span className="genrageKayButton showHidekey" onClick={toggleCredentials}>Revel test key</span>
+                                          <span className="genrageKayButton showHidekey" onClick={toggleCredentials}>Reveal test key</span>
                                         </div>
                                       )
                                     )
@@ -242,7 +242,7 @@ const Credentials = () => {
                                 }
                               </td>
                               <td className="isolatedMenu">
-                                <IsolatedMenu isTestMode={isTestMode} genrateAndRegenrateKeys={genrateAndRegenrateKeys} />
+                                <IsolatedMenu isTestMode={isTestMode} genrateAndRegenrateKeys={generateAndRegenerateKeys} />
                               </td>
                             </tr>
                           )
